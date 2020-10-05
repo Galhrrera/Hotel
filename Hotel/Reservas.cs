@@ -25,6 +25,7 @@ namespace Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             Form NuevaReserva = new CrearReserva();
+            NuevaReserva.Show();
         }
     }
 }
