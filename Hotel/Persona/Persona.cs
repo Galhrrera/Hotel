@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hotel___Proyecto_Final
+namespace Hotel
 {
-    public abstract class Persona 
+    public class Persona 
     {
         //atributos
         private string nombre; //es ingresado por el usuario

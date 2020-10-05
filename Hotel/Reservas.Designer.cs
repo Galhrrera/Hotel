@@ -31,11 +31,11 @@
             this.lblReservas = new System.Windows.Forms.Label();
             this.groupBoxReservaHeader = new System.Windows.Forms.GroupBox();
             this.groupBoxHabitacionesReservadas = new System.Windows.Forms.GroupBox();
-            this.groupBoxbtnsReservas = new System.Windows.Forms.GroupBox();
-            this.btnCrearReserva = new System.Windows.Forms.Button();
-            this.btnCheckIn = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
             this.listBoxReservas = new System.Windows.Forms.ListBox();
+            this.groupBoxbtnsReservas = new System.Windows.Forms.GroupBox();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCrearReserva = new System.Windows.Forms.Button();
             this.groupBoxReservaHeader.SuspendLayout();
             this.groupBoxHabitacionesReservadas.SuspendLayout();
             this.groupBoxbtnsReservas.SuspendLayout();
@@ -50,7 +50,7 @@
             this.lblReservas.Size = new System.Drawing.Size(152, 30);
             this.lblReservas.TabIndex = 0;
             this.lblReservas.Text = "Reservas";
-            this.lblReservas.Click += new System.EventHandler(this.label1_Click);
+            //this.lblReservas.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBoxReservaHeader
             // 
@@ -70,6 +70,15 @@
             this.groupBoxHabitacionesReservadas.TabIndex = 2;
             this.groupBoxHabitacionesReservadas.TabStop = false;
             // 
+            // listBoxReservas
+            // 
+            this.listBoxReservas.FormattingEnabled = true;
+            this.listBoxReservas.Location = new System.Drawing.Point(6, 10);
+            this.listBoxReservas.Name = "listBoxReservas";
+            this.listBoxReservas.Size = new System.Drawing.Size(764, 212);
+            this.listBoxReservas.TabIndex = 0;
+            this.listBoxReservas.SelectedIndexChanged += new System.EventHandler(this.listBoxReservas_SelectedIndexChanged);
+            // 
             // groupBoxbtnsReservas
             // 
             this.groupBoxbtnsReservas.Controls.Add(this.btnCheckOut);
@@ -80,6 +89,26 @@
             this.groupBoxbtnsReservas.Size = new System.Drawing.Size(776, 127);
             this.groupBoxbtnsReservas.TabIndex = 3;
             this.groupBoxbtnsReservas.TabStop = false;
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckOut.TabIndex = 2;
+            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.Location = new System.Drawing.Point(435, 30);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckIn.TabIndex = 1;
+            this.btnCheckIn.Text = "Check In";
+            this.btnCheckIn.UseVisualStyleBackColor = true;
             // 
             // btnCrearReserva
             // 
@@ -92,34 +121,6 @@
             this.btnCrearReserva.Text = "Crear Reserva";
             this.btnCrearReserva.UseVisualStyleBackColor = false;
             this.btnCrearReserva.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.Location = new System.Drawing.Point(435, 30);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(142, 65);
-            this.btnCheckIn.TabIndex = 1;
-            this.btnCheckIn.Text = "Check In";
-            this.btnCheckIn.UseVisualStyleBackColor = true;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
-            this.btnCheckOut.TabIndex = 2;
-            this.btnCheckOut.Text = "Check Out";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // listBoxReservas
-            // 
-            this.listBoxReservas.FormattingEnabled = true;
-            this.listBoxReservas.Location = new System.Drawing.Point(6, 10);
-            this.listBoxReservas.Name = "listBoxReservas";
-            this.listBoxReservas.Size = new System.Drawing.Size(764, 212);
-            this.listBoxReservas.TabIndex = 0;
             // 
             // Reservas
             // 

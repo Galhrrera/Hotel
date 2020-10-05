@@ -12,9 +12,18 @@ namespace Hotel
 {
     public partial class CrearReserva : Form
     {
-        public CrearReserva()
+        List<Persona> listatemp = new List<Persona>();
+
+        public CrearReserva(List<Persona> lista)
         {
             InitializeComponent();
+
+            if (lista != null)
+                listatemp = lista;
+            else
+                listatemp = new List<Persona>();
+
+            LlenarListaPersonas(lista);
         }
 
         private void txtDias_TextChanged(object sender, EventArgs e)
@@ -26,7 +35,7 @@ namespace Hotel
         {
             DateTime fechaEntrada = dtpFechaIngreso.Value.Date;
             DateTime fechaSalida = dtpFechaSalida.Value.Date;
-            //dptFechaInicio & dptFechaFinal son los nombres de los box en el formulario
+            //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
             TimeSpan tSpan = fechaSalida - fechaEntrada;
 
             int dias = tSpan.Days;
@@ -38,7 +47,67 @@ namespace Hotel
                 throw new Exception("Error con los las fechas ingresadas");
             }             
             else
-                txtDias.Text = dias.ToString() + "días";
+                txtDias.Text = dias.ToString() + " días";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarPersona_Click(object sender, EventArgs e)  //botón para guardar un nuevo cliente
+        {
+            if (txtNombreTitular.Text == string.Empty)
+            {
+                MessageBox.Show("Debe ingresar el nombre del titular");
+                return;
+            }
+            if (txtNumID.Text == string.Empty)
+            {
+                MessageBox.Show("Debe ingresar el número de identificación del titular");
+                return;
+            }
+
+            if (comboBoxTipoPersona.SelectedIndex == 0) //1 => Huesped
+            {
+                //Huesped H1 = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                //listatemp.Add(H1);
+            }
+            else if (comboBoxTipoPersona.SelectedIndex ==1)  //2=> Cliente
+            {
+                //Cliente C1 = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                //listatemp.Add(C1);
+            }    
+
+            //Limpia los campos para poder reutilizarlos luego:
+            txtNumID.Text = string.Empty;
+            txtNombreTitular.Text = string.Empty;
+            comboBoxTipoPersona.SelectedIndex = 0;
+
+            //txtNombreTitular podría usarse para indicar que el cursos debe situarse nuevamente en el campo de ingreso para el nombre del usuario
+
+            
+            
+        }
+
+        private void LlenarListaPersonas(List<Persona> lista)
+        {
+            foreach (var item in lista)
+            {
+                listClientes.Items.Add(item);
+            }
+        }
+
+        private void listClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,6 +36,16 @@
             this.lblNumDias = new System.Windows.Forms.Label();
             this.txtDias = new System.Windows.Forms.TextBox();
             this.btnCDalcularDias = new System.Windows.Forms.Button();
+            this.groupBoxTitularNuevaReserva = new System.Windows.Forms.GroupBox();
+            this.btnGuardarPersona = new System.Windows.Forms.Button();
+            this.comboBoxTipoPersona = new System.Windows.Forms.ComboBox();
+            this.lblTipoPersona = new System.Windows.Forms.Label();
+            this.txtNumID = new System.Windows.Forms.TextBox();
+            this.lblNumID = new System.Windows.Forms.Label();
+            this.txtNombreTitular = new System.Windows.Forms.TextBox();
+            this.lblNombreTitular = new System.Windows.Forms.Label();
+            this.listClientes = new System.Windows.Forms.ListBox();
+            this.groupBoxTitularNuevaReserva.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNuevaReserva
@@ -110,11 +120,112 @@
             this.btnCDalcularDias.UseVisualStyleBackColor = true;
             this.btnCDalcularDias.Click += new System.EventHandler(this.btnCDalcularDias_Click);
             // 
+            // groupBoxTitularNuevaReserva
+            // 
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.btnGuardarPersona);
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.comboBoxTipoPersona);
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.lblTipoPersona);
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.txtNumID);
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.lblNumID);
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.txtNombreTitular);
+            this.groupBoxTitularNuevaReserva.Controls.Add(this.lblNombreTitular);
+            this.groupBoxTitularNuevaReserva.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.groupBoxTitularNuevaReserva.Font = new System.Drawing.Font("PaybAck", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxTitularNuevaReserva.Location = new System.Drawing.Point(59, 208);
+            this.groupBoxTitularNuevaReserva.Name = "groupBoxTitularNuevaReserva";
+            this.groupBoxTitularNuevaReserva.Size = new System.Drawing.Size(376, 168);
+            this.groupBoxTitularNuevaReserva.TabIndex = 8;
+            this.groupBoxTitularNuevaReserva.TabStop = false;
+            this.groupBoxTitularNuevaReserva.Text = "Titular";
+            // 
+            // btnGuardarPersona
+            // 
+            this.btnGuardarPersona.Location = new System.Drawing.Point(159, 139);
+            this.btnGuardarPersona.Name = "btnGuardarPersona";
+            this.btnGuardarPersona.Size = new System.Drawing.Size(200, 23);
+            this.btnGuardarPersona.TabIndex = 6;
+            this.btnGuardarPersona.Text = "Guardar titular";
+            this.btnGuardarPersona.UseVisualStyleBackColor = true;
+            this.btnGuardarPersona.Click += new System.EventHandler(this.btnGuardarPersona_Click);
+            // 
+            // comboBoxTipoPersona
+            // 
+            this.comboBoxTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoPersona.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTipoPersona.FormattingEnabled = true;
+            this.comboBoxTipoPersona.Items.AddRange(new object[] {
+            "Huesped",
+            "Cliente"});
+            this.comboBoxTipoPersona.Location = new System.Drawing.Point(159, 93);
+            this.comboBoxTipoPersona.Name = "comboBoxTipoPersona";
+            this.comboBoxTipoPersona.Size = new System.Drawing.Size(200, 24);
+            this.comboBoxTipoPersona.TabIndex = 5;
+            this.comboBoxTipoPersona.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoPersona_SelectedIndexChanged);
+            // 
+            // lblTipoPersona
+            // 
+            this.lblTipoPersona.AutoSize = true;
+            this.lblTipoPersona.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoPersona.Location = new System.Drawing.Point(10, 93);
+            this.lblTipoPersona.Name = "lblTipoPersona";
+            this.lblTipoPersona.Size = new System.Drawing.Size(40, 15);
+            this.lblTipoPersona.TabIndex = 4;
+            this.lblTipoPersona.Text = "Tipo: ";
+            // 
+            // txtNumID
+            // 
+            this.txtNumID.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumID.Location = new System.Drawing.Point(159, 53);
+            this.txtNumID.MaxLength = 10;
+            this.txtNumID.Name = "txtNumID";
+            this.txtNumID.Size = new System.Drawing.Size(200, 23);
+            this.txtNumID.TabIndex = 3;
+            // 
+            // lblNumID
+            // 
+            this.lblNumID.AutoSize = true;
+            this.lblNumID.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumID.Location = new System.Drawing.Point(6, 59);
+            this.lblNumID.Name = "lblNumID";
+            this.lblNumID.Size = new System.Drawing.Size(157, 15);
+            this.lblNumID.TabIndex = 2;
+            this.lblNumID.Text = "Número de identificación: ";
+            // 
+            // txtNombreTitular
+            // 
+            this.txtNombreTitular.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreTitular.Location = new System.Drawing.Point(159, 13);
+            this.txtNombreTitular.Name = "txtNombreTitular";
+            this.txtNombreTitular.Size = new System.Drawing.Size(200, 23);
+            this.txtNombreTitular.TabIndex = 1;
+            // 
+            // lblNombreTitular
+            // 
+            this.lblNombreTitular.AutoSize = true;
+            this.lblNombreTitular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreTitular.Location = new System.Drawing.Point(7, 26);
+            this.lblNombreTitular.Name = "lblNombreTitular";
+            this.lblNombreTitular.Size = new System.Drawing.Size(90, 13);
+            this.lblNombreTitular.TabIndex = 0;
+            this.lblNombreTitular.Text = "Nombre completo";
+            this.lblNombreTitular.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // listClientes
+            // 
+            this.listClientes.FormattingEnabled = true;
+            this.listClientes.Location = new System.Drawing.Point(490, 221);
+            this.listClientes.Name = "listClientes";
+            this.listClientes.Size = new System.Drawing.Size(351, 147);
+            this.listClientes.TabIndex = 2;
+            this.listClientes.SelectedIndexChanged += new System.EventHandler(this.listClientes_SelectedIndexChanged);
+            // 
             // CrearReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(896, 595);
+            this.Controls.Add(this.listClientes);
+            this.Controls.Add(this.groupBoxTitularNuevaReserva);
             this.Controls.Add(this.btnCDalcularDias);
             this.Controls.Add(this.txtDias);
             this.Controls.Add(this.lblNumDias);
@@ -125,6 +236,8 @@
             this.Controls.Add(this.lblNuevaReserva);
             this.Name = "CrearReserva";
             this.Text = "Crear reserva";
+            this.groupBoxTitularNuevaReserva.ResumeLayout(false);
+            this.groupBoxTitularNuevaReserva.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +253,14 @@
         private System.Windows.Forms.Label lblNumDias;
         private System.Windows.Forms.TextBox txtDias;
         private System.Windows.Forms.Button btnCDalcularDias;
+        private System.Windows.Forms.GroupBox groupBoxTitularNuevaReserva;
+        private System.Windows.Forms.Label lblNombreTitular;
+        private System.Windows.Forms.Label lblNumID;
+        private System.Windows.Forms.TextBox txtNombreTitular;
+        private System.Windows.Forms.TextBox txtNumID;
+        private System.Windows.Forms.ComboBox comboBoxTipoPersona;
+        private System.Windows.Forms.Label lblTipoPersona;
+        private System.Windows.Forms.Button btnGuardarPersona;
+        private System.Windows.Forms.ListBox listClientes;
     }
 }
