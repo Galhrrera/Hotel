@@ -10,28 +10,26 @@ namespace Hotel___Proyecto_Final
         private byte piso;
         private Huesped huesped;
         private float precio;
-        public enum tipoCama { doble, sencilla, queen, semidoble, king };
         private float totalMinibar;
-        private List<PctoMinibar> listaMinibar;
+        private List<Producto> listaMinibar;
+
+        public byte NumHabitacion { get => numHabitacion; set => numHabitacion = value; }
+        public byte Piso { get => piso; set => piso = value; }
+        public Huesped Huesped { get => huesped; set => huesped = value; }
+        public float Precio { get => precio; set => precio = value; }
+        public float TotalMinibar { get => totalMinibar; set => totalMinibar = value; }
+        public List<Producto> ListaMinibar { get => listaMinibar; set => listaMinibar = value; }
+
+        public enum tipoCama { doble, sencilla, queen, semidoble, king };
         public enum estado { Desocupada, Ocupada };
 
-        protected byte NumHabitacion { get => numHabitacion; }
-        protected byte Piso { get => piso; }
-        protected Huesped Huesped { get => huesped; }
-        protected float Precio { get => precio; }
-        protected float TotalMinibar { get => totalMinibar; }
-        protected List<PctoMinibar> ListaMinibar { get => listaMinibar; }
+       
+        protected Habitacion() { }
 
-        //¿CONSTRUCTOR?
 
-        public static void ReabastecerMinibar()
-        {
-            //Añadir productos a la lista producto
-        }
+        public abstract void ReabastecerMinibar(List<Producto> ListaMinibar);
 
-        public void Consumir(List<PctoMinibar> ListaMinibar)
-        {
-            //agregar el resultado a la lista
-        }
+        public abstract void Consumir(List<Producto> ListaMinibar, int cantConsumir);
+
     }
 }
