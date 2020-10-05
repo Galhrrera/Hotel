@@ -33,6 +33,9 @@
             this.dtpFechaSalida = new System.Windows.Forms.DateTimePicker();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.lblFechaSalida = new System.Windows.Forms.Label();
+            this.lblNumDias = new System.Windows.Forms.Label();
+            this.txtDias = new System.Windows.Forms.TextBox();
+            this.btnCDalcularDias = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNuevaReserva
@@ -79,11 +82,42 @@
             this.lblFechaSalida.TabIndex = 4;
             this.lblFechaSalida.Text = "Fecha Salida";
             // 
+            // lblNumDias
+            // 
+            this.lblNumDias.AutoSize = true;
+            this.lblNumDias.Location = new System.Drawing.Point(487, 152);
+            this.lblNumDias.Name = "lblNumDias";
+            this.lblNumDias.Size = new System.Drawing.Size(30, 13);
+            this.lblNumDias.TabIndex = 5;
+            this.lblNumDias.Text = "Días";
+            // 
+            // txtDias
+            // 
+            this.txtDias.Location = new System.Drawing.Point(535, 149);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.ReadOnly = true;
+            this.txtDias.Size = new System.Drawing.Size(100, 20);
+            this.txtDias.TabIndex = 6;
+            this.txtDias.TextChanged += new System.EventHandler(this.txtDias_TextChanged);
+            // 
+            // btnCDalcularDias
+            // 
+            this.btnCDalcularDias.Location = new System.Drawing.Point(490, 99);
+            this.btnCDalcularDias.Name = "btnCDalcularDias";
+            this.btnCDalcularDias.Size = new System.Drawing.Size(106, 23);
+            this.btnCDalcularDias.TabIndex = 7;
+            this.btnCDalcularDias.Text = "Calcular días";
+            this.btnCDalcularDias.UseVisualStyleBackColor = true;
+            this.btnCDalcularDias.Click += new System.EventHandler(this.btnCDalcularDias_Click);
+            // 
             // CrearReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCDalcularDias);
+            this.Controls.Add(this.txtDias);
+            this.Controls.Add(this.lblNumDias);
             this.Controls.Add(this.lblFechaSalida);
             this.Controls.Add(this.lblFechaIngreso);
             this.Controls.Add(this.dtpFechaSalida);
@@ -103,5 +137,8 @@
         private System.Windows.Forms.DateTimePicker dtpFechaSalida;
         private System.Windows.Forms.Label lblFechaIngreso;
         private System.Windows.Forms.Label lblFechaSalida;
+        private System.Windows.Forms.Label lblNumDias;
+        private System.Windows.Forms.TextBox txtDias;
+        private System.Windows.Forms.Button btnCDalcularDias;
     }
 }

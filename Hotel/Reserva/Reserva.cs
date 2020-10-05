@@ -43,9 +43,9 @@ namespace Hotel___Proyecto_Final
             //this.fechaEntrada = dptFechaInicio.Value.Date;
             //this.fechaSalida = dptFechaFinal.Value.Date;
             //dptFechaInicio & dptFechaFinal son los nombres de los box en el formulario
-            tSpan = fechaSalida - fechaEntrada;
+            //tSpan = fechaSalida - fechaEntrada;
 
-            this.dias = tSpan.Days;
+            //this.dias = tSpan.Days;
         }
     }
 }
