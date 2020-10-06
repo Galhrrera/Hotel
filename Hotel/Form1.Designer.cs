@@ -97,6 +97,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Uighur", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.richTextBox1.Location = new System.Drawing.Point(391, 485);
