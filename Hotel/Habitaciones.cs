@@ -31,11 +31,7 @@ namespace Hotel
         {
             Close();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void lblHabitaciones_Click(object sender, EventArgs e)
         {
@@ -44,7 +40,7 @@ namespace Hotel
 
         private void Habitaciones_Load(object sender, EventArgs e)
         {
-            dataGridViewHabitaciones.DataSource = ListaHabitaciones;
+            dataGridViewListaDeHabitaciones.DataSource = ListaHabitaciones;
         }
     }
 }
