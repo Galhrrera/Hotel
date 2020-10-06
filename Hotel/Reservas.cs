@@ -13,6 +13,7 @@ namespace Hotel
     public partial class Reservas : Form
     {
         List<Persona> ListaPersona = new List<Persona>();
+        List<reserva> listaReservas = new List<reserva>();
         
         public Reservas()
         {
@@ -22,11 +23,15 @@ namespace Hotel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form NuevaReserva = new CrearReserva(ListaPersona);
+            CrearReserva NuevaReserva = new CrearReserva(ListaPersona);
             NuevaReserva.Show();
+            //NuevaReserva.ShowDialog();
+
+            
+            
         }
 
-        private void listBoxReservas_SelectedIndexChanged(object sender, EventArgs e)
+        private void listReservas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

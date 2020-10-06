@@ -67,6 +67,7 @@
             this.btnHabitaciones.TabIndex = 2;
             this.btnHabitaciones.Text = "Habitaciones";
             this.btnHabitaciones.UseVisualStyleBackColor = false;
+            this.btnHabitaciones.Click += new System.EventHandler(this.btnHabitaciones_Click);
             // 
             // btnExit
             // 

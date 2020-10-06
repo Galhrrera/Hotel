@@ -27,5 +27,11 @@ namespace Hotel
             Form reserva = new Reservas();
             reserva.Show();
         }
+
+        private void btnHabitaciones_Click(object sender, EventArgs e)
+        {
+            Habitaciones habitaciones = new Habitaciones();
+            habitaciones.Show();
+        }
     }
 }

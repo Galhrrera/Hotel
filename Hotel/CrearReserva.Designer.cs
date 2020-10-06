@@ -45,7 +45,15 @@
             this.txtNombreTitular = new System.Windows.Forms.TextBox();
             this.lblNombreTitular = new System.Windows.Forms.Label();
             this.listClientes = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTipoHabitacion = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblNumReserva = new System.Windows.Forms.Label();
+            this.txtNumReserva = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBoxTitularNuevaReserva.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNuevaReserva
@@ -160,7 +168,6 @@
             this.comboBoxTipoPersona.Name = "comboBoxTipoPersona";
             this.comboBoxTipoPersona.Size = new System.Drawing.Size(200, 24);
             this.comboBoxTipoPersona.TabIndex = 5;
-            this.comboBoxTipoPersona.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoPersona_SelectedIndexChanged);
             // 
             // lblTipoPersona
             // 
@@ -208,7 +215,6 @@
             this.lblNombreTitular.Size = new System.Drawing.Size(90, 13);
             this.lblNombreTitular.TabIndex = 0;
             this.lblNombreTitular.Text = "Nombre completo";
-            this.lblNombreTitular.Click += new System.EventHandler(this.label1_Click);
             // 
             // listClientes
             // 
@@ -219,11 +225,80 @@
             this.listClientes.TabIndex = 2;
             this.listClientes.SelectedIndexChanged += new System.EventHandler(this.listClientes_SelectedIndexChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNumReserva);
+            this.groupBox1.Controls.Add(this.lblNumReserva);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.lblTipoHabitacion);
+            this.groupBox1.Location = new System.Drawing.Point(59, 402);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(376, 108);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // lblTipoHabitacion
+            // 
+            this.lblTipoHabitacion.AutoSize = true;
+            this.lblTipoHabitacion.Location = new System.Drawing.Point(9, 36);
+            this.lblTipoHabitacion.Name = "lblTipoHabitacion";
+            this.lblTipoHabitacion.Size = new System.Drawing.Size(98, 13);
+            this.lblTipoHabitacion.TabIndex = 0;
+            this.lblTipoHabitacion.Text = "Tipo de habitación:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(159, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // lblNumReserva
+            // 
+            this.lblNumReserva.AutoSize = true;
+            this.lblNumReserva.Location = new System.Drawing.Point(13, 72);
+            this.lblNumReserva.Name = "lblNumReserva";
+            this.lblNumReserva.Size = new System.Drawing.Size(103, 13);
+            this.lblNumReserva.TabIndex = 2;
+            this.lblNumReserva.Text = "Número de reserva: ";
+            // 
+            // txtNumReserva
+            // 
+            this.txtNumReserva.Location = new System.Drawing.Point(159, 72);
+            this.txtNumReserva.Name = "txtNumReserva";
+            this.txtNumReserva.ReadOnly = true;
+            this.txtNumReserva.Size = new System.Drawing.Size(200, 20);
+            this.txtNumReserva.TabIndex = 3;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(490, 458);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(121, 23);
+            this.btnConfirmar.TabIndex = 10;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(720, 458);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(121, 23);
+            this.btnRegresar.TabIndex = 11;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // CrearReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 595);
+            this.ClientSize = new System.Drawing.Size(896, 531);
+            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listClientes);
             this.Controls.Add(this.groupBoxTitularNuevaReserva);
             this.Controls.Add(this.btnCDalcularDias);
@@ -236,8 +311,11 @@
             this.Controls.Add(this.lblNuevaReserva);
             this.Name = "CrearReserva";
             this.Text = "Crear reserva";
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AntesCerrar);
             this.groupBoxTitularNuevaReserva.ResumeLayout(false);
             this.groupBoxTitularNuevaReserva.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +340,12 @@
         private System.Windows.Forms.Label lblTipoPersona;
         private System.Windows.Forms.Button btnGuardarPersona;
         private System.Windows.Forms.ListBox listClientes;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtNumReserva;
+        private System.Windows.Forms.Label lblNumReserva;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblTipoHabitacion;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

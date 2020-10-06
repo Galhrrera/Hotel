@@ -52,6 +52,12 @@
     <Compile Include="CrearReserva.Designer.cs">
       <DependentUpon>CrearReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Habitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Habitaciones.Designer.cs">
+      <DependentUpon>Habitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persona\Cliente.cs" />
     <Compile Include="Habitacion\Ejecutiva.cs" />
     <Compile Include="Form1.cs">
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Habitaciones.resx">
+      <DependentUpon>Habitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

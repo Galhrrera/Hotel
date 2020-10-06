@@ -49,16 +49,7 @@ namespace Hotel
             else
                 txtDias.Text = dias.ToString() + " días";
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+                
 
         private void btnGuardarPersona_Click(object sender, EventArgs e)  //botón para guardar un nuevo cliente
         {
@@ -73,28 +64,27 @@ namespace Hotel
                 return;
             }
 
-            if (comboBoxTipoPersona.SelectedIndex == 0) //1 => Huesped
+            if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped & 2 = cliente
             {
                 //Huesped H1 = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                 //listatemp.Add(H1);
+                
             }
             else if (comboBoxTipoPersona.SelectedIndex ==1)  //2=> Cliente
             {
                 //Cliente C1 = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                 //listatemp.Add(C1);
+                
             }    
 
+            
             //Limpia los campos para poder reutilizarlos luego:
             txtNumID.Text = string.Empty;
             txtNombreTitular.Text = string.Empty;
             comboBoxTipoPersona.SelectedIndex = 0;
-
-            //txtNombreTitular podría usarse para indicar que el cursos debe situarse nuevamente en el campo de ingreso para el nombre del usuario
-
-            
-            
+                                   
         }
 
         private void LlenarListaPersonas(List<Persona> lista)
@@ -109,5 +99,12 @@ namespace Hotel
         {
 
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Close(); //Cierra esta ventana en especifico
+        }
+
+        
     }
 }
