@@ -31,11 +31,11 @@
             this.lblReservas = new System.Windows.Forms.Label();
             this.groupBoxReservaHeader = new System.Windows.Forms.GroupBox();
             this.groupBoxHabitacionesReservadas = new System.Windows.Forms.GroupBox();
+            this.listReservas = new System.Windows.Forms.ListBox();
             this.groupBoxbtnsReservas = new System.Windows.Forms.GroupBox();
-            this.btnCrearReserva = new System.Windows.Forms.Button();
-            this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.listBoxReservas = new System.Windows.Forms.ListBox();
+            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCrearReserva = new System.Windows.Forms.Button();
             this.groupBoxReservaHeader.SuspendLayout();
             this.groupBoxHabitacionesReservadas.SuspendLayout();
             this.groupBoxbtnsReservas.SuspendLayout();
@@ -50,7 +50,6 @@
             this.lblReservas.Size = new System.Drawing.Size(152, 30);
             this.lblReservas.TabIndex = 0;
             this.lblReservas.Text = "Reservas";
-            this.lblReservas.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBoxReservaHeader
             // 
@@ -63,12 +62,21 @@
             // 
             // groupBoxHabitacionesReservadas
             // 
-            this.groupBoxHabitacionesReservadas.Controls.Add(this.listBoxReservas);
+            this.groupBoxHabitacionesReservadas.Controls.Add(this.listReservas);
             this.groupBoxHabitacionesReservadas.Location = new System.Drawing.Point(12, 118);
             this.groupBoxHabitacionesReservadas.Name = "groupBoxHabitacionesReservadas";
             this.groupBoxHabitacionesReservadas.Size = new System.Drawing.Size(776, 229);
             this.groupBoxHabitacionesReservadas.TabIndex = 2;
             this.groupBoxHabitacionesReservadas.TabStop = false;
+            // 
+            // listReservas
+            // 
+            this.listReservas.FormattingEnabled = true;
+            this.listReservas.Location = new System.Drawing.Point(6, 10);
+            this.listReservas.Name = "listReservas";
+            this.listReservas.Size = new System.Drawing.Size(764, 212);
+            this.listReservas.TabIndex = 0;
+            this.listReservas.SelectedIndexChanged += new System.EventHandler(this.listReservas_SelectedIndexChanged);
             // 
             // groupBoxbtnsReservas
             // 
@@ -81,17 +89,15 @@
             this.groupBoxbtnsReservas.TabIndex = 3;
             this.groupBoxbtnsReservas.TabStop = false;
             // 
-            // btnCrearReserva
+            // btnCheckOut
             // 
-            this.btnCrearReserva.BackColor = System.Drawing.Color.Fuchsia;
-            this.btnCrearReserva.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearReserva.Location = new System.Drawing.Point(6, 30);
-            this.btnCrearReserva.Name = "btnCrearReserva";
-            this.btnCrearReserva.Size = new System.Drawing.Size(244, 65);
-            this.btnCrearReserva.TabIndex = 0;
-            this.btnCrearReserva.Text = "Crear Reserva";
-            this.btnCrearReserva.UseVisualStyleBackColor = false;
-            this.btnCrearReserva.Click += new System.EventHandler(this.button1_Click);
+            this.btnCheckOut.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckOut.TabIndex = 2;
+            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
             // 
             // btnCheckIn
             // 
@@ -103,23 +109,17 @@
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = true;
             // 
-            // btnCheckOut
+            // btnCrearReserva
             // 
-            this.btnCheckOut.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
-            this.btnCheckOut.TabIndex = 2;
-            this.btnCheckOut.Text = "Check Out";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // listBoxReservas
-            // 
-            this.listBoxReservas.FormattingEnabled = true;
-            this.listBoxReservas.Location = new System.Drawing.Point(6, 10);
-            this.listBoxReservas.Name = "listBoxReservas";
-            this.listBoxReservas.Size = new System.Drawing.Size(764, 212);
-            this.listBoxReservas.TabIndex = 0;
+            this.btnCrearReserva.BackColor = System.Drawing.Color.Fuchsia;
+            this.btnCrearReserva.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearReserva.Location = new System.Drawing.Point(6, 30);
+            this.btnCrearReserva.Name = "btnCrearReserva";
+            this.btnCrearReserva.Size = new System.Drawing.Size(244, 65);
+            this.btnCrearReserva.TabIndex = 0;
+            this.btnCrearReserva.Text = "Crear Reserva";
+            this.btnCrearReserva.UseVisualStyleBackColor = false;
+            this.btnCrearReserva.Click += new System.EventHandler(this.button1_Click);
             // 
             // Reservas
             // 
@@ -148,6 +148,6 @@
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Button btnCrearReserva;
-        private System.Windows.Forms.ListBox listBoxReservas;
+        private System.Windows.Forms.ListBox listReservas;
     }
 }

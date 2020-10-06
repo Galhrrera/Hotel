@@ -12,17 +12,26 @@ namespace Hotel
 {
     public partial class Reservas : Form
     {
+        List<Persona> ListaPersona = new List<Persona>();
+        List<reserva> listaReservas = new List<reserva>();
+        
         public Reservas()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            CrearReserva NuevaReserva = new CrearReserva(ListaPersona);
+            NuevaReserva.Show();
+            //NuevaReserva.ShowDialog();
+
+            
+            
+        }
+
+        private void listReservas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
