@@ -7,6 +7,7 @@ namespace Hotel
     public class Persona 
     {
         //este es un comentario que hizo Nicole el 6/10/2020 a las 2:57pm 
+        //Prueba
 
         //atributos
         private string nombre; //es ingresado por el usuario
