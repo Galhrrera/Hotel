@@ -87,6 +87,12 @@
     <Compile Include="Servicios\Servicio.cs" />
     <Compile Include="Servicios\ServicioPedido.cs" />
     <Compile Include="Habitacion\Suite.cs" />
+    <Compile Include="Servicios_xHabitación.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicios_xHabitación.Designer.cs">
+      <DependentUpon>Servicios_xHabitación.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CrearReserva.resx">
       <DependentUpon>CrearReserva.cs</DependentUpon>
     </EmbeddedResource>
