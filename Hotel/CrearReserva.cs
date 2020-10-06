@@ -105,6 +105,9 @@ namespace Hotel
             Close(); //Cierra esta ventana en especifico
         }
 
-        
+        private void txtNumReserva_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

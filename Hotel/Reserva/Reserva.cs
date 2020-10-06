@@ -26,13 +26,13 @@ namespace Hotel
 
         public void HacerCheckOut()
         {
-            string SalidaArchivo = "";                            //Ingresar la ruta en la que se debe crear el archivo.
+            string SalidaArchivo = "Factura.txt";                            //Ingresar la ruta en la que se debe crear el archivo.
             StreamWriter streamwriter = new StreamWriter(SalidaArchivo);
             //factura
             streamwriter.Close();
         }
 
-        public void CalcularDias()
+        public void CalcularDias() //Este método fue implementado en el formulario de Crear Reserva
         {
             //this.fechaEntrada = dptFechaInicio.Value.Date;
             //this.fechaSalida = dptFechaFinal.Value.Date;

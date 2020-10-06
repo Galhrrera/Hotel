@@ -46,10 +46,10 @@
             this.lblNombreTitular = new System.Windows.Forms.Label();
             this.listClientes = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblTipoHabitacion = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblNumReserva = new System.Windows.Forms.Label();
             this.txtNumReserva = new System.Windows.Forms.TextBox();
+            this.lblNumReserva = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTipoHabitacion = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBoxTitularNuevaReserva.SuspendLayout();
@@ -238,22 +238,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // lblTipoHabitacion
+            // txtNumReserva
             // 
-            this.lblTipoHabitacion.AutoSize = true;
-            this.lblTipoHabitacion.Location = new System.Drawing.Point(9, 36);
-            this.lblTipoHabitacion.Name = "lblTipoHabitacion";
-            this.lblTipoHabitacion.Size = new System.Drawing.Size(98, 13);
-            this.lblTipoHabitacion.TabIndex = 0;
-            this.lblTipoHabitacion.Text = "Tipo de habitación:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(159, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 1;
+            this.txtNumReserva.Location = new System.Drawing.Point(159, 72);
+            this.txtNumReserva.Name = "txtNumReserva";
+            this.txtNumReserva.ReadOnly = true;
+            this.txtNumReserva.Size = new System.Drawing.Size(200, 20);
+            this.txtNumReserva.TabIndex = 3;
+            this.txtNumReserva.TextChanged += new System.EventHandler(this.txtNumReserva_TextChanged);
             // 
             // lblNumReserva
             // 
@@ -264,13 +256,22 @@
             this.lblNumReserva.TabIndex = 2;
             this.lblNumReserva.Text = "Número de reserva: ";
             // 
-            // txtNumReserva
+            // comboBox1
             // 
-            this.txtNumReserva.Location = new System.Drawing.Point(159, 72);
-            this.txtNumReserva.Name = "txtNumReserva";
-            this.txtNumReserva.ReadOnly = true;
-            this.txtNumReserva.Size = new System.Drawing.Size(200, 20);
-            this.txtNumReserva.TabIndex = 3;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(159, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // lblTipoHabitacion
+            // 
+            this.lblTipoHabitacion.AutoSize = true;
+            this.lblTipoHabitacion.Location = new System.Drawing.Point(9, 36);
+            this.lblTipoHabitacion.Name = "lblTipoHabitacion";
+            this.lblTipoHabitacion.Size = new System.Drawing.Size(98, 13);
+            this.lblTipoHabitacion.TabIndex = 0;
+            this.lblTipoHabitacion.Text = "Tipo de habitación:";
             // 
             // btnConfirmar
             // 
@@ -311,7 +312,6 @@
             this.Controls.Add(this.lblNuevaReserva);
             this.Name = "CrearReserva";
             this.Text = "Crear reserva";
-            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AntesCerrar);
             this.groupBoxTitularNuevaReserva.ResumeLayout(false);
             this.groupBoxTitularNuevaReserva.PerformLayout();
             this.groupBox1.ResumeLayout(false);
