@@ -44,10 +44,10 @@
             // lblReservas
             // 
             this.lblReservas.AutoSize = true;
-            this.lblReservas.Font = new System.Drawing.Font("PaybAck", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReservas.Location = new System.Drawing.Point(322, 34);
             this.lblReservas.Name = "lblReservas";
-            this.lblReservas.Size = new System.Drawing.Size(152, 30);
+            this.lblReservas.Size = new System.Drawing.Size(147, 33);
             this.lblReservas.TabIndex = 0;
             this.lblReservas.Text = "Reservas";
             // 
@@ -91,7 +91,7 @@
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
@@ -101,18 +101,19 @@
             // 
             // btnCheckIn
             // 
-            this.btnCheckIn.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.Location = new System.Drawing.Point(435, 30);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(142, 65);
             this.btnCheckIn.TabIndex = 1;
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = true;
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // btnCrearReserva
             // 
             this.btnCrearReserva.BackColor = System.Drawing.Color.Fuchsia;
-            this.btnCrearReserva.Font = new System.Drawing.Font("PaybAck", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearReserva.Location = new System.Drawing.Point(6, 30);
             this.btnCrearReserva.Name = "btnCrearReserva";
             this.btnCrearReserva.Size = new System.Drawing.Size(244, 65);

@@ -35,5 +35,10 @@ namespace Hotel
         {
 
         }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
