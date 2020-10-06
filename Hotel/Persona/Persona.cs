@@ -6,7 +6,8 @@ namespace Hotel
 {
     public class Persona 
     {
-        //hola
+        //este es un comentario que hizo Nicole el 6/10/2020 a las 2:57pm 
+        //Prueba
 
         //atributos
         private string nombre; //es ingresado por el usuario
@@ -22,7 +23,11 @@ namespace Hotel
             Num_id = num_id;
         }
 
-        
+        public override string ToString()
+        {
+            return ("Nombre: " + nombre + " ID: " + num_id);
+        }
+
 
 
     }

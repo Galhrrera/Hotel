@@ -14,6 +14,7 @@ namespace Hotel
         private Huesped huesped;
         private float precio;
         private float totalMinibar;
+        private estado estadoHab;
         private List<Producto> listaMinibar;
 
         public int NumHabitacion { get => numHabitacion; set => numHabitacion = value; }
@@ -22,10 +23,8 @@ namespace Hotel
         public float Precio { get => precio; set => precio = value; }
         public float TotalMinibar { get => totalMinibar; set => totalMinibar = value; }
         public List<Producto> ListaMinibar { get => listaMinibar; set => listaMinibar = value; }
+        public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
 
-        
-
-       
         protected Habitacion() { }
 
 
