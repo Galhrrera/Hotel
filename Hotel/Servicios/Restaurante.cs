@@ -6,6 +6,8 @@ namespace Hotel___Proyecto_Final
 {
     public class Restaurante : Servicio
     {
+        //comentario de prueba
+
         private bool room_service;
         private List<Servicio> listaMenu;
 
