@@ -12,10 +12,10 @@ namespace Hotel
             Producto botellaAgua = new Producto("Botella de Agua", 3500, 2);
             Producto kitAseo = new Producto("Kit de aseo personal", 9000, 1);
             Producto gaseosa = new Producto("Gaseosa", 3000, 2);
-            ListaMinibar.Add(botellaLicor);
-            ListaMinibar.Add(botellaAgua);
-            ListaMinibar.Add(kitAseo);
-            ListaMinibar.Add(gaseosa);
+            //ListaMinibar.Add(botellaLicor);
+            //ListaMinibar.Add(botellaAgua);
+            //ListaMinibar.Add(kitAseo);
+            //ListaMinibar.Add(gaseosa);
         }
 
         public override void Consumir(List<Producto> ListaMinibar, int cantConsumir)
