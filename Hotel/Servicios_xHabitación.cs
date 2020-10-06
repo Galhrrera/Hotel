@@ -16,5 +16,35 @@ namespace Hotel
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void restaurante_menu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lista_restaurante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void solicitar_servicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subtotal_lavanderia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -59,10 +59,10 @@
             // lblNuevaReserva
             // 
             this.lblNuevaReserva.AutoSize = true;
-            this.lblNuevaReserva.Font = new System.Drawing.Font("PaybAck", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevaReserva.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNuevaReserva.Location = new System.Drawing.Point(268, 9);
             this.lblNuevaReserva.Name = "lblNuevaReserva";
-            this.lblNuevaReserva.Size = new System.Drawing.Size(259, 34);
+            this.lblNuevaReserva.Size = new System.Drawing.Size(271, 40);
             this.lblNuevaReserva.TabIndex = 0;
             this.lblNuevaReserva.Text = "Nueva Reserva";
             // 
@@ -138,7 +138,7 @@
             this.groupBoxTitularNuevaReserva.Controls.Add(this.txtNombreTitular);
             this.groupBoxTitularNuevaReserva.Controls.Add(this.lblNombreTitular);
             this.groupBoxTitularNuevaReserva.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.groupBoxTitularNuevaReserva.Font = new System.Drawing.Font("PaybAck", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxTitularNuevaReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxTitularNuevaReserva.Location = new System.Drawing.Point(59, 208);
             this.groupBoxTitularNuevaReserva.Name = "groupBoxTitularNuevaReserva";
             this.groupBoxTitularNuevaReserva.Size = new System.Drawing.Size(376, 168);
@@ -148,6 +148,7 @@
             // 
             // btnGuardarPersona
             // 
+            this.btnGuardarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarPersona.Location = new System.Drawing.Point(159, 139);
             this.btnGuardarPersona.Name = "btnGuardarPersona";
             this.btnGuardarPersona.Size = new System.Drawing.Size(200, 23);
