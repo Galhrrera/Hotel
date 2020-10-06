@@ -41,10 +41,11 @@
             // lblNombreHotel
             // 
             this.lblNombreHotel.AutoSize = true;
-            this.lblNombreHotel.Font = new System.Drawing.Font("Microsoft Uighur", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreHotel.Location = new System.Drawing.Point(426, 9);
+            this.lblNombreHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreHotel.Location = new System.Drawing.Point(568, 11);
+            this.lblNombreHotel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreHotel.Name = "lblNombreHotel";
-            this.lblNombreHotel.Size = new System.Drawing.Size(427, 125);
+            this.lblNombreHotel.Size = new System.Drawing.Size(798, 135);
             this.lblNombreHotel.TabIndex = 3;
             this.lblNombreHotel.Text = "Maleni Resort";
             this.lblNombreHotel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -52,10 +53,11 @@
             // btnReservas
             // 
             this.btnReservas.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnReservas.Font = new System.Drawing.Font("Microsoft Uighur", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservas.Location = new System.Drawing.Point(60, 130);
+            this.btnReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservas.Location = new System.Drawing.Point(80, 160);
+            this.btnReservas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReservas.Name = "btnReservas";
-            this.btnReservas.Size = new System.Drawing.Size(241, 109);
+            this.btnReservas.Size = new System.Drawing.Size(321, 134);
             this.btnReservas.TabIndex = 1;
             this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = false;
@@ -64,10 +66,11 @@
             // btnHabitaciones
             // 
             this.btnHabitaciones.BackColor = System.Drawing.Color.LightBlue;
-            this.btnHabitaciones.Font = new System.Drawing.Font("Microsoft Uighur", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHabitaciones.Location = new System.Drawing.Point(60, 308);
+            this.btnHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabitaciones.Location = new System.Drawing.Point(80, 379);
+            this.btnHabitaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHabitaciones.Name = "btnHabitaciones";
-            this.btnHabitaciones.Size = new System.Drawing.Size(241, 109);
+            this.btnHabitaciones.Size = new System.Drawing.Size(321, 134);
             this.btnHabitaciones.TabIndex = 2;
             this.btnHabitaciones.Text = "Habitaciones";
             this.btnHabitaciones.UseVisualStyleBackColor = false;
@@ -76,10 +79,11 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Uighur", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(60, 485);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(80, 597);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(241, 109);
+            this.btnExit.Size = new System.Drawing.Size(321, 134);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Salir";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -88,7 +92,8 @@
             // foto_hotel
             // 
             this.foto_hotel.Image = ((System.Drawing.Image)(resources.GetObject("foto_hotel.Image")));
-            this.foto_hotel.Location = new System.Drawing.Point(391, 111);
+            this.foto_hotel.Location = new System.Drawing.Point(521, 137);
+            this.foto_hotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.foto_hotel.Name = "foto_hotel";
             this.foto_hotel.Size = new System.Drawing.Size(500, 350);
             this.foto_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -97,28 +102,30 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Uighur", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.richTextBox1.Location = new System.Drawing.Point(391, 485);
+            this.richTextBox1.Location = new System.Drawing.Point(521, 597);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(500, 142);
+            this.richTextBox1.Size = new System.Drawing.Size(665, 174);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.foto_hotel);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnHabitaciones);
             this.Controls.Add(this.btnReservas);
             this.Controls.Add(this.lblNombreHotel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Principal";
             this.Text = "Sistema de reservas del hotel";
+            this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.foto_hotel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,8 +12,18 @@ namespace Hotel
 {
     public partial class Habitaciones : Form
     {
-        public Habitaciones()
+        private List<Habitacion> ListaHabitaciones = null;
+        public Habitaciones(List<Habitacion> habitaciones)
         {
+            //Asociar los datos de la lista al data
+            if(habitaciones != null)
+            {
+                ListaHabitaciones = habitaciones;
+            }
+            else
+            {
+                ListaHabitaciones = new List<Habitacion>();
+            }
             InitializeComponent();
         }
 
@@ -30,6 +40,11 @@ namespace Hotel
         private void lblHabitaciones_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Habitaciones_Load(object sender, EventArgs e)
+        {
+            dataGridViewHabitaciones.DataSource = ListaHabitaciones;
         }
     }
 }
