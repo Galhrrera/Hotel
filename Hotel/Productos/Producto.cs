@@ -8,13 +8,12 @@ namespace Hotel
     {
         private string nombreProducto;
         private float precioProducto;
-        private int cantidadProducto;
+        private int cantidadProducto; //cantidad de inventario del hotel
 
-        public Producto(string nombreProducto, float precioProducto, int cantidadProducto)
+        public Producto(string nombreProducto, float precioProducto)
         {
             this.nombreProducto = nombreProducto;
             this.precioProducto = precioProducto;
-            this.cantidadProducto = cantidadProducto;
         }
 
         public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }

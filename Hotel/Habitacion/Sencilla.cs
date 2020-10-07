@@ -8,7 +8,7 @@ namespace Hotel
     {
         public Sencilla() { }
 
-        public override void Consumir(List<Producto> ListaMinibar, int cantConsumir) { }
-        public override void ReabastecerMinibar(List<Producto> ListaMinibar) { }
+        public override void Consumir(Producto pcto, int cantConsumir) { }
+        public override void ReabastecerMinibar() { }
     }
 }

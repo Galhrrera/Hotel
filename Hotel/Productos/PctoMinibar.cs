@@ -6,12 +6,19 @@ namespace Hotel
 {
     public class PctoMinibar
     {
-        private byte CantidadInicial;
+        private int cantidadInicial; 
         private Producto producto;
-        private byte CantidadFinal;
+        private int cantidadFinal;
 
-        public byte CantidadInicial1 { get => CantidadInicial; set => CantidadInicial = value; } //¿Por qué sale "1" al final del nombre de la propiedad? 
+        public PctoMinibar(int cantidadInicial, Producto producto)
+        {
+            CantidadInicial = cantidadInicial;
+            this.producto = producto;
+            CantidadFinal = cantidadInicial; 
+        }
+
+        public int CantidadInicial { get => cantidadInicial; set => cantidadInicial = value; } 
         public Producto Producto { get => producto; set => producto = value; } //internal??
-        public byte CantidadFinal1 { get => CantidadFinal; set => CantidadFinal = value; }
+        public int CantidadFinal { get => cantidadFinal; set => cantidadFinal = value; }
     }
 }

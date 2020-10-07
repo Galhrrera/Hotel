@@ -105,7 +105,7 @@
             // lblHabitaciones
             // 
             this.lblHabitaciones.AutoSize = true;
-            this.lblHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((int)(0)));
             this.lblHabitaciones.Location = new System.Drawing.Point(204, 23);
             this.lblHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHabitaciones.Name = "lblHabitaciones";

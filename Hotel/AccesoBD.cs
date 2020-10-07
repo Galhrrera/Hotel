@@ -16,7 +16,6 @@ namespace Hotel
             int numHabitacionPiso2 = 200;
 
             for (int i = 1; i <= 10; i++)
-
             {
 
                 Habitacion HabSencilla = new Sencilla();
@@ -136,5 +135,9 @@ namespace Hotel
             return infoHabitaciones;
         }
 
+        public void GenerarMinibarEjecutiva()
+        {
+
+        }
     }    
 }

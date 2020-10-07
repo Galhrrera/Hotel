@@ -6,71 +6,22 @@ namespace Hotel
 {
     public class Ejecutiva : Habitacion
     {
+        //en el contructor se crea la lista con todos los elementos del minibar con sus respecivas
+        //cantidades y precios. 
         public Ejecutiva()
         {
-            Producto botellaLicor = new Producto("Botella de licor", 25000, 4);
-            Producto botellaAgua = new Producto("Botella de Agua", 3500, 2);
-            Producto kitAseo = new Producto("Kit de aseo personal", 9000, 1);
-            Producto gaseosa = new Producto("Gaseosa", 3000, 2);
-            //ListaMinibar.Add(botellaLicor);
-            //ListaMinibar.Add(botellaAgua);
-            //ListaMinibar.Add(kitAseo);
-            //ListaMinibar.Add(gaseosa);
+            ReabastecerMinibar();
         }
 
-        public override void Consumir(List<Producto> ListaMinibar, int cantConsumir)
+        public override void ReabastecerMinibar() 
         {
-            foreach (var item in ListaMinibar)
-            {
-                if(cantConsumir <= item.CantidadProducto)
-                {
-                    if (item.NombreProducto.Equals("Botella de licor"))
-                    {
-                        item.CantidadProducto -= cantConsumir;
-                        TotalMinibar = TotalMinibar + item.PrecioProducto * cantConsumir; 
-                    }
-                    if (item.NombreProducto.Equals("Botella de Agua"))
-                    {
-                        item.CantidadProducto -= cantConsumir;
-                        TotalMinibar = TotalMinibar + item.PrecioProducto * cantConsumir;
-                    }
-                    if (item.NombreProducto.Equals("kit de aseo personal"))
-                    {
-                        item.CantidadProducto -= cantConsumir;
-                        TotalMinibar = TotalMinibar + item.PrecioProducto * cantConsumir;
-                    }
-                    if (item.NombreProducto.Equals("Gaseosa"))
-                    {
-                        item.CantidadProducto -= cantConsumir;
-                        TotalMinibar = TotalMinibar + item.PrecioProducto * cantConsumir;
-                    }
-                }
-                
-            }
+            ListaMinibar = new List<PctoMinibar>(); 
 
+            AdicionarPctoMinibar(new Producto("Botella de licor", 25000), 4);
+            AdicionarPctoMinibar(new Producto("Botella de Agua", 3500), 2);
+            AdicionarPctoMinibar(new Producto("Kit de aseo personal", 9000), 1);
+            AdicionarPctoMinibar(new Producto("Gaseosa", 3000), 2);
         }
 
-        public override void ReabastecerMinibar(List<Producto> ListaMinibar)
-        {
-            foreach (var item in ListaMinibar)
-            {
-                if(item.NombreProducto.Equals("Botella de licor"))
-                {
-                    item.CantidadProducto = 4;
-                }
-                if (item.NombreProducto.Equals("Botella de Agua"))
-                {
-                    item.CantidadProducto = 2;
-                }
-                if (item.NombreProducto.Equals("kit de aseo personal"))
-                {
-                    item.CantidadProducto = 1;
-                }
-                if (item.NombreProducto.Equals("Gaseosa"))
-                {
-                    item.CantidadProducto = 2;
-                }
-            }
-        }
     }
 }

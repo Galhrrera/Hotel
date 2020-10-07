@@ -8,10 +8,7 @@ namespace Hotel
     {
         //comentario de prueba
 
-        private bool room_service;
         private List<Servicio> listaMenu;
-
-        public bool Room_service { get => room_service; set => room_service = value; }
         public List<Servicio> ListaMenu { get => listaMenu; set => listaMenu = value; }
 
         public Restaurante() 
