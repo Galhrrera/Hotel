@@ -14,12 +14,23 @@ namespace Hotel
     {
         List<Persona> ListaPersona = new List<Persona>();
         List<reserva> listaReservas = new List<reserva>();
-        
-        public Reservas()
+
+        public Reservas(List<reserva> listares)
         {
+            //Asociar los datos de la lista al data
+            if (listares != null)
+            {
+                listaReservas = listares;
+            }
+            else
+            {
+                listaReservas = new List<reserva>();
+            }
             InitializeComponent();
+
+            LlenarListaReservas(listaReservas);
         }
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -39,6 +50,16 @@ namespace Hotel
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Reservas_Load(object sender, EventArgs e)
+        {
+            dataGridViewReservas.DataSource = listaReservas;
+        }
+
+        private void LlenarListaReservas(List<reserva> lista)
+        {
+            dataGridViewReservas.DataSource = lista;
         }
     }
 }

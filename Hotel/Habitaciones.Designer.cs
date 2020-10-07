@@ -30,21 +30,17 @@
         {
             this.btnRegresarHabitaciones = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewHabitaciones = new System.Windows.Forms.DataGridView();
-            this.CoumnaPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNumHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewListaDeHabitaciones = new System.Windows.Forms.DataGridView();
             this.lblHabitaciones = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHabitaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaDeHabitaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegresarHabitaciones
             // 
-            this.btnRegresarHabitaciones.Location = new System.Drawing.Point(499, 498);
-            this.btnRegresarHabitaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresarHabitaciones.Location = new System.Drawing.Point(283, 372);
             this.btnRegresarHabitaciones.Name = "btnRegresarHabitaciones";
-            this.btnRegresarHabitaciones.Size = new System.Drawing.Size(184, 41);
+            this.btnRegresarHabitaciones.Size = new System.Drawing.Size(138, 33);
             this.btnRegresarHabitaciones.TabIndex = 0;
             this.btnRegresarHabitaciones.Text = "Regresar";
             this.btnRegresarHabitaciones.UseVisualStyleBackColor = true;
@@ -52,82 +48,50 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridViewHabitaciones);
-            this.groupBox1.Location = new System.Drawing.Point(17, 81);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Controls.Add(this.dataGridViewListaDeHabitaciones);
+            this.groupBox1.Location = new System.Drawing.Point(13, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(681, 316);
+            this.groupBox1.Size = new System.Drawing.Size(674, 257);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBoxListaHabitaciones";
             // 
-            // dataGridViewHabitaciones
+            // dataGridViewListaDeHabitaciones
             // 
-            this.dataGridViewHabitaciones.AllowUserToOrderColumns = true;
-            this.dataGridViewHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHabitaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CoumnaPiso,
-            this.ColumnaNumHabitacion,
-            this.ColumnEstado});
-            this.dataGridViewHabitaciones.Location = new System.Drawing.Point(8, 23);
-            this.dataGridViewHabitaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridViewHabitaciones.Name = "dataGridViewHabitaciones";
-            this.dataGridViewHabitaciones.RowHeadersWidth = 51;
-            this.dataGridViewHabitaciones.Size = new System.Drawing.Size(657, 286);
-            this.dataGridViewHabitaciones.TabIndex = 0;
-            this.dataGridViewHabitaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CoumnaPiso
-            // 
-            this.CoumnaPiso.Frozen = true;
-            this.CoumnaPiso.HeaderText = "Piso";
-            this.CoumnaPiso.MinimumWidth = 6;
-            this.CoumnaPiso.Name = "CoumnaPiso";
-            this.CoumnaPiso.Width = 125;
-            // 
-            // ColumnaNumHabitacion
-            // 
-            this.ColumnaNumHabitacion.Frozen = true;
-            this.ColumnaNumHabitacion.HeaderText = "Número de habitación";
-            this.ColumnaNumHabitacion.MinimumWidth = 6;
-            this.ColumnaNumHabitacion.Name = "ColumnaNumHabitacion";
-            this.ColumnaNumHabitacion.Width = 150;
-            // 
-            // ColumnEstado
-            // 
-            this.ColumnEstado.Frozen = true;
-            this.ColumnEstado.HeaderText = "Estado";
-            this.ColumnEstado.MinimumWidth = 6;
-            this.ColumnEstado.Name = "ColumnEstado";
-            this.ColumnEstado.Width = 200;
+            this.dataGridViewListaDeHabitaciones.AllowUserToAddRows = false;
+            this.dataGridViewListaDeHabitaciones.AllowUserToDeleteRows = false;
+            this.dataGridViewListaDeHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaDeHabitaciones.Location = new System.Drawing.Point(7, 20);
+            this.dataGridViewListaDeHabitaciones.Name = "dataGridViewListaDeHabitaciones";
+            this.dataGridViewListaDeHabitaciones.ReadOnly = true;
+            this.dataGridViewListaDeHabitaciones.Size = new System.Drawing.Size(658, 231);
+            this.dataGridViewListaDeHabitaciones.TabIndex = 0;
+            this.dataGridViewListaDeHabitaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaDeHabitaciones_CellContentClick);
             // 
             // lblHabitaciones
             // 
             this.lblHabitaciones.AutoSize = true;
-            this.lblHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((int)(0)));
-            this.lblHabitaciones.Location = new System.Drawing.Point(204, 23);
-            this.lblHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHabitaciones.Location = new System.Drawing.Point(254, 26);
             this.lblHabitaciones.Name = "lblHabitaciones";
-            this.lblHabitaciones.Size = new System.Drawing.Size(252, 46);
+            this.lblHabitaciones.Size = new System.Drawing.Size(202, 37);
             this.lblHabitaciones.TabIndex = 2;
             this.lblHabitaciones.Text = "Habitaciones";
             this.lblHabitaciones.Click += new System.EventHandler(this.lblHabitaciones_Click);
             // 
             // Habitaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 554);
+            this.ClientSize = new System.Drawing.Size(698, 450);
             this.Controls.Add(this.lblHabitaciones);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRegresarHabitaciones);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Habitaciones";
             this.Text = "Habitaciones";
             this.Load += new System.EventHandler(this.Habitaciones_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHabitaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaDeHabitaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,9 +102,6 @@
         private System.Windows.Forms.Button btnRegresarHabitaciones;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblHabitaciones;
-        private System.Windows.Forms.DataGridView dataGridViewHabitaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CoumnaPiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNumHabitacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
+        private System.Windows.Forms.DataGridView dataGridViewListaDeHabitaciones;
     }
 }

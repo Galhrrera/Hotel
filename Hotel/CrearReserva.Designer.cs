@@ -282,6 +282,7 @@
             this.btnConfirmar.TabIndex = 10;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnRegresar
             // 
@@ -313,6 +314,7 @@
             this.Controls.Add(this.lblNuevaReserva);
             this.Name = "CrearReserva";
             this.Text = "Crear reserva";
+            this.Load += new System.EventHandler(this.CrearReserva_Load);
             this.groupBoxTitularNuevaReserva.ResumeLayout(false);
             this.groupBoxTitularNuevaReserva.PerformLayout();
             this.groupBox1.ResumeLayout(false);
