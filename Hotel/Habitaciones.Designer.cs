@@ -30,8 +30,8 @@
         {
             this.btnRegresarHabitaciones = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblHabitaciones = new System.Windows.Forms.Label();
             this.dataGridViewListaDeHabitaciones = new System.Windows.Forms.DataGridView();
+            this.lblHabitaciones = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaDeHabitaciones)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBoxListaHabitaciones";
             // 
+            // dataGridViewListaDeHabitaciones
+            // 
+            this.dataGridViewListaDeHabitaciones.AllowUserToAddRows = false;
+            this.dataGridViewListaDeHabitaciones.AllowUserToDeleteRows = false;
+            this.dataGridViewListaDeHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaDeHabitaciones.Location = new System.Drawing.Point(7, 20);
+            this.dataGridViewListaDeHabitaciones.Name = "dataGridViewListaDeHabitaciones";
+            this.dataGridViewListaDeHabitaciones.ReadOnly = true;
+            this.dataGridViewListaDeHabitaciones.Size = new System.Drawing.Size(658, 231);
+            this.dataGridViewListaDeHabitaciones.TabIndex = 0;
+            this.dataGridViewListaDeHabitaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaDeHabitaciones_CellContentClick);
+            // 
             // lblHabitaciones
             // 
             this.lblHabitaciones.AutoSize = true;
@@ -66,14 +78,6 @@
             this.lblHabitaciones.TabIndex = 2;
             this.lblHabitaciones.Text = "Habitaciones";
             this.lblHabitaciones.Click += new System.EventHandler(this.lblHabitaciones_Click);
-            // 
-            // dataGridViewListaDeHabitaciones
-            // 
-            this.dataGridViewListaDeHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaDeHabitaciones.Location = new System.Drawing.Point(7, 20);
-            this.dataGridViewListaDeHabitaciones.Name = "dataGridViewListaDeHabitaciones";
-            this.dataGridViewListaDeHabitaciones.Size = new System.Drawing.Size(658, 231);
-            this.dataGridViewListaDeHabitaciones.TabIndex = 0;
             // 
             // Habitaciones
             // 

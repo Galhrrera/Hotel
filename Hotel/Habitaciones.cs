@@ -42,5 +42,10 @@ namespace Hotel
         {
             dataGridViewListaDeHabitaciones.DataSource = ListaHabitaciones;
         }
+
+        private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

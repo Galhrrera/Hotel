@@ -15,12 +15,18 @@ namespace Hotel
                                                                    //Clase de asociación entre reserva y habitación
         
         public Persona Persona { get => persona; }
-        public int NumReserva { get => NumReserva; }
+        
         public List<HabitacionReservada> ListaHabitaciones { get => listaHabitaciones; }
+        public int NumReserva { get => numReserva; set => numReserva = value; }
 
+        public reserva(Persona cliente)
+        {
+            persona = cliente;
+            NumReserva = rnd.Next(111111, 999999);
+        }
         public void HacerCheckIn()
         {
-            this.numReserva = rnd.Next(111111, 999999);
+            this.NumReserva = rnd.Next(111111, 999999);
             estado = Habitacion.estado.Ocupada;
         }
 

@@ -26,7 +26,7 @@ namespace Hotel
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
-            Form reserva = new Reservas();
+            Form reserva = new Reservas(null);
             reserva.Show();
         }
 

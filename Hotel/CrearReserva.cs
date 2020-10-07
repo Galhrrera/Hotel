@@ -12,7 +12,8 @@ namespace Hotel
 {
     public partial class CrearReserva : Form
     {
-        List<Persona> listatemp = new List<Persona>();
+        private List<Persona> listatemp = new List<Persona>();
+        private List<reserva> listaReservas = new List<reserva>();
 
         public CrearReserva(List<Persona> lista)
         {
@@ -40,7 +41,7 @@ namespace Hotel
 
             int dias = tSpan.Days;
 
-            //deberiamos usar try catch?
+            
             if (dias <= 0)
             {
                 txtDias.Text = "Por favor revise las fechas de ingreso y de salida";
@@ -64,26 +65,26 @@ namespace Hotel
                 return;
             }
 
-            if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped & 2 = cliente
+            if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped
             {
-                //Huesped H1 = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                
                 listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                //listatemp.Add(H1);
                 
             }
             else if (comboBoxTipoPersona.SelectedIndex ==1)  //2=> Cliente
             {
-                //Cliente C1 = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                
                 listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                //listatemp.Add(C1);
+                
                 
             }    
 
             
             //Limpia los campos para poder reutilizarlos luego:
-            txtNumID.Text = string.Empty;
-            txtNombreTitular.Text = string.Empty;
-            comboBoxTipoPersona.SelectedIndex = 0;
+
+            //txtNumID.Text = string.Empty;
+            //txtNombreTitular.Text = string.Empty;
+            //comboBoxTipoPersona.SelectedIndex = 0;
                                    
         }
 
@@ -109,5 +110,34 @@ namespace Hotel
         {
             
         }
+
+        private void CrearReserva_Load(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            
+            
+            Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            reserva nuevareserva = new reserva(personatemp);
+            
+            //nuevareserva.NumReserva = 
+            listaReservas.Add(nuevareserva);
+
+            Reservas frmreservas = new Reservas(listaReservas);
+            frmreservas.ShowDialog();
+
+            txtNumID.Text = string.Empty;
+            txtNombreTitular.Text = string.Empty;
+            comboBoxTipoPersona.SelectedIndex = 0;
+
+
+        }
+
+
+
     }
 }

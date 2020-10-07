@@ -31,15 +31,15 @@
             this.lblReservas = new System.Windows.Forms.Label();
             this.groupBoxReservaHeader = new System.Windows.Forms.GroupBox();
             this.groupBoxHabitacionesReservadas = new System.Windows.Forms.GroupBox();
+            this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
             this.groupBoxbtnsReservas = new System.Windows.Forms.GroupBox();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnCrearReserva = new System.Windows.Forms.Button();
-            this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
             this.groupBoxReservaHeader.SuspendLayout();
             this.groupBoxHabitacionesReservadas.SuspendLayout();
-            this.groupBoxbtnsReservas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
+            this.groupBoxbtnsReservas.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblReservas
@@ -69,6 +69,17 @@
             this.groupBoxHabitacionesReservadas.Size = new System.Drawing.Size(776, 229);
             this.groupBoxHabitacionesReservadas.TabIndex = 2;
             this.groupBoxHabitacionesReservadas.TabStop = false;
+            // 
+            // dataGridViewReservas
+            // 
+            this.dataGridViewReservas.AllowUserToAddRows = false;
+            this.dataGridViewReservas.AllowUserToDeleteRows = false;
+            this.dataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReservas.Location = new System.Drawing.Point(6, 20);
+            this.dataGridViewReservas.Name = "dataGridViewReservas";
+            this.dataGridViewReservas.ReadOnly = true;
+            this.dataGridViewReservas.Size = new System.Drawing.Size(764, 203);
+            this.dataGridViewReservas.TabIndex = 0;
             // 
             // groupBoxbtnsReservas
             // 
@@ -114,14 +125,6 @@
             this.btnCrearReserva.UseVisualStyleBackColor = false;
             this.btnCrearReserva.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridViewReservas
-            // 
-            this.dataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReservas.Location = new System.Drawing.Point(6, 20);
-            this.dataGridViewReservas.Name = "dataGridViewReservas";
-            this.dataGridViewReservas.Size = new System.Drawing.Size(764, 203);
-            this.dataGridViewReservas.TabIndex = 0;
-            // 
             // Reservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,11 +135,12 @@
             this.Controls.Add(this.groupBoxReservaHeader);
             this.Name = "Reservas";
             this.Text = "Reservas";
+            this.Load += new System.EventHandler(this.Reservas_Load);
             this.groupBoxReservaHeader.ResumeLayout(false);
             this.groupBoxReservaHeader.PerformLayout();
             this.groupBoxHabitacionesReservadas.ResumeLayout(false);
-            this.groupBoxbtnsReservas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).EndInit();
+            this.groupBoxbtnsReservas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
