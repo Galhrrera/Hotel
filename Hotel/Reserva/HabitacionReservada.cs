@@ -6,12 +6,19 @@ namespace Hotel
 {
     public class HabitacionReservada
     {
-        private Habitacion habitacionReservada;
+        private Habitacion habReservada;
         private float totalXhabitacion;
-        private List<ServicioPedido> listaServicios;
+        private List<ServicioPedido> listaServicios = new List<ServicioPedido>(); 
+
+        public HabitacionReservada(Habitacion habReservada)
+        {
+            this.habReservada = habReservada;
+            
+        }
+
         public float TotalXhabitacion { get => totalXhabitacion; set => totalXhabitacion = value; }
         public List<ServicioPedido> ListaServicios { get => listaServicios; set => listaServicios = value; }
-        //internal Habitacion HabitacionReservada { get => habitacionReservada; set => habitacionReservada = value; }
+        public Habitacion HabReservada { get => habReservada; set => habReservada = value; }
         public static float CalcularPrecioServicio()
         {
             //Calcular el precio segun los servicios pedidos
