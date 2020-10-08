@@ -122,10 +122,29 @@ namespace Hotel
             
             
             Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-            //reserva nuevareserva = new reserva(personatemp, new comboBox1.SelectedItem());  //AQUIIIII
-            
-            //nuevareserva.NumReserva = 
-            //listaReservas.Add(nuevareserva); //AQUIIIII
+            if(comboBox1.Text == "Sencilla")
+            {
+                reserva nuevareserva = new reserva(personatemp, new Sencilla());
+                listaReservas.Add(nuevareserva);
+            }
+            if (comboBox1.Text == "Suite")
+            {
+                reserva nuevareserva = new reserva(personatemp, new Suite());
+                listaReservas.Add(nuevareserva);
+            }
+            if (comboBox1.Text == "Ejecutiva")
+            {
+                reserva nuevareserva = new reserva(personatemp, new Ejecutiva());
+                listaReservas.Add(nuevareserva);
+            }
+            if(comboBox1.Text == null)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de habitación");
+                return;
+            }
+
+
+
 
             //Reservas frmreservas = new Reservas(listaReservas);
             //frmreservas.ShowDialog();
