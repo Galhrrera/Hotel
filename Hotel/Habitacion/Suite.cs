@@ -8,6 +8,7 @@ namespace Hotel
     {
         public Suite() 
         {
+            this.TipoHab = tipoHabitacion.Suite;
             ReabastecerMinibar(); 
         }
 

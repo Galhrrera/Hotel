@@ -12,7 +12,8 @@ namespace Hotel
 {
     public partial class FormHabitacionxxx : Form
     {
-        public FormHabitacionxxx()
+        private Habitacion HabitacionEspecifica;
+        public FormHabitacionxxx(Habitacion habSpec)
         {
             InitializeComponent();
         }

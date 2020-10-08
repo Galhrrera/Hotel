@@ -10,6 +10,7 @@ namespace Hotel
         //cantidades y precios. 
         public Ejecutiva()
         {
+            this.TipoHab = tipoHabitacion.Ejecutiva;
             ReabastecerMinibar();
         }
 
