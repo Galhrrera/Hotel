@@ -16,7 +16,6 @@ namespace Hotel
         private int piso;
         private Huesped huesped;
         private float precio;
-        private float totalMinibar;
         private estado estadoHab;
         private tipoHabitacion tipoHab;
         private List<PctoMinibar> listaMinibar = new List<PctoMinibar>(); 
@@ -25,7 +24,6 @@ namespace Hotel
         public int Piso { get => piso; set => piso = value; }
         public Huesped Huesped { get => huesped; set => huesped = value; }
         public float Precio { get => precio; set => precio = value; }
-        public float TotalMinibar { get => totalMinibar; set => totalMinibar = value; }
         public List<PctoMinibar> ListaMinibar { get => listaMinibar; set => listaMinibar = value; }
         public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
         public tipoHabitacion TipoHab { get => tipoHab; set => tipoHab = value; }
@@ -51,5 +49,10 @@ namespace Hotel
             listaMinibar.Add(new PctoMinibar(cant, producto)); 
         }
 
+        public double CalcularTotalMinibar(PctoMinibar productoMinibar)
+        {
+            double totalMB = (productoMinibar.CantidadInicial - productoMinibar.CantidadFinal) * productoMinibar.Producto.PrecioProducto;
+            return totalMB; 
+        }
     }
 }

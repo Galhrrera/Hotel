@@ -6,38 +6,19 @@ namespace Hotel
 {
     public class Restaurante : Servicio
     {
-        //comentario de prueba
 
         private List<Servicio> listaMenu;
         public List<Servicio> ListaMenu { get => listaMenu; set => listaMenu = value; }
 
-        public Restaurante() 
+        public Restaurante(bool room_service, float precio, string nombre) : base(room_service, precio, nombre)
         {
-            Servicio desayuno = new Servicio(15000, "Desayuno");
-            Servicio almuerzo = new Servicio(25000, "Almuerzo");
-            Servicio cena = new Servicio(20000, "Cena");
+            Servicio desayuno = new Servicio(false, 15000, "Desayuno");
+            Servicio almuerzo = new Servicio(false, 25000, "Almuerzo");
+            Servicio cena = new Servicio(false, 20000, "Cena");
             ListaMenu.Add(desayuno);
             ListaMenu.Add(almuerzo);
             ListaMenu.Add(cena);
         }
-        public override float CalcularSubtotal(List<Servicio> ListaMenu, int cant)
-        {
-            foreach (var item in ListaMenu)
-            {
-                if(item.Nombre.Equals("Desayuno"))
-                {
-                    TotalServicios = TotalServicios + (item.Precio * cant);
-                }
-                if (item.Nombre.Equals("Almuerzo"))
-                {
-                    TotalServicios = TotalServicios + (item.Precio * cant);
-                }
-                if (item.Nombre.Equals("Cena"))
-                {
-                    TotalServicios = TotalServicios + (item.Precio * cant);
-                }
-            }
-            return TotalServicios;
-        }
+        
     }
 }
