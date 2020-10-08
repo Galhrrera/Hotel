@@ -6,7 +6,6 @@ namespace Hotel
 {
     public class Restaurante : Servicio
     {
-        //comentario de prueba
 
         private List<Servicio> listaMenu;
         public List<Servicio> ListaMenu { get => listaMenu; set => listaMenu = value; }

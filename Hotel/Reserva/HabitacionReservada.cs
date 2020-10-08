@@ -19,18 +19,12 @@ namespace Hotel
         public float TotalXhabitacion { get => totalXhabitacion; set => totalXhabitacion = value; }
         public List<ServicioPedido> ListaServicios { get => listaServicios; set => listaServicios = value; }
         public Habitacion HabReservada { get => habReservada; set => habReservada = value; }
-        public static float CalcularPrecioServicio()
-        {
-            //Calcular el precio segun los servicios pedidos
-            float precioservicio = 0;
-            return precioservicio;
-        }
-        public float CalcularPrecioMinibar()
-        {
-            //Calcular el precio del minibar según los productos consumidos
-            float preciominibar = 0;
 
-            return preciominibar;
+        public double CalcularTotalServicio(ServicioPedido servicioPdo)
+        {
+            double total = servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
+            return total;
         }
+
     }
 }
