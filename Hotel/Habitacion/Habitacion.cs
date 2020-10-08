@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Hotel
 {
-    public abstract class Habitacion
+    public class Habitacion
     {
         public enum tipoCama { doble, sencilla, queen, semidoble, king };
         public enum estado { Desocupada, Ocupada };
@@ -24,10 +24,10 @@ namespace Hotel
         public List<PctoMinibar> ListaMinibar { get => listaMinibar; set => listaMinibar = value; }
         public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
 
-        protected Habitacion() { }
+        public Habitacion() { }
 
 
-        public abstract void ReabastecerMinibar();
+        public virtual void ReabastecerMinibar() { }
 
         public virtual void Consumir(Producto pcto, int cantConsumir)
         {

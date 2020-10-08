@@ -14,7 +14,7 @@ namespace Hotel
     {
         private List<Persona> listatemp = new List<Persona>();
         private List<reserva> listaReservas = new List<reserva>();
-
+       
         public CrearReserva(List<Persona> lista)
         {
             InitializeComponent();
@@ -122,10 +122,10 @@ namespace Hotel
             
             
             Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-            reserva nuevareserva = new reserva(personatemp);
-            
+            //reserva nuevareserva = new reserva(personatemp, new comboBox1.SelectedItem());  //AQUIIIII
+
             //nuevareserva.NumReserva = 
-            listaReservas.Add(nuevareserva);
+            //listaReservas.Add(nuevareserva); //AQUIIIII
 
             //Reservas frmreservas = new Reservas(listaReservas);
             //frmreservas.ShowDialog();
@@ -137,7 +137,14 @@ namespace Hotel
 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
 
+        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

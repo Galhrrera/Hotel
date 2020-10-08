@@ -12,8 +12,7 @@ namespace Hotel
 
         public HabitacionReservada(Habitacion habReservada)
         {
-            this.habReservada = habReservada;
-            
+            this.habReservada = habReservada; 
         }
 
         public float TotalXhabitacion { get => totalXhabitacion; set => totalXhabitacion = value; }
