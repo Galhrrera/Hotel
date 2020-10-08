@@ -46,5 +46,10 @@ namespace Hotel
         {
 
         }
+
+        private void regresar_habitacion_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
