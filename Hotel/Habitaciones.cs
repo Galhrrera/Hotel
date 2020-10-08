@@ -45,8 +45,9 @@ namespace Hotel
 
         private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormHabitacionxxx habitacionspec = new FormHabitacionxxx();
-            habitacionspec.Show();
+            //FormHabitacionxxx habtemp = new FormHabitacionxxx();
+
+            //habtemp.Show;
         }
     }
 }

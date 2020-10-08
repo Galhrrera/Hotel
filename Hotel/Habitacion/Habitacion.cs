@@ -10,11 +10,14 @@ namespace Hotel
         public enum tipoCama { doble, sencilla, queen, semidoble, king };
         public enum estado { Desocupada, Ocupada };
 
+        public enum tipoHabitacion { Sencilla, Ejecutiva, Suite };
+
         private int numHabitacion;
         private int piso;
         private Huesped huesped;
         private float precio;
         private estado estadoHab;
+        private tipoHabitacion tipoHab;
         private List<PctoMinibar> listaMinibar = new List<PctoMinibar>(); 
 
         public int NumHabitacion { get => numHabitacion; set => numHabitacion = value; }
@@ -23,6 +26,7 @@ namespace Hotel
         public float Precio { get => precio; set => precio = value; }
         public List<PctoMinibar> ListaMinibar { get => listaMinibar; set => listaMinibar = value; }
         public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
+        public tipoHabitacion TipoHab { get => tipoHab; set => tipoHab = value; }
 
         public Habitacion() { }
 
