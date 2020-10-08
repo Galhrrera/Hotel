@@ -77,15 +77,15 @@ namespace Hotel
                 listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                 
                 
-            }    
+            }
 
-            
+
             //Limpia los campos para poder reutilizarlos luego:
 
             //txtNumID.Text = string.Empty;
             //txtNombreTitular.Text = string.Empty;
             //comboBoxTipoPersona.SelectedIndex = 0;
-                                   
+                                  
         }
 
         private void LlenarListaPersonas(List<Persona> lista)
@@ -127,8 +127,8 @@ namespace Hotel
             //nuevareserva.NumReserva = 
             listaReservas.Add(nuevareserva);
 
-            Reservas frmreservas = new Reservas(listaReservas);
-            frmreservas.ShowDialog();
+            //Reservas frmreservas = new Reservas(listaReservas);
+            //frmreservas.ShowDialog();
 
             txtNumID.Text = string.Empty;
             txtNombreTitular.Text = string.Empty;
