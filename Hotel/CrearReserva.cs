@@ -123,7 +123,7 @@ namespace Hotel
             
             Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
             //reserva nuevareserva = new reserva(personatemp, new comboBox1.SelectedItem());  //AQUIIIII
-
+            
             //nuevareserva.NumReserva = 
             //listaReservas.Add(nuevareserva); //AQUIIIII
 
