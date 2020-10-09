@@ -126,19 +126,21 @@ namespace Hotel
             if(comboBox1.Text == "Sencilla")
             {
                 Habitacion habtemp = new Sencilla();
-                //habtemp.
-                reserva nuevareserva = new reserva(personatemp, habtemp);
+                reserva nuevareserva = new reserva(personatemp, new Sencilla());
                 listaReservas.Add(nuevareserva);
+                MessageBox.Show($"El cliente es: {nuevareserva.Persona.Nombre}, su habitación es: {Convert.ToString(nuevareserva.Habitacion.GetType())}");
             }
             if (comboBox1.Text == "Suite")
             {
                 reserva nuevareserva = new reserva(personatemp, new Suite());
                 listaReservas.Add(nuevareserva);
+                MessageBox.Show($"El cliente es: {nuevareserva.Persona.Nombre}, su habitación es: {Convert.ToString(nuevareserva.Habitacion.GetType())}");
             }
             if (comboBox1.Text == "Ejecutiva")
             {
                 reserva nuevareserva = new reserva(personatemp, new Ejecutiva());
                 listaReservas.Add(nuevareserva);
+                MessageBox.Show($"El cliente es: {nuevareserva.Persona.Nombre}, su habitación es: {Convert.ToString(nuevareserva.Habitacion.GetType())}");
             }
             if(comboBox1.Text == null)
             {
@@ -147,7 +149,7 @@ namespace Hotel
             }
 
 
-
+           
 
             //Reservas frmreservas = new Reservas(listaReservas);
             //frmreservas.ShowDialog();

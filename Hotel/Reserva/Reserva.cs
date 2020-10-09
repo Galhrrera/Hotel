@@ -20,12 +20,13 @@ namespace Hotel
         public int NumReserva { get => numReserva; set => numReserva = value; }
         public Habitacion Habitacion { get => habitacion; set => habitacion = value; }
 
-        public reserva(Persona cliente, Habitacion habitacion)
+        public reserva(Persona cliente, Habitacion habitacion) //para crear reserva se necesita una persona y una habitación 
         {
             persona = cliente;
+            Habitacion = habitacion;
             NumReserva = rnd.Next(111111, 999999);
 
-            listaHabitaciones.Add(new HabitacionReservada(habitacion));
+           listaHabitaciones.Add(new HabitacionReservada(habitacion));
         }
         public void HacerCheckIn()
         {

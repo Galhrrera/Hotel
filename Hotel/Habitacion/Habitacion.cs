@@ -35,24 +35,48 @@ namespace Hotel
 
         public virtual void Consumir(Producto pcto, int cantConsumir)
         {
-            foreach (var item in ListaMinibar)
+            try
             {
-                if (item.Producto.NombreProducto == pcto.NombreProducto)
+                foreach (var item in ListaMinibar)
                 {
-                    item.CantidadFinal = item.CantidadFinal - cantConsumir;
+                    if (item.Producto.NombreProducto == pcto.NombreProducto)
+                    {
+                        item.CantidadFinal = item.CantidadFinal - cantConsumir;
+                    }
                 }
             }
+            catch
+            {
+                throw new Exception(); 
+            }
+           
         }
 
         public void AdicionarPctoMinibar(Producto producto, int cant)
         {
-            listaMinibar.Add(new PctoMinibar(cant, producto)); 
+            try
+            {
+                listaMinibar.Add(new PctoMinibar(cant, producto));
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            
         }
 
         public double CalcularTotalMinibar(PctoMinibar productoMinibar)
         {
-            double totalMB = (productoMinibar.CantidadInicial - productoMinibar.CantidadFinal) * productoMinibar.Producto.PrecioProducto;
-            return totalMB; 
+            try
+            {
+                double totalMB = (productoMinibar.CantidadInicial - productoMinibar.CantidadFinal) * productoMinibar.Producto.PrecioProducto;
+                return totalMB; 
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            
         }
     }
 }

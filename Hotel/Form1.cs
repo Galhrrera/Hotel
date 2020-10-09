@@ -43,5 +43,10 @@ namespace Hotel
             AccesoBD acceso = new AccesoBD();
             infoHabitaciones = acceso.GenerarHabitaciones();
         }
+
+        private void lblNombreHotel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

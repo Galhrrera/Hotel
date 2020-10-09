@@ -21,8 +21,16 @@ namespace Hotel
 
         public double CalcularTotalServicio(ServicioPedido servicioPdo)
         {
-            double total = servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
-            return total;
+            try
+            {
+                double total = servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
+                return total;
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            
         }
 
     }

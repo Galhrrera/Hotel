@@ -10,12 +10,20 @@ namespace Hotel
         public List<Servicio> ListaLavanderia { get => listaLavanderia; set => listaLavanderia = value; }
         public Lavanderia(bool room_service, float precio, string nombre) : base(room_service, precio, nombre)
         {
-            Servicio lavarSacarRopa = new Servicio(false, 500, "Lavar y secar ropa");
-            Servicio plancharRopa = new Servicio(false, 1000, "Planchar ropa");
-            Servicio planchaVapor = new Servicio(false, 2000, "Planchar ropa a vapor");
-            listaLavanderia.Add(lavarSacarRopa);
-            listaLavanderia.Add(plancharRopa);
-            listaLavanderia.Add(planchaVapor);
+            try
+            {
+                Servicio lavarSacarRopa = new Servicio(false, 500, "Lavar y secar ropa");
+                Servicio plancharRopa = new Servicio(false, 1000, "Planchar ropa");
+                Servicio planchaVapor = new Servicio(false, 2000, "Planchar ropa a vapor");
+                listaLavanderia.Add(lavarSacarRopa);
+                listaLavanderia.Add(plancharRopa);
+                listaLavanderia.Add(planchaVapor);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            
         }
 
         
