@@ -16,7 +16,7 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Servicios_xHabitación());
+            Application.Run(new Principal());
         }
     }
 }
