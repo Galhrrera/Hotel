@@ -25,7 +25,7 @@ namespace Hotel
             persona = cliente;
             NumReserva = rnd.Next(111111, 999999);
 
-            listaHabitaciones.Add(new HabitacionReservada(habitacion));
+           // listaHabitaciones.Add(new HabitacionReservada(habitacion));
         }
         public void HacerCheckIn()
         {

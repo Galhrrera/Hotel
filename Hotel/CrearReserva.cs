@@ -123,7 +123,7 @@ namespace Hotel
             
             Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
             if(comboBox1.Text == "Sencilla")
-            {
+            {; 
                 reserva nuevareserva = new reserva(personatemp, new Sencilla());
                 listaReservas.Add(nuevareserva);
             }

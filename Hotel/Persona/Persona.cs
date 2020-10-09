@@ -23,10 +23,8 @@ namespace Hotel
 
         public override string ToString()
         {
-            return ("Nombre: " + nombre + " ID: " + num_id);
+            return ("Nombre: " + nombre + " -- ID: " + num_id);
         }
-
-
 
     }
 }
