@@ -35,6 +35,7 @@ namespace Hotel
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Parámetro de lista estática
             CrearReserva NuevaReserva = new CrearReserva(ListaPersona);
             NuevaReserva.Show();     
             //NuevaReserva.ShowDialog();
