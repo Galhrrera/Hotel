@@ -12,12 +12,20 @@ namespace Hotel
 
         public Restaurante(bool room_service, float precio, string nombre) : base(room_service, precio, nombre)
         {
-            Servicio desayuno = new Servicio(false, 15000, "Desayuno");
-            Servicio almuerzo = new Servicio(false, 25000, "Almuerzo");
-            Servicio cena = new Servicio(false, 20000, "Cena");
-            ListaMenu.Add(desayuno);
-            ListaMenu.Add(almuerzo);
-            ListaMenu.Add(cena);
+            try
+            {
+                Servicio desayuno = new Servicio(false, 15000, "Desayuno");
+                Servicio almuerzo = new Servicio(false, 25000, "Almuerzo");
+                Servicio cena = new Servicio(false, 20000, "Cena");
+                ListaMenu.Add(desayuno);
+                ListaMenu.Add(almuerzo);
+                ListaMenu.Add(cena);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            
         }
         
     }

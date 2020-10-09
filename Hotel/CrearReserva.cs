@@ -125,7 +125,6 @@ namespace Hotel
             if(comboBox1.Text == "Sencilla")
             {
                 Habitacion habtemp = new Sencilla();
-                //habtemp.
                 reserva nuevareserva = new reserva(personatemp, habtemp);
                 listaReservas.Add(nuevareserva);
             }

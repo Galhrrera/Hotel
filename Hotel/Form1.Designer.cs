@@ -41,10 +41,10 @@
             // lblNombreHotel
             // 
             this.lblNombreHotel.AutoSize = true;
-            this.lblNombreHotel.Font = new System.Drawing.Font("Microsoft Uighur", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreHotel.Location = new System.Drawing.Point(424, -6);
+            this.lblNombreHotel.Font = new System.Drawing.Font("Microsoft Uighur", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreHotel.Location = new System.Drawing.Point(497, 24);
             this.lblNombreHotel.Name = "lblNombreHotel";
-            this.lblNombreHotel.Size = new System.Drawing.Size(452, 114);
+            this.lblNombreHotel.Size = new System.Drawing.Size(302, 75);
             this.lblNombreHotel.TabIndex = 3;
             this.lblNombreHotel.Text = "Maleni Resort";
             this.lblNombreHotel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,7 +89,7 @@
             // foto_hotel
             // 
             this.foto_hotel.Image = ((System.Drawing.Image)(resources.GetObject("foto_hotel.Image")));
-            this.foto_hotel.Location = new System.Drawing.Point(407, 102);
+            this.foto_hotel.Location = new System.Drawing.Point(391, 102);
             this.foto_hotel.Name = "foto_hotel";
             this.foto_hotel.Size = new System.Drawing.Size(500, 350);
             this.foto_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
