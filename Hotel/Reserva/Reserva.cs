@@ -10,9 +10,9 @@ namespace Hotel
         private Persona persona;
         private int numReserva;                                                
         private Habitacion habitacion;        
-        private Random rnd = new Random(DateTime.Now.Millisecond); //Generador de número de reserva
-        private List<HabitacionReservada> listaHabitaciones;       //Se necesita la clase HabitacionReservada
-                                                                   //Clase de asociación entre reserva y habitación
+        private Random rnd = new Random(DateTime.Now.Millisecond);                                   //Generador de número de reserva
+        private List<HabitacionReservada> listaHabitaciones = new List<HabitacionReservada>();       //Se necesita la clase HabitacionReservada
+                                                                                                     //Clase de asociación entre reserva y habitación
         
         public Persona Persona { get => persona; }
         
