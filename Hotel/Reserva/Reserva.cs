@@ -23,6 +23,7 @@ namespace Hotel
         public reserva(Persona cliente, Habitacion habitacion) //para crear reserva se necesita una persona y una habitación 
         {
             persona = cliente;
+            Habitacion = habitacion;
             NumReserva = rnd.Next(111111, 999999);
 
            listaHabitaciones.Add(new HabitacionReservada(habitacion));
