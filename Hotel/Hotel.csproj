@@ -127,6 +127,7 @@
     <EmbeddedResource Include="Servicios_xHabitación.resx">
       <DependentUpon>Servicios_xHabitación.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Persona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

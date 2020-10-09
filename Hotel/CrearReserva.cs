@@ -23,8 +23,8 @@ namespace Hotel
                 listatemp = lista;
             else
                 listatemp = new List<Persona>();
-
-            LlenarListaPersonas(lista);
+            
+            LlenarListaPersonas(listatemp);
         }
 
         private void txtDias_TextChanged(object sender, EventArgs e)
@@ -67,16 +67,17 @@ namespace Hotel
 
             if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped
             {
-                
+
                 listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                
+                Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+
             }
             else if (comboBoxTipoPersona.SelectedIndex ==1)  //2=> Cliente
             {
                 
                 listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                
-                
+                Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+
             }
 
 
@@ -90,7 +91,7 @@ namespace Hotel
 
         private void LlenarListaPersonas(List<Persona> lista)
         {
-            foreach (var item in lista)
+            foreach (Persona item in lista)
             {
                 listClientes.Items.Add(item);
             }

@@ -12,8 +12,9 @@ namespace Hotel
 {
     public partial class Reservas : Form
     {
-        List<Persona> ListaPersona = new List<Persona>();
+        public static List<Persona> ListaPersona = new List<Persona>();
         List<reserva> listaReservas = new List<reserva>();
+      
 
         public Reservas(List<reserva> listares)
         {
@@ -35,11 +36,11 @@ namespace Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             CrearReserva NuevaReserva = new CrearReserva(ListaPersona);
-            NuevaReserva.Show();
+            NuevaReserva.Show();     
             //NuevaReserva.ShowDialog();
 
-            
-            
+
+
         }
 
         private void listReservas_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,6 +61,11 @@ namespace Hotel
         private void LlenarListaReservas(List<reserva> lista)
         {
             dataGridViewReservas.DataSource = lista;
+        }
+
+        private void groupBoxReservaHeader_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

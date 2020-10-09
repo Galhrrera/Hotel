@@ -45,28 +45,34 @@
             // lblReservas
             // 
             this.lblReservas.AutoSize = true;
-            this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((int)(0)));
-            this.lblReservas.Location = new System.Drawing.Point(322, 34);
+            this.lblReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservas.Location = new System.Drawing.Point(429, 42);
+            this.lblReservas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReservas.Name = "lblReservas";
-            this.lblReservas.Size = new System.Drawing.Size(147, 33);
+            this.lblReservas.Size = new System.Drawing.Size(185, 42);
             this.lblReservas.TabIndex = 0;
             this.lblReservas.Text = "Reservas";
             // 
             // groupBoxReservaHeader
             // 
             this.groupBoxReservaHeader.Controls.Add(this.lblReservas);
-            this.groupBoxReservaHeader.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxReservaHeader.Location = new System.Drawing.Point(16, 15);
+            this.groupBoxReservaHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxReservaHeader.Name = "groupBoxReservaHeader";
-            this.groupBoxReservaHeader.Size = new System.Drawing.Size(776, 100);
+            this.groupBoxReservaHeader.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxReservaHeader.Size = new System.Drawing.Size(1035, 123);
             this.groupBoxReservaHeader.TabIndex = 1;
             this.groupBoxReservaHeader.TabStop = false;
+            this.groupBoxReservaHeader.Enter += new System.EventHandler(this.groupBoxReservaHeader_Enter);
             // 
             // groupBoxHabitacionesReservadas
             // 
             this.groupBoxHabitacionesReservadas.Controls.Add(this.dataGridViewReservas);
-            this.groupBoxHabitacionesReservadas.Location = new System.Drawing.Point(12, 118);
+            this.groupBoxHabitacionesReservadas.Location = new System.Drawing.Point(16, 145);
+            this.groupBoxHabitacionesReservadas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxHabitacionesReservadas.Name = "groupBoxHabitacionesReservadas";
-            this.groupBoxHabitacionesReservadas.Size = new System.Drawing.Size(776, 229);
+            this.groupBoxHabitacionesReservadas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxHabitacionesReservadas.Size = new System.Drawing.Size(1035, 282);
             this.groupBoxHabitacionesReservadas.TabIndex = 2;
             this.groupBoxHabitacionesReservadas.TabStop = false;
             // 
@@ -75,10 +81,12 @@
             this.dataGridViewReservas.AllowUserToAddRows = false;
             this.dataGridViewReservas.AllowUserToDeleteRows = false;
             this.dataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReservas.Location = new System.Drawing.Point(6, 20);
+            this.dataGridViewReservas.Location = new System.Drawing.Point(8, 25);
+            this.dataGridViewReservas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewReservas.Name = "dataGridViewReservas";
             this.dataGridViewReservas.ReadOnly = true;
-            this.dataGridViewReservas.Size = new System.Drawing.Size(764, 203);
+            this.dataGridViewReservas.RowHeadersWidth = 51;
+            this.dataGridViewReservas.Size = new System.Drawing.Size(1019, 250);
             this.dataGridViewReservas.TabIndex = 0;
             // 
             // groupBoxbtnsReservas
@@ -86,28 +94,32 @@
             this.groupBoxbtnsReservas.Controls.Add(this.btnCheckOut);
             this.groupBoxbtnsReservas.Controls.Add(this.btnCheckIn);
             this.groupBoxbtnsReservas.Controls.Add(this.btnCrearReserva);
-            this.groupBoxbtnsReservas.Location = new System.Drawing.Point(12, 353);
+            this.groupBoxbtnsReservas.Location = new System.Drawing.Point(16, 434);
+            this.groupBoxbtnsReservas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxbtnsReservas.Name = "groupBoxbtnsReservas";
-            this.groupBoxbtnsReservas.Size = new System.Drawing.Size(776, 127);
+            this.groupBoxbtnsReservas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxbtnsReservas.Size = new System.Drawing.Size(1035, 156);
             this.groupBoxbtnsReservas.TabIndex = 3;
             this.groupBoxbtnsReservas.TabStop = false;
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((int)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.Location = new System.Drawing.Point(815, 38);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckOut.Size = new System.Drawing.Size(189, 80);
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
             // 
             // btnCheckIn
             // 
-            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((int)(0)));
-            this.btnCheckIn.Location = new System.Drawing.Point(435, 30);
+            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.Location = new System.Drawing.Point(580, 37);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckIn.Size = new System.Drawing.Size(189, 80);
             this.btnCheckIn.TabIndex = 1;
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = true;
@@ -116,10 +128,11 @@
             // btnCrearReserva
             // 
             this.btnCrearReserva.BackColor = System.Drawing.Color.Fuchsia;
-            this.btnCrearReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((int)(0)));
-            this.btnCrearReserva.Location = new System.Drawing.Point(6, 30);
+            this.btnCrearReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearReserva.Location = new System.Drawing.Point(8, 37);
+            this.btnCrearReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCrearReserva.Name = "btnCrearReserva";
-            this.btnCrearReserva.Size = new System.Drawing.Size(244, 65);
+            this.btnCrearReserva.Size = new System.Drawing.Size(325, 80);
             this.btnCrearReserva.TabIndex = 0;
             this.btnCrearReserva.Text = "Crear Reserva";
             this.btnCrearReserva.UseVisualStyleBackColor = false;
@@ -127,12 +140,13 @@
             // 
             // Reservas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 492);
+            this.ClientSize = new System.Drawing.Size(1067, 606);
             this.Controls.Add(this.groupBoxbtnsReservas);
             this.Controls.Add(this.groupBoxHabitacionesReservadas);
             this.Controls.Add(this.groupBoxReservaHeader);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Reservas";
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.Reservas_Load);
