@@ -125,22 +125,15 @@ namespace Hotel
             Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
             if(comboBox1.Text == "Sencilla")
             {
-                Habitacion habtemp = new Sencilla();
-                reserva nuevareserva = new reserva(personatemp, new Sencilla());
-                listaReservas.Add(nuevareserva);
-                MessageBox.Show($"El cliente es: {nuevareserva.Persona.Nombre}, su habitación es: {Convert.ToString(nuevareserva.Habitacion.GetType())}");
+                
             }
             if (comboBox1.Text == "Suite")
             {
-                reserva nuevareserva = new reserva(personatemp, new Suite());
-                listaReservas.Add(nuevareserva);
-                MessageBox.Show($"El cliente es: {nuevareserva.Persona.Nombre}, su habitación es: {Convert.ToString(nuevareserva.Habitacion.GetType())}");
+               
             }
             if (comboBox1.Text == "Ejecutiva")
             {
-                reserva nuevareserva = new reserva(personatemp, new Ejecutiva());
-                listaReservas.Add(nuevareserva);
-                MessageBox.Show($"El cliente es: {nuevareserva.Persona.Nombre}, su habitación es: {Convert.ToString(nuevareserva.Habitacion.GetType())}");
+                
             }
             if(comboBox1.Text == null)
             {
