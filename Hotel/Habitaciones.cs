@@ -41,31 +41,13 @@ namespace Hotel
         private void Habitaciones_Load(object sender, EventArgs e)
         {
             dataGridViewListaDeHabitaciones.DataSource = ListaHabitaciones;
-            listHabitacionesHotel.DataSource = ListaHabitaciones;
         }
 
         private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //FormHabitacionxxx habtemp = new FormHabitacionxxx();
 
-            //ESTO PROBABLEMENTE SOBRA Y HAY QUE BORRARLO, SI PREFERIMOS LA LISTBOX, SINO PUES DEJEMOSLO :)
-            //FormHabitacionxxx frmHabSpec = new FormHabitacionxxx(habTemp);
-            //frmHabSpec.Show();
-        }
-
-        private void listHabitacionesHotel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (var item in ListaHabitaciones)
-            {
-                if(listHabitacionesHotel.SelectedItem == item)
-                {
-                    FormHabitacionxxx frmHabSpec = new FormHabitacionxxx(item);
-                    frmHabSpec.Show();
-                    break;
-                }
-            }
-
-            //FormHabitacionxxx frmHabSpec = new FormHabitacionxxx;
-            //frmHabSpec.Show();
+            //habtemp.Show;
         }
     }
 }
