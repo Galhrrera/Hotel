@@ -8,24 +8,14 @@ namespace Hotel
 {
     public class AccesoBD
     {
-        public void GenerarMinibarEjecutiva() //pendiente
-        {
-            try
-            {
+        public List<Habitacion> infoHabitacionesBD = new List<Habitacion>();
 
-            }
-            catch
-            {
-                throw new Exception();
-            }
-        }
+        public List<Habitacion> InfoHabitacionesBD { get => infoHabitacionesBD; set => infoHabitacionesBD = value; }
+
         public List<Habitacion> GenerarHabitaciones()
         {
             try
             {
-                List<Habitacion> infoHabitaciones = new List<Habitacion>();
-                //For para crear habitaciones sencillas piso 2
-
                 int numHabitacionPiso2 = 200;
 
                 for (int i = 1; i <= 10; i++)
@@ -40,9 +30,9 @@ namespace Hotel
                     HabSencilla.Precio = 200000;
                     HabSencilla.EstadoHab = Habitacion.estado.Desocupada;
 
-                    numHabitacionPiso2++;
+                    numHabitacionPiso2++; 
 
-                    infoHabitaciones.Add(HabSencilla);
+                    InfoHabitacionesBD.Add(HabSencilla);
 
                 }
 
@@ -66,7 +56,7 @@ namespace Hotel
 
                     numHabitacionPiso3++;
 
-                    infoHabitaciones.Add(HabSencilla);
+                    InfoHabitacionesBD.Add(HabSencilla);
 
                 }
 
@@ -90,7 +80,7 @@ namespace Hotel
 
                     numHabitacionPiso4++;
 
-                    infoHabitaciones.Add(HabSencilla);
+                    InfoHabitacionesBD.Add(HabSencilla);
 
                 }
 
@@ -116,7 +106,7 @@ namespace Hotel
 
                     numHabitacionPiso5++;
 
-                    infoHabitaciones.Add(HabEjecutiva);
+                    InfoHabitacionesBD.Add(HabEjecutiva);
 
                 }
 
@@ -142,10 +132,10 @@ namespace Hotel
 
                     numHabitacionPiso6++;
 
-                    infoHabitaciones.Add(HabSuite);
+                    InfoHabitacionesBD.Add(HabSuite);
 
                 }
-                return infoHabitaciones;
+                return InfoHabitacionesBD;
             }
             catch
             {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Hotel
 {
     public partial class CrearReserva : Form
@@ -125,7 +126,12 @@ namespace Hotel
             Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
             if(comboBox1.Text == "Sencilla")
             {
-                
+                List<Habitacion> listaAux = new List<Habitacion>();
+                AccesoBD acceso = new AccesoBD();   //se está intanciando de nuevo accesoBD cuando solo debe instanciarse una vez
+                listaAux = acceso.InfoHabitacionesBD;
+                foreach (var item in listaAux) { } //la idea es recorrer la lista de las habitaciones ya existentes para ocupar 
+                                                   // una habitación (cambiar el estado) y crear la reserva de ese cliente con dicha habitación
+                                                   // esa habitación corresponde al tipo seleccionado. 
             }
             if (comboBox1.Text == "Suite")
             {
@@ -141,17 +147,12 @@ namespace Hotel
                 return;
             }
 
-
-           
-
             //Reservas frmreservas = new Reservas(listaReservas);
             //frmreservas.ShowDialog();
 
             txtNumID.Text = string.Empty;
             txtNombreTitular.Text = string.Empty;
             comboBoxTipoPersona.SelectedIndex = 0;
-
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
