@@ -8,7 +8,7 @@ namespace Hotel
 {
     public class AccesoBD
     {
-        public void GenerarMinibarEjecutiva() //?????
+        public void GenerarMinibarEjecutiva() //pendiente
         {
             try
             {
