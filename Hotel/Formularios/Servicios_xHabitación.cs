@@ -12,6 +12,8 @@ namespace Hotel
 {
     public partial class Servicios_xHabitación : Form
     {
+        List<Servicio> listaServicios = new List<Servicio>();
+
         public Servicios_xHabitación()
         {
             InitializeComponent();
@@ -88,6 +90,11 @@ namespace Hotel
                 Button1Click(this, EventArgs.Empty);
             }
             */
+        }
+
+        private void Servicios_xHabitación_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

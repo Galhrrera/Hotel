@@ -103,6 +103,7 @@
             this.btnServicios.TabIndex = 5;
             this.btnServicios.Text = "Servicios";
             this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // btnRegresar
             // 
@@ -138,6 +139,7 @@
             this.txtNombreHuesped.ReadOnly = true;
             this.txtNombreHuesped.Size = new System.Drawing.Size(250, 20);
             this.txtNombreHuesped.TabIndex = 9;
+            this.txtNombreHuesped.TextChanged += new System.EventHandler(this.txtNombreHuesped_TextChanged);
             // 
             // textBox3
             // 

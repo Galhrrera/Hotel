@@ -21,7 +21,7 @@ namespace Hotel
             txtTipoHab.Text = HabitacionEspecifica.TipoHab.ToString();
             if (HabitacionEspecifica.Huesped == null)
             {
-                txtNombreHuesped.Text = "Pendiente";
+                txtNombreHuesped.Text = "Ninguno";
             }
             else
                 txtNombreHuesped.Text = HabitacionEspecifica.Huesped.Nombre.ToString();
@@ -35,6 +35,17 @@ namespace Hotel
         private void FormHabitacionxxx_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNombreHuesped_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            Servicios_xHabitación frmServicioXHabitacion = new Servicios_xHabitación();
+            frmServicioXHabitacion.Show();
         }
     }
 }

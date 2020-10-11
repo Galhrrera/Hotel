@@ -209,6 +209,7 @@
             this.Controls.Add(this.titulo_servicioshab);
             this.Name = "Servicios_xHabitación";
             this.Text = "Servicios_xHabitación";
+            this.Load += new System.EventHandler(this.Servicios_xHabitación_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

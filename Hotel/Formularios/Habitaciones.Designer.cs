@@ -30,8 +30,8 @@
         {
             this.btnRegresarHabitaciones = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblHabitaciones = new System.Windows.Forms.Label();
             this.listHabitacionesHotel = new System.Windows.Forms.ListBox();
+            this.lblHabitaciones = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBoxListaHabitaciones";
             // 
+            // listHabitacionesHotel
+            // 
+            this.listHabitacionesHotel.FormattingEnabled = true;
+            this.listHabitacionesHotel.Location = new System.Drawing.Point(7, 20);
+            this.listHabitacionesHotel.Name = "listHabitacionesHotel";
+            this.listHabitacionesHotel.Size = new System.Drawing.Size(661, 225);
+            this.listHabitacionesHotel.TabIndex = 0;
+            this.listHabitacionesHotel.SelectedIndexChanged += new System.EventHandler(this.listHabitacionesHotel_SelectedIndexChanged);
+            this.listHabitacionesHotel.DoubleClick += new System.EventHandler(this.listHabitacionesHotel_DoubleClick);
+            // 
             // lblHabitaciones
             // 
             this.lblHabitaciones.AutoSize = true;
@@ -65,15 +75,6 @@
             this.lblHabitaciones.TabIndex = 2;
             this.lblHabitaciones.Text = "Habitaciones";
             this.lblHabitaciones.Click += new System.EventHandler(this.lblHabitaciones_Click);
-            // 
-            // listHabitacionesHotel
-            // 
-            this.listHabitacionesHotel.FormattingEnabled = true;
-            this.listHabitacionesHotel.Location = new System.Drawing.Point(7, 20);
-            this.listHabitacionesHotel.Name = "listHabitacionesHotel";
-            this.listHabitacionesHotel.Size = new System.Drawing.Size(661, 225);
-            this.listHabitacionesHotel.TabIndex = 0;
-            this.listHabitacionesHotel.SelectedIndexChanged += new System.EventHandler(this.listHabitacionesHotel_SelectedIndexChanged);
             // 
             // Habitaciones
             // 

@@ -25,6 +25,7 @@ namespace Hotel
                 ListaHabitaciones = new List<Habitacion>();
             }
             InitializeComponent();
+            
         }
 
         private void btnRegresarHabitaciones_Click(object sender, EventArgs e)
@@ -43,10 +44,9 @@ namespace Hotel
             
             listHabitacionesHotel.DataSource = ListaHabitaciones;
         }
+                
 
-        
-
-        private void listHabitacionesHotel_SelectedIndexChanged(object sender, EventArgs e)
+        private void listHabitacionesHotel_DoubleClick(object sender, EventArgs e)
         {
             foreach (var item in ListaHabitaciones)
             {
@@ -56,11 +56,14 @@ namespace Hotel
                     frmHabSpec.Show();
                     break;
                 }
+
             }
 
-            //FormHabitacionxxx frmHabSpec = new FormHabitacionxxx;
-            //frmHabSpec.Show();
-            //habtemp.Show;
+        }
+
+        private void listHabitacionesHotel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

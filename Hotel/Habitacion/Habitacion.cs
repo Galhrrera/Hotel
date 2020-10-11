@@ -94,8 +94,19 @@ namespace Hotel
             else if (tipoHab == tipoHabitacion.Suite)
                 tipohabitacionlst = "Suite";
 
-            string texto = "Piso: " + piso + "    Número de habitación: " + numHabitacion + "     Estado: " + estadohabitación +
+            string texto;
+            if (huesped == null)
+            {
+                texto = "Número de habitación: " + numHabitacion + "     Estado: " + estadohabitación +
                 "    Tipo de Habitación: " + tipohabitacionlst;
+            }
+            else
+            {
+                texto = "Número de habitación: " + numHabitacion + "     Estado: " + estadohabitación +
+                "    Tipo de Habitación: " + tipohabitacionlst + " Titular: " + huesped.Nombre;
+            }
+                
+
             return texto;
         }
     }

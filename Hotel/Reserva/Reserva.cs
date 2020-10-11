@@ -8,29 +8,30 @@ namespace Hotel
     public class reserva
     {        
         private Persona persona;
-        private int numReserva;                                                
+        private int numReserva;        
+        private int dias;
         private Habitacion habitacion;        
         private Random rnd = new Random(DateTime.Now.Millisecond);                                   //Generador de número de reserva
         private List<HabitacionReservada> listaHabitaciones = new List<HabitacionReservada>();       //Se necesita la clase HabitacionReservada
                                                                                                      //Clase de asociación entre reserva y habitación
         
-        public Persona Persona { get => persona; }
+        public Persona Persona { get => persona; set => persona = value; }
         
         public List<HabitacionReservada> ListaHabitaciones { get => listaHabitaciones; set => listaHabitaciones = value; }
         public int NumReserva { get => numReserva; set => numReserva = value; }
-        public Habitacion Habitacion { get => habitacion; set => habitacion = value; }
+        public Habitacion Habitacion { get => habitacion; set => habitacion = value; }        
+        public int Dias { get => dias; set => dias = value; }
 
-        public reserva(Persona cliente, Habitacion habitacion) //para crear reserva se necesita una persona y una habitación 
+        public reserva() //para crear reserva se necesita una persona y una habitación 
         {
-            persona = cliente;
-            Habitacion = habitacion;
+            
             NumReserva = rnd.Next(111111, 999999);
 
            listaHabitaciones.Add(new HabitacionReservada(habitacion));
         }
         public void HacerCheckIn()
         {
-            this.NumReserva = rnd.Next(111111, 999999);
+            
             Habitacion.EstadoHab = Habitacion.estado.Ocupada;
         }
 
