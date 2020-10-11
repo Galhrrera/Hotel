@@ -78,5 +78,25 @@ namespace Hotel
             }
             
         }
+
+        public override string ToString()
+        {
+            string estadohabitación = null, tipohabitacionlst = null;
+            if (estadoHab == Habitacion.estado.Desocupada)
+                estadohabitación = "Desocupada";
+            else if (estadoHab == Habitacion.estado.Ocupada)
+                estadohabitación = "Ocupada";
+
+            if (tipoHab == tipoHabitacion.Ejecutiva)
+                tipohabitacionlst = "Ejecutiva";
+            else if (tipoHab == tipoHabitacion.Sencilla)
+                tipohabitacionlst = "Sencilla";
+            else if (tipoHab == tipoHabitacion.Suite)
+                tipohabitacionlst = "Suite";
+
+            string texto = "Piso: " + piso + "    Número de habitación: " + numHabitacion + "     Estado: " + estadohabitación +
+                "    Tipo de Habitación: " + tipohabitacionlst;
+            return texto;
+        }
     }
 }

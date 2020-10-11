@@ -36,8 +36,8 @@
             this.btnServicios = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTipoHab = new System.Windows.Forms.TextBox();
+            this.txtNombreHuesped = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblSubTotalProductos = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -123,21 +123,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 7;
             // 
-            // textBox1
+            // txtTipoHab
             // 
-            this.textBox1.Location = new System.Drawing.Point(225, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtTipoHab.Location = new System.Drawing.Point(225, 101);
+            this.txtTipoHab.Name = "txtTipoHab";
+            this.txtTipoHab.ReadOnly = true;
+            this.txtTipoHab.Size = new System.Drawing.Size(250, 20);
+            this.txtTipoHab.TabIndex = 8;
             // 
-            // textBox2
+            // txtNombreHuesped
             // 
-            this.textBox2.Location = new System.Drawing.Point(225, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(250, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtNombreHuesped.Location = new System.Drawing.Point(225, 140);
+            this.txtNombreHuesped.Name = "txtNombreHuesped";
+            this.txtNombreHuesped.ReadOnly = true;
+            this.txtNombreHuesped.Size = new System.Drawing.Size(250, 20);
+            this.txtNombreHuesped.TabIndex = 9;
             // 
             // textBox3
             // 
@@ -173,8 +173,8 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.lblSubTotalProductos);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombreHuesped);
+            this.Controls.Add(this.txtTipoHab);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnServicios);
@@ -185,6 +185,7 @@
             this.Controls.Add(this.lblHabitacion);
             this.Name = "FormHabitacionxxx";
             this.Text = "FormHabitacionxxx";
+            this.Load += new System.EventHandler(this.FormHabitacionxxx_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,8 +202,8 @@
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTipoHab;
+        private System.Windows.Forms.TextBox txtNombreHuesped;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblSubTotalProductos;
         private System.Windows.Forms.TextBox textBox4;

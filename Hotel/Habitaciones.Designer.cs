@@ -30,10 +30,9 @@
         {
             this.btnRegresarHabitaciones = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewListaDeHabitaciones = new System.Windows.Forms.DataGridView();
             this.lblHabitaciones = new System.Windows.Forms.Label();
+            this.listHabitacionesHotel = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaDeHabitaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegresarHabitaciones
@@ -48,25 +47,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridViewListaDeHabitaciones);
+            this.groupBox1.Controls.Add(this.listHabitacionesHotel);
             this.groupBox1.Location = new System.Drawing.Point(13, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(674, 257);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBoxListaHabitaciones";
-            // 
-            // dataGridViewListaDeHabitaciones
-            // 
-            this.dataGridViewListaDeHabitaciones.AllowUserToAddRows = false;
-            this.dataGridViewListaDeHabitaciones.AllowUserToDeleteRows = false;
-            this.dataGridViewListaDeHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaDeHabitaciones.Location = new System.Drawing.Point(7, 20);
-            this.dataGridViewListaDeHabitaciones.Name = "dataGridViewListaDeHabitaciones";
-            this.dataGridViewListaDeHabitaciones.ReadOnly = true;
-            this.dataGridViewListaDeHabitaciones.Size = new System.Drawing.Size(658, 231);
-            this.dataGridViewListaDeHabitaciones.TabIndex = 0;
-            this.dataGridViewListaDeHabitaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaDeHabitaciones_CellContentClick);
             // 
             // lblHabitaciones
             // 
@@ -78,6 +65,15 @@
             this.lblHabitaciones.TabIndex = 2;
             this.lblHabitaciones.Text = "Habitaciones";
             this.lblHabitaciones.Click += new System.EventHandler(this.lblHabitaciones_Click);
+            // 
+            // listHabitacionesHotel
+            // 
+            this.listHabitacionesHotel.FormattingEnabled = true;
+            this.listHabitacionesHotel.Location = new System.Drawing.Point(7, 20);
+            this.listHabitacionesHotel.Name = "listHabitacionesHotel";
+            this.listHabitacionesHotel.Size = new System.Drawing.Size(661, 225);
+            this.listHabitacionesHotel.TabIndex = 0;
+            this.listHabitacionesHotel.SelectedIndexChanged += new System.EventHandler(this.listHabitacionesHotel_SelectedIndexChanged);
             // 
             // Habitaciones
             // 
@@ -91,7 +87,6 @@
             this.Text = "Habitaciones";
             this.Load += new System.EventHandler(this.Habitaciones_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaDeHabitaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +97,6 @@
         private System.Windows.Forms.Button btnRegresarHabitaciones;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblHabitaciones;
-        private System.Windows.Forms.DataGridView dataGridViewListaDeHabitaciones;
+        private System.Windows.Forms.ListBox listHabitacionesHotel;
     }
 }
