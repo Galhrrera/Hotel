@@ -151,6 +151,7 @@ namespace Hotel
                         else
                         {
                             item.EstadoHab = Habitacion.estado.Reservada;
+                            item.Titular = titular;
                             Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
                             rsvaSencilla.Dias = int.Parse(txtDias.Text); //AQUI
                             MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
@@ -177,6 +178,7 @@ namespace Hotel
                         else
                         {
                             item.EstadoHab = Habitacion.estado.Reservada;
+                            item.Titular = titular;
                             Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
                             rsvaSuite.Dias = int.Parse(txtDias.Text);
                             MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
@@ -203,6 +205,7 @@ namespace Hotel
                         else
                         {
                             item.EstadoHab = Habitacion.estado.Reservada;
+                            item.Titular = titular;
                             Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
                             rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
                             MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
