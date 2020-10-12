@@ -37,7 +37,7 @@ namespace Hotel
         private void btnCDalcularDias_Click(object sender, EventArgs e)
         {
             DateTime fechaEntrada = dtpFechaIngreso.Value.Date;
-            DateTime fechaSalida = dtpFechaSalida.Value.Date;                               //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
+            DateTime fechaSalida = dtpFechaSalida.Value.Date;   //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
 
             TimeSpan tSpan = fechaSalida - fechaEntrada;
 

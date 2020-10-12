@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Hotel
 {
-    public class reserva
+    public class Reserva
     {        
         private Persona persona;
         private int numReserva;        
@@ -22,7 +22,7 @@ namespace Hotel
         public Habitacion Habitacion { get => habitacion; set => habitacion = value; }        
         public int Dias { get => dias; set => dias = value; }
 
-        public reserva() //para crear reserva se necesita una persona y una habitación 
+        public Reserva() //para crear reserva se necesita una persona y una habitación 
         {
             
             NumReserva = rnd.Next(111111, 999999);
