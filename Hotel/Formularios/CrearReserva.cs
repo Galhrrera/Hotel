@@ -14,7 +14,7 @@ namespace Hotel
     public partial class CrearReserva : Form
     {
         private List<Persona> listatemp = new List<Persona>();
-        private List<reserva> listaReservasCR = new List<reserva>();
+        private List<Reserva> listaReservasCR = new List<Reserva>();
         private Persona personaTemp;
        
         public CrearReserva(List<Persona> lista)
@@ -37,7 +37,7 @@ namespace Hotel
         private void btnCDalcularDias_Click(object sender, EventArgs e)
         {
             DateTime fechaEntrada = dtpFechaIngreso.Value.Date;
-            DateTime fechaSalida = dtpFechaSalida.Value.Date;                               //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
+            DateTime fechaSalida = dtpFechaSalida.Value.Date;   //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
 
             TimeSpan tSpan = fechaSalida - fechaEntrada;
 
@@ -138,7 +138,7 @@ namespace Hotel
                 return;
             }
 
-            reserva reservaTemp = new reserva();
+            Reserva reservaTemp = new Reserva();
 
             reservaTemp.Habitacion = habreservada;
             reservaTemp.Persona = personaTemp;
