@@ -131,6 +131,7 @@ namespace Hotel
                         Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
                         MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
                         Reservas.ListaReservas.Add(rsvaSencilla);
+                        txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
                         return; 
                     }
                     
@@ -147,6 +148,7 @@ namespace Hotel
                         Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
                         MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
                         Reservas.ListaReservas.Add(rsvaSuite);
+                        txtNumReserva.Text = rsvaSuite.NumReserva.ToString();
                         return; 
                     }
                     
@@ -163,6 +165,7 @@ namespace Hotel
                         Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
                         MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
                         Reservas.ListaReservas.Add(rsvaEjecutiva);
+                        txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
                         return;
                     }
                    
