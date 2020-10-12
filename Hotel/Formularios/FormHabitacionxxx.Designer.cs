@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblHabitacion = new System.Windows.Forms.Label();
+            this.lblNumHabitacion = new System.Windows.Forms.Label();
             this.lblTipoHabitacion = new System.Windows.Forms.Label();
             this.lblHuesped = new System.Windows.Forms.Label();
             this.lblTipoCama = new System.Windows.Forms.Label();
@@ -37,10 +38,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTipoHab = new System.Windows.Forms.TextBox();
             this.txtNombreHuesped = new System.Windows.Forms.TextBox();
-            this.txtTipoCama = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblSubTotalProductos = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.txtNumHab = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,11 +48,21 @@
             // 
             this.lblHabitacion.AutoSize = true;
             this.lblHabitacion.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHabitacion.Location = new System.Drawing.Point(281, 30);
+            this.lblHabitacion.Location = new System.Drawing.Point(298, 30);
             this.lblHabitacion.Name = "lblHabitacion";
             this.lblHabitacion.Size = new System.Drawing.Size(109, 20);
             this.lblHabitacion.TabIndex = 0;
             this.lblHabitacion.Text = "Habitación: ";
+            // 
+            // lblNumHabitacion
+            // 
+            this.lblNumHabitacion.AutoSize = true;
+            this.lblNumHabitacion.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumHabitacion.Location = new System.Drawing.Point(413, 30);
+            this.lblNumHabitacion.Name = "lblNumHabitacion";
+            this.lblNumHabitacion.Size = new System.Drawing.Size(42, 20);
+            this.lblNumHabitacion.TabIndex = 1;
+            this.lblNumHabitacion.Text = "XXX";
             // 
             // lblTipoHabitacion
             // 
@@ -93,6 +103,7 @@
             this.btnServicios.TabIndex = 5;
             this.btnServicios.Text = "Servicios";
             this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // btnRegresar
             // 
@@ -128,14 +139,15 @@
             this.txtNombreHuesped.ReadOnly = true;
             this.txtNombreHuesped.Size = new System.Drawing.Size(250, 20);
             this.txtNombreHuesped.TabIndex = 9;
+            this.txtNombreHuesped.TextChanged += new System.EventHandler(this.txtNombreHuesped_TextChanged);
             // 
-            // txtTipoCama
+            // textBox3
             // 
-            this.txtTipoCama.Location = new System.Drawing.Point(225, 186);
-            this.txtTipoCama.Name = "txtTipoCama";
-            this.txtTipoCama.ReadOnly = true;
-            this.txtTipoCama.Size = new System.Drawing.Size(250, 20);
-            this.txtTipoCama.TabIndex = 10;
+            this.textBox3.Location = new System.Drawing.Point(225, 186);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(250, 20);
+            this.textBox3.TabIndex = 10;
             // 
             // lblSubTotalProductos
             // 
@@ -155,24 +167,14 @@
             this.textBox4.Size = new System.Drawing.Size(130, 20);
             this.textBox4.TabIndex = 12;
             // 
-            // txtNumHab
-            // 
-            this.txtNumHab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumHab.Location = new System.Drawing.Point(397, 30);
-            this.txtNumHab.Name = "txtNumHab";
-            this.txtNumHab.ReadOnly = true;
-            this.txtNumHab.Size = new System.Drawing.Size(100, 26);
-            this.txtNumHab.TabIndex = 13;
-            // 
             // FormHabitacionxxx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 349);
-            this.Controls.Add(this.txtNumHab);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.lblSubTotalProductos);
-            this.Controls.Add(this.txtTipoCama);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtNombreHuesped);
             this.Controls.Add(this.txtTipoHab);
             this.Controls.Add(this.dataGridView1);
@@ -181,9 +183,11 @@
             this.Controls.Add(this.lblTipoCama);
             this.Controls.Add(this.lblHuesped);
             this.Controls.Add(this.lblTipoHabitacion);
+            this.Controls.Add(this.lblNumHabitacion);
             this.Controls.Add(this.lblHabitacion);
             this.Name = "FormHabitacionxxx";
             this.Text = "FormHabitacionxxx";
+            this.Load += new System.EventHandler(this.FormHabitacionxxx_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,6 +197,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblHabitacion;
+        private System.Windows.Forms.Label lblNumHabitacion;
         private System.Windows.Forms.Label lblTipoHabitacion;
         private System.Windows.Forms.Label lblHuesped;
         private System.Windows.Forms.Label lblTipoCama;
@@ -201,9 +206,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtTipoHab;
         private System.Windows.Forms.TextBox txtNombreHuesped;
-        private System.Windows.Forms.TextBox txtTipoCama;
+        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblSubTotalProductos;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox txtNumHab;
     }
 }

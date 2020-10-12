@@ -10,21 +10,18 @@ using System.Windows.Forms;
 
 namespace Hotel
 {
-
     public partial class FormHabitacionxxx : Form
     {
-
         private Habitacion HabitacionEspecifica;
-
         public FormHabitacionxxx(Habitacion habSpec)
         {
             InitializeComponent();
             this.HabitacionEspecifica = habSpec;
-            txtNumHab.Text = HabitacionEspecifica.NumHabitacion.ToString();
+            lblNumHabitacion.Text = HabitacionEspecifica.NumHabitacion.ToString();
             txtTipoHab.Text = HabitacionEspecifica.TipoHab.ToString();
             if (HabitacionEspecifica.Huesped == null)
             {
-                txtNombreHuesped.Text = "Pendiente";
+                txtNombreHuesped.Text = "Ninguno";
             }
             else
                 txtNombreHuesped.Text = HabitacionEspecifica.Huesped.Nombre.ToString();
@@ -35,7 +32,20 @@ namespace Hotel
             Close();
         }
 
-        
+        private void FormHabitacionxxx_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreHuesped_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            Servicios_xHabitación frmServicioXHabitacion = new Servicios_xHabitación();
+            frmServicioXHabitacion.Show();
+        }
     }
-        
 }

@@ -41,10 +41,10 @@
             // lblNombreHotel
             // 
             this.lblNombreHotel.AutoSize = true;
-            this.lblNombreHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreHotel.Location = new System.Drawing.Point(422, 9);
+            this.lblNombreHotel.Font = new System.Drawing.Font("Microsoft Uighur", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreHotel.Location = new System.Drawing.Point(497, 24);
             this.lblNombreHotel.Name = "lblNombreHotel";
-            this.lblNombreHotel.Size = new System.Drawing.Size(440, 73);
+            this.lblNombreHotel.Size = new System.Drawing.Size(302, 75);
             this.lblNombreHotel.TabIndex = 3;
             this.lblNombreHotel.Text = "Maleni Resort";
             this.lblNombreHotel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -53,7 +53,7 @@
             // btnReservas
             // 
             this.btnReservas.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservas.Font = new System.Drawing.Font("Microsoft Uighur", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservas.Location = new System.Drawing.Point(60, 130);
             this.btnReservas.Name = "btnReservas";
             this.btnReservas.Size = new System.Drawing.Size(241, 109);
@@ -65,7 +65,7 @@
             // btnHabitaciones
             // 
             this.btnHabitaciones.BackColor = System.Drawing.Color.LightBlue;
-            this.btnHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabitaciones.Font = new System.Drawing.Font("Microsoft Uighur", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHabitaciones.Location = new System.Drawing.Point(60, 308);
             this.btnHabitaciones.Name = "btnHabitaciones";
             this.btnHabitaciones.Size = new System.Drawing.Size(241, 109);
@@ -77,7 +77,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Uighur", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(60, 485);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(241, 109);
@@ -99,7 +99,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Uighur", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.richTextBox1.Location = new System.Drawing.Point(391, 458);
             this.richTextBox1.Name = "richTextBox1";

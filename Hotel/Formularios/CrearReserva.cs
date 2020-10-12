@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Hotel
 {
     public partial class CrearReserva : Form
     {
         private List<Persona> listatemp = new List<Persona>();
-        private List<reserva> listaReservas = new List<reserva>();
+        private List<reserva> listaReservasCR = new List<reserva>();
+        private Persona personaTemp;
        
         public CrearReserva(List<Persona> lista)
         {
@@ -35,20 +37,20 @@ namespace Hotel
         private void btnCDalcularDias_Click(object sender, EventArgs e)
         {
             DateTime fechaEntrada = dtpFechaIngreso.Value.Date;
-            DateTime fechaSalida = dtpFechaSalida.Value.Date;
-            //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
+            DateTime fechaSalida = dtpFechaSalida.Value.Date;                               //dtpFechaEntrada & dtpFechaSalida son los nombres de los box en el formulario
+
             TimeSpan tSpan = fechaSalida - fechaEntrada;
 
             int dias = tSpan.Days;
 
-            
-            if (dias <= 0)
+
+            if (dias <= 0 || dias == null)
             {
-                txtDias.Text = "Por favor revise las fechas de ingreso y de salida";
+                MessageBox.Show("Por favor revise las fechas de ingreso y de salida");
                 throw new Exception("Error con los las fechas ingresadas");
-            }             
+            }
             else
-                txtDias.Text = dias.ToString() + " días";
+                txtDias.Text = dias.ToString();
         }
                 
 
@@ -78,14 +80,7 @@ namespace Hotel
                 listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                 Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
 
-            }
-
-
-            //Limpia los campos para poder reutilizarlos luego:
-
-            //txtNumID.Text = string.Empty;
-            //txtNombreTitular.Text = string.Empty;
-            //comboBoxTipoPersona.SelectedIndex = 0;
+            }            
                                   
         }
 
@@ -93,13 +88,13 @@ namespace Hotel
         {
             foreach (Persona item in lista)
             {
-                listClientes.Items.Add(item);
+                listClientes.Items.Add(item); //listbox
             }
         }
 
         private void listClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.personaTemp = (Persona)listClientes.SelectedItem;
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -120,20 +115,22 @@ namespace Hotel
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            
-            
-            Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+
+            Habitacion habreservada = new Habitacion();
+            //Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            //Persona personatemp = new Persona(listClientes.SelectedItem.)
             if(comboBox1.Text == "Sencilla")
             {
+                habreservada = new Sencilla();
                 
             }
             if (comboBox1.Text == "Suite")
             {
-               
+                habreservada = new Suite();
             }
             if (comboBox1.Text == "Ejecutiva")
             {
-                
+                habreservada = new Ejecutiva();
             }
             if(comboBox1.Text == null)
             {
@@ -141,17 +138,25 @@ namespace Hotel
                 return;
             }
 
+            reserva reservaTemp = new reserva();
 
-           
+            reservaTemp.Habitacion = habreservada;
+            reservaTemp.Persona = personaTemp;
 
-            //Reservas frmreservas = new Reservas(listaReservas);
-            //frmreservas.ShowDialog();
+            reservaTemp.Dias = int.Parse(txtDias.Text.ToString());
+
+            listaReservasCR.Add(reservaTemp);
+
+            
+
+            Reservas frmReservas = new Reservas(listaReservasCR);
+            frmReservas.Show();
 
             txtNumID.Text = string.Empty;
             txtNombreTitular.Text = string.Empty;
             comboBoxTipoPersona.SelectedIndex = 0;
 
-
+            Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
