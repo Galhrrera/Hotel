@@ -120,7 +120,17 @@ namespace Hotel
             // una habitación (cambiar el estado) y crear la reserva de ese cliente con dicha habitación
             // esa habitación corresponde al tipo seleccionado. 
 
-            Persona titular = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            Persona titular = null;
+            if ( comboBoxTipoPersona.SelectedIndex == 0)
+            {
+                titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            }
+
+            if (comboBoxTipoPersona.SelectedIndex == 1)
+            {
+                titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            }
+
             if (comboBox1.Text == "Sencilla")
             {
                 foreach (var item in Principal.infoHabitaciones) 
