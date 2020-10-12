@@ -13,24 +13,18 @@ namespace Hotel
     public partial class Reservas : Form
     {
         public static List<Persona> ListaPersona = new List<Persona>();
-        public List<Reserva> listaReservas = new List<Reserva>();
+        private static List<Reserva> listaReservas = new List<Reserva>();
         public List<HabitacionReservada> listaHabitacionesReservadas = new List<HabitacionReservada>();
-      
+
+        public static List<Reserva> ListaReservas { get => listaReservas; set => listaReservas = value; }
 
         public Reservas(List<Reserva> listares)
         {
-            //Asociar los datos de la lista al data
-            if (listares != null)
-            {
-                listaReservas = listares;
-            }
-            else
-            {
-                listaReservas = new List<Reserva>();
-            }
+            
+           
             InitializeComponent();
 
-            LlenarListaReservas(listaReservas);
+            LlenarListaReservas(ListaReservas);
         }
 
 
@@ -56,7 +50,7 @@ namespace Hotel
 
         private void Reservas_Load(object sender, EventArgs e)
         {
-            dataGridViewReservas.DataSource = listaReservas; //Debe ser lista de objetos de clase reserva o de objetos de clase habitacion reservada?
+            dataGridViewReservas.DataSource = ListaReservas; //Debe ser lista de objetos de clase reserva o de objetos de clase habitacion reservada?
         }
 
         private void LlenarListaReservas(List<Reserva> lista)
@@ -71,12 +65,12 @@ namespace Hotel
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se cambiará el estado de la habitaci´n y se procederá a guardar la factura en un archivo de texto");
+            MessageBox.Show("Aquí se cambiará el estado de la habitación y se procederá a guardar la factura en un archivo de texto");
         }
 
         private void dataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            dataGridViewReservas.DataSource = ListaReservas;
         }
     }
 }

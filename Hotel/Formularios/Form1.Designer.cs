@@ -2,6 +2,8 @@
 {
     partial class Principal
     {
+        //this.Load += new System.EventHandler(this.Principal_Load); comentamos esto abajito... probable razón de error GARRAFAL
+
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -95,6 +97,7 @@
             this.foto_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.foto_hotel.TabIndex = 4;
             this.foto_hotel.TabStop = false;
+            this.foto_hotel.Click += new System.EventHandler(this.foto_hotel_Click);
             // 
             // richTextBox1
             // 
