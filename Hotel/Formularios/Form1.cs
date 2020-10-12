@@ -12,8 +12,9 @@ namespace Hotel
 {
     public partial class Principal : Form
     {
-        public List<Habitacion> infoHabitaciones = new List<Habitacion>(); // esto estaba en Principal_Load
-        public AccesoBD acceso = new AccesoBD(); //esto estaba en Principal_Load
+        public static List<Habitacion> infoHabitaciones = new List<Habitacion>();
+        public List<Habitacion> InfoHabitaciones { get => infoHabitaciones; set => infoHabitaciones = value; }
+
         public Principal()
         {
             InitializeComponent();
@@ -32,17 +33,24 @@ namespace Hotel
 
         public void btnHabitaciones_Click(object sender, EventArgs e)
         {
-            Habitaciones habitaciones = new Habitaciones(infoHabitaciones);
+            Habitaciones habitaciones = new Habitaciones(InfoHabitaciones);
             habitaciones.Show();
         }
 
         public void Principal_Load(object sender, EventArgs e) //era private pero necesito que la clase CrearReserva.cs la acceda 
         {
+            AccesoBD acceso = new AccesoBD(); 
             List<Habitacion> all_rooms = new List<Habitacion>();    
-            infoHabitaciones = acceso.GenerarHabitaciones();
+            InfoHabitaciones = acceso.GenerarHabitaciones();
+
         }
 
         private void lblNombreHotel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void foto_hotel_Click(object sender, EventArgs e)
         {
 
         }

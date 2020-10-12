@@ -14,7 +14,6 @@ namespace Hotel
     public partial class CrearReserva : Form
     {
         private List<Persona> listatemp = new List<Persona>();
-        private List<Reserva> listaReservasCR = new List<Reserva>();
         private Persona personaTemp;
        
         public CrearReserva(List<Persona> lista)
@@ -113,50 +112,74 @@ namespace Hotel
         }
         
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e) 
         {
+            
 
-            Habitacion habreservada = new Habitacion();
-            //Persona personatemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-            //Persona personatemp = new Persona(listClientes.SelectedItem.)
-            if(comboBox1.Text == "Sencilla")
+            //la idea es recorrer la lista de las habitaciones ya existentes para ocupar 
+            // una habitación (cambiar el estado) y crear la reserva de ese cliente con dicha habitación
+            // esa habitación corresponde al tipo seleccionado. 
+
+            Persona titular = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            if (comboBox1.Text == "Sencilla")
             {
-                habreservada = new Sencilla();
-                
+                foreach (var item in Principal.infoHabitaciones) 
+                {
+                    if (Convert.ToString(item.TipoHab).Equals("Sencilla") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
+                    {
+                        item.EstadoHab = Habitacion.estado.Ocupada;
+                        Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
+                        MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
+                        Reservas.ListaReservas.Add(rsvaSencilla);
+                        return; 
+                    }
+                    
+                }
+
             }
             if (comboBox1.Text == "Suite")
             {
-                habreservada = new Suite();
+                foreach (var item in Principal.infoHabitaciones)
+                {
+                    if (Convert.ToString(item.TipoHab).Equals("Suite") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
+                    {
+                        item.EstadoHab = Habitacion.estado.Ocupada;
+                        Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
+                        MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
+                        Reservas.ListaReservas.Add(rsvaSuite);
+                        return; 
+                    }
+                    
+                }
+
             }
             if (comboBox1.Text == "Ejecutiva")
             {
-                habreservada = new Ejecutiva();
+                foreach (var item in Principal.infoHabitaciones)
+                {
+                    if (Convert.ToString(item.TipoHab).Equals("Ejecutiva") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
+                    {
+                        item.EstadoHab = Habitacion.estado.Ocupada;
+                        Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
+                        MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
+                        Reservas.ListaReservas.Add(rsvaEjecutiva);
+                        return;
+                    }
+                   
+                }
             }
-            if(comboBox1.Text == null)
+            if (comboBox1.Text == null)
             {
                 MessageBox.Show("Debe seleccionar un tipo de habitación");
                 return;
             }
 
-            Reserva reservaTemp = new Reserva();
-
-            reservaTemp.Habitacion = habreservada;
-            reservaTemp.Persona = personaTemp;
-
-            reservaTemp.Dias = int.Parse(txtDias.Text.ToString());
-
-            listaReservasCR.Add(reservaTemp);
-
-            
-
-            Reservas frmReservas = new Reservas(listaReservasCR);
-            frmReservas.Show();
+            //Reservas.Show();
 
             txtNumID.Text = string.Empty;
             txtNombreTitular.Text = string.Empty;
             comboBoxTipoPersona.SelectedIndex = 0;
 
-            Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
