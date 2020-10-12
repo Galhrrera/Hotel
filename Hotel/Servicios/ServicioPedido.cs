@@ -20,9 +20,7 @@ namespace Hotel
             this.servicio = servicio;
             this.hora = DateTime.Now;
             this.numElementos = numElementos;
-
         }
 
-      
     }
 }
