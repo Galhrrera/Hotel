@@ -12,9 +12,9 @@ namespace Hotel
         {
             try
             {
-                Servicio lavarSacarRopa = new Servicio(false, 500, "Lavar y secar ropa");
-                Servicio plancharRopa = new Servicio(false, 1000, "Planchar ropa");
-                Servicio planchaVapor = new Servicio(false, 2000, "Planchar ropa a vapor");
+                Servicio lavarSacarRopa = new Servicio(false, 5000, "Lavar y secar ropa");
+                Servicio plancharRopa = new Servicio(false, 9000, "Planchar ropa");
+                Servicio planchaVapor = new Servicio(false, 6000, "Planchar ropa a vapor");
                 listaLavanderia.Add(lavarSacarRopa);
                 listaLavanderia.Add(plancharRopa);
                 listaLavanderia.Add(planchaVapor);
