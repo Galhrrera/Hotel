@@ -242,7 +242,28 @@ namespace Hotel
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (comboBox1.Text == "Sencilla")
+            {
+                cBtipoCama.Items.Clear();
+                cBtipoCama.Enabled = true;
+                cBtipoCama.Items.Add("Cama doble");
+                cBtipoCama.Items.Add("Dos camas sencillas");              
+            }
+            if (comboBox1.Text == "Ejecutiva")
+            {
+                cBtipoCama.Items.Clear();
+                cBtipoCama.Enabled = true;
+                cBtipoCama.Items.Add("Cama queen");
+                cBtipoCama.Items.Add("Dos camas semidobles");
+            }
+            if (comboBox1.Text == "Suite")
+            {
+                cBtipoCama.Items.Clear();
+                cBtipoCama.Enabled = true;
+                cBtipoCama.Items.Add("Cama king");
+                cBtipoCama.Items.Add("Una cama queen y una semidoble");
+            }
+
         }
     }
 }
