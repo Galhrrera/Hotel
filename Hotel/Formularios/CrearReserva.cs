@@ -14,7 +14,7 @@ namespace Hotel
     public partial class CrearReserva : Form
     {
         private List<Persona> listatemp = new List<Persona>();
-        private List<reserva> listaReservasCR = new List<reserva>();
+        private List<Reserva> listaReservasCR = new List<Reserva>();
         private Persona personaTemp;
        
         public CrearReserva(List<Persona> lista)
@@ -138,7 +138,7 @@ namespace Hotel
                 return;
             }
 
-            reserva reservaTemp = new reserva();
+            Reserva reservaTemp = new Reserva();
 
             reservaTemp.Habitacion = habreservada;
             reservaTemp.Persona = personaTemp;

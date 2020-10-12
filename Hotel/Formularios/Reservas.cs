@@ -13,11 +13,11 @@ namespace Hotel
     public partial class Reservas : Form
     {
         public static List<Persona> ListaPersona = new List<Persona>();
-        public List<reserva> listaReservas = new List<reserva>();
+        public List<Reserva> listaReservas = new List<Reserva>();
         public List<HabitacionReservada> listaHabitacionesReservadas = new List<HabitacionReservada>();
       
 
-        public Reservas(List<reserva> listares)
+        public Reservas(List<Reserva> listares)
         {
             //Asociar los datos de la lista al data
             if (listares != null)
@@ -26,7 +26,7 @@ namespace Hotel
             }
             else
             {
-                listaReservas = new List<reserva>();
+                listaReservas = new List<Reserva>();
             }
             InitializeComponent();
 
@@ -59,7 +59,7 @@ namespace Hotel
             dataGridViewReservas.DataSource = listaReservas; //Debe ser lista de objetos de clase reserva o de objetos de clase habitacion reservada?
         }
 
-        private void LlenarListaReservas(List<reserva> lista)
+        private void LlenarListaReservas(List<Reserva> lista)
         {
             dataGridViewReservas.DataSource = lista;
         }
