@@ -20,15 +20,8 @@ namespace Hotel
 
         public Reservas(List<Reserva> listares)
         {
-            //Asociar los datos de la lista al data
-            if (listares != null)
-            {
-                ListaReservas = listares;
-            }
-            else
-            {
-                ListaReservas = new List<Reserva>();
-            }
+            
+           
             InitializeComponent();
 
             LlenarListaReservas(ListaReservas);
