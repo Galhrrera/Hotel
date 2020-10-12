@@ -31,7 +31,7 @@
             this.titulo_servicioshab = new System.Windows.Forms.Label();
             this.num_habitacion = new System.Windows.Forms.Label();
             this.restaurante_menu = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.servicio_lavandería = new System.Windows.Forms.CheckedListBox();
             this.lista_restaurante = new System.Windows.Forms.Label();
             this.lista_lavanderia = new System.Windows.Forms.Label();
             this.txtCantPrendas = new System.Windows.Forms.TextBox();
@@ -44,6 +44,8 @@
             this.txtCantPlatos = new System.Windows.Forms.TextBox();
             this.lblRS = new System.Windows.Forms.Label();
             this.cBroomService = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cBtipoPlancha = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // titulo_servicioshab
@@ -77,24 +79,25 @@
             "Almuerzo",
             "Cena"});
             this.restaurante_menu.Location = new System.Drawing.Point(53, 142);
-            this.restaurante_menu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.restaurante_menu.Margin = new System.Windows.Forms.Padding(4);
             this.restaurante_menu.Name = "restaurante_menu";
             this.restaurante_menu.Size = new System.Drawing.Size(395, 123);
             this.restaurante_menu.TabIndex = 2;
             this.restaurante_menu.SelectedIndexChanged += new System.EventHandler(this.restaurante_menu_SelectedIndexChanged);
             // 
-            // checkedListBox1
+            // servicio_lavandería
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.servicio_lavandería.CheckOnClick = true;
+            this.servicio_lavandería.FormattingEnabled = true;
+            this.servicio_lavandería.Items.AddRange(new object[] {
             "Lavar",
             "Planchar"});
-            this.checkedListBox1.Location = new System.Drawing.Point(620, 142);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(387, 123);
-            this.checkedListBox1.TabIndex = 4;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.servicio_lavandería.Location = new System.Drawing.Point(620, 142);
+            this.servicio_lavandería.Margin = new System.Windows.Forms.Padding(4);
+            this.servicio_lavandería.Name = "servicio_lavandería";
+            this.servicio_lavandería.Size = new System.Drawing.Size(387, 123);
+            this.servicio_lavandería.TabIndex = 4;
+            this.servicio_lavandería.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // lista_restaurante
             // 
@@ -121,8 +124,8 @@
             // 
             // txtCantPrendas
             // 
-            this.txtCantPrendas.Location = new System.Drawing.Point(768, 308);
-            this.txtCantPrendas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantPrendas.Location = new System.Drawing.Point(768, 320);
+            this.txtCantPrendas.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantPrendas.Name = "txtCantPrendas";
             this.txtCantPrendas.Size = new System.Drawing.Size(132, 22);
             this.txtCantPrendas.TabIndex = 7;
@@ -130,7 +133,7 @@
             // cant_prendas
             // 
             this.cant_prendas.AutoSize = true;
-            this.cant_prendas.Location = new System.Drawing.Point(616, 311);
+            this.cant_prendas.Location = new System.Drawing.Point(616, 323);
             this.cant_prendas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cant_prendas.Name = "cant_prendas";
             this.cant_prendas.Size = new System.Drawing.Size(144, 17);
@@ -164,7 +167,7 @@
             // 
             this.solicitar_servicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solicitar_servicio.Location = new System.Drawing.Point(300, 444);
-            this.solicitar_servicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.solicitar_servicio.Margin = new System.Windows.Forms.Padding(4);
             this.solicitar_servicio.Name = "solicitar_servicio";
             this.solicitar_servicio.Size = new System.Drawing.Size(191, 69);
             this.solicitar_servicio.TabIndex = 11;
@@ -176,7 +179,7 @@
             // 
             this.regresar_habitacion.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresar_habitacion.Location = new System.Drawing.Point(527, 444);
-            this.regresar_habitacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.regresar_habitacion.Margin = new System.Windows.Forms.Padding(4);
             this.regresar_habitacion.Name = "regresar_habitacion";
             this.regresar_habitacion.Size = new System.Drawing.Size(175, 69);
             this.regresar_habitacion.TabIndex = 12;
@@ -197,7 +200,7 @@
             // txtCantPlatos
             // 
             this.txtCantPlatos.Location = new System.Drawing.Point(187, 288);
-            this.txtCantPlatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantPlatos.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantPlatos.Name = "txtCantPlatos";
             this.txtCantPlatos.Size = new System.Drawing.Size(132, 22);
             this.txtCantPlatos.TabIndex = 14;
@@ -225,11 +228,35 @@
             this.cBroomService.Size = new System.Drawing.Size(132, 24);
             this.cBroomService.TabIndex = 16;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(620, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Tipo de plancha:";
+            // 
+            // cBtipoPlancha
+            // 
+            this.cBtipoPlancha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBtipoPlancha.Enabled = false;
+            this.cBtipoPlancha.FormattingEnabled = true;
+            this.cBtipoPlancha.Items.AddRange(new object[] {
+            "Normal",
+            "A vapor"});
+            this.cBtipoPlancha.Location = new System.Drawing.Point(768, 288);
+            this.cBtipoPlancha.Name = "cBtipoPlancha";
+            this.cBtipoPlancha.Size = new System.Drawing.Size(132, 24);
+            this.cBtipoPlancha.TabIndex = 18;
+            // 
             // Servicios_xHabitación
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.cBtipoPlancha);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cBroomService);
             this.Controls.Add(this.lblRS);
             this.Controls.Add(this.txtCantPlatos);
@@ -242,11 +269,11 @@
             this.Controls.Add(this.txtCantPrendas);
             this.Controls.Add(this.lista_lavanderia);
             this.Controls.Add(this.lista_restaurante);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.servicio_lavandería);
             this.Controls.Add(this.restaurante_menu);
             this.Controls.Add(this.num_habitacion);
             this.Controls.Add(this.titulo_servicioshab);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Servicios_xHabitación";
             this.Text = "Servicios_xHabitación";
             this.Load += new System.EventHandler(this.Servicios_xHabitación_Load);
@@ -260,7 +287,7 @@
         private System.Windows.Forms.Label titulo_servicioshab;
         private System.Windows.Forms.Label num_habitacion;
         private System.Windows.Forms.CheckedListBox restaurante_menu;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox servicio_lavandería;
         private System.Windows.Forms.Label lista_restaurante;
         private System.Windows.Forms.Label lista_lavanderia;
         private System.Windows.Forms.TextBox txtCantPrendas;
@@ -273,5 +300,7 @@
         private System.Windows.Forms.TextBox txtCantPlatos;
         private System.Windows.Forms.Label lblRS;
         private System.Windows.Forms.ComboBox cBroomService;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cBtipoPlancha;
     }
 }
