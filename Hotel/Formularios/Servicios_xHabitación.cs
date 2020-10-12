@@ -28,18 +28,7 @@ namespace Hotel
         {
             if (restaurante_menu.CheckedItems.Count == 1)
             {
-                if (restaurante_menu.Text.Equals("Desayuno"))
-                {
-                    //Cargárselo a la habitación
-                }
-                if(restaurante_menu.Text.Equals("Almuerzo"))
-                {
-                    //Cargárselo a la habitación
-                }
-                if (restaurante_menu.Text.Equals("Cena"))
-                {
-                    //Cargárselo a la habitación
-                }
+
             }
             else
             {
@@ -58,7 +47,46 @@ namespace Hotel
 
         private void solicitar_servicio_Click(object sender, EventArgs e)
         {
-
+            bool RS = false;
+            if (restaurante_menu.Text.Equals("Desayuno"))
+            {
+                if (cBroomService.Text == "Sí")
+                {
+                    RS = true;
+                }
+                else
+                {
+                    RS = false;
+                }
+                Servicio pdDesayuno = new Servicio(RS, 15000, "Restaurante - Desayuno");
+                HabitacionReservada.PedirServicio(pdDesayuno, int.Parse(txtCantPlatos.Text));
+            }
+            if (restaurante_menu.Text.Equals("Almuerzo"))
+            {
+                if (cBroomService.Text == "Sí")
+                {
+                    RS = true;
+                }
+                else
+                {
+                    RS = false;
+                }
+                Servicio pdAlmuerzo = new Servicio(RS, 25000, "Restaurante - Almuerzo");
+                HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text));
+            }
+            if (restaurante_menu.Text.Equals("Cena"))
+            {
+                if (cBroomService.Text == "Sí")
+                {
+                    RS = true;
+                }
+                else
+                {
+                    RS = false;
+                }
+                Servicio pdCena = new Servicio(RS, 20000, "Restaurante - Cena");
+                HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text));
+            }
         }
 
         private void subtotal_lavanderia_Click(object sender, EventArgs e)

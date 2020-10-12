@@ -8,7 +8,7 @@ namespace Hotel
     {
         private Habitacion habReservada;
         private float totalXhabitacion;
-        private List<ServicioPedido> listaServicios = new List<ServicioPedido>(); 
+        private static List<ServicioPedido> listaServicios = new List<ServicioPedido>(); 
 
         public HabitacionReservada(Habitacion habReservada)
         {
@@ -19,7 +19,7 @@ namespace Hotel
         public List<ServicioPedido> ListaServicios { get => listaServicios; set => listaServicios = value; }
         public Habitacion HabReservada { get => habReservada; set => habReservada = value; }
 
-        public void PedirServicio(Servicio servicio, int cant)
+        public static void PedirServicio(Servicio servicio, int cant)
         {
             listaServicios.Add(new ServicioPedido(servicio, cant));
         }
