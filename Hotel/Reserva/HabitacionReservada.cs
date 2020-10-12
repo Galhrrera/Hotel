@@ -19,6 +19,10 @@ namespace Hotel
         public List<ServicioPedido> ListaServicios { get => listaServicios; set => listaServicios = value; }
         public Habitacion HabReservada { get => habReservada; set => habReservada = value; }
 
+        public void PedirServicio(Servicio servicio, int cant)
+        {
+            listaServicios.Add(new ServicioPedido(servicio, cant));
+        }
         public double CalcularTotalServicio(ServicioPedido servicioPdo)
         {
             try

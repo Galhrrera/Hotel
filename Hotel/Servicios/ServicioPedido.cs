@@ -15,13 +15,12 @@ namespace Hotel
         public int NumElementos { get => numElementos; set => numElementos = value; }
         public double Total { get => total; set => total = value; }
 
-        public ServicioPedido(Servicio servicio, DateTime hora, int numElementos)
+        public ServicioPedido(Servicio servicio, int numElementos)
         {
             this.servicio = servicio;
             this.hora = DateTime.Now;
             this.numElementos = numElementos;
 
-            
         }
 
       

@@ -73,12 +73,14 @@ namespace Hotel
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            
             MessageBox.Show("Aquí se cambiará el estado de la habitación y se procederá a guardar la factura en un archivo de texto");
 
             foreach (var item in listaReservas)
             {
                 if (dataGridViewReservas.CurrentRow.Cells[2].Value == item.Habitacion)
                 {
+                    Check_Out.CheckOut.GenerarFactura(item);
                     item.Habitacion.EstadoHab = Habitacion.estado.Desocupada;
                     MessageBox.Show($"El estado de la habitación: {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado.");
                 }

@@ -17,7 +17,7 @@ namespace Hotel
             this.nombre = nombre;
         }
 
-        public float Precio { get => precio; set => precio = value; }
+        public float Precio { get => precio; }
         public string Nombre { get => nombre; set => nombre = value; }
         public bool Room_service { get => room_service; set => room_service = value; }
 
