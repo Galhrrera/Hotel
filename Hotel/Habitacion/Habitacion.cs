@@ -8,7 +8,7 @@ namespace Hotel
     public class Habitacion
     {
         public enum tipoCama { doble, sencilla, queen, semidoble, king };
-        public enum estado { Desocupada, Ocupada };
+        public enum estado { Desocupada, Ocupada, Reservada };
 
         public enum tipoHabitacion { Sencilla, Ejecutiva, Suite };
 
@@ -85,7 +85,9 @@ namespace Hotel
             if (estadoHab == Habitacion.estado.Desocupada)
                 estadohabitación = "Desocupada";
             else if (estadoHab == Habitacion.estado.Ocupada)
-                estadohabitación = "Ocupada";
+                estadohabitación = "Ocupada     ";
+            else if (estadoHab == Habitacion.estado.Reservada)
+                estadohabitación = "Reservada   ";
 
             if (tipoHab == tipoHabitacion.Ejecutiva)
                 tipohabitacionlst = "Ejecutiva";
