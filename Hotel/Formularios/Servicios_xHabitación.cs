@@ -87,7 +87,29 @@ namespace Hotel
                 Servicio pdCena = new Servicio(RS, 20000, "Restaurante - Cena");
                 HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text));
             }
+            if (servicio_lavandería.Text.Equals("Lavar"))
+            {
+                Servicio pdLavandería = new Servicio(false, 12000, "Lavandería");
+                HabitacionReservada.PedirServicio(pdLavandería, int.Parse(txtCantPrendas.Text));
+            }
+            if (servicio_lavandería.Text.Equals("Planchar"))
+            {
+                if (cBtipoPlancha.Text == "Normal")
+                {
+                    Servicio pdNormal = new Servicio(false, 9000, "Plancha normal");
+                    HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text));
+                    MessageBox.Show("Se enviaron a planchar normal exitosamente");
+                }
+                if (cBtipoPlancha.Text == "A vapor")
+                {
+                    Servicio pdNormal = new Servicio(false, 6000, "Plancha a vapor");
+                    HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text));
+                    MessageBox.Show("Se enviaron a planchar a vapor exitosamente");
+                }
+
+            }
         }
+
 
         private void subtotal_lavanderia_Click(object sender, EventArgs e)
         {
@@ -96,7 +118,10 @@ namespace Hotel
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (servicio_lavandería.Text.Equals("Planchar"))
+            {
+                cBtipoPlancha.Enabled = true;
+            }
         }
 
         private void regresar_habitacion_Click(object sender, EventArgs e)
