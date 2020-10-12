@@ -7,7 +7,7 @@ namespace Hotel
     public class HabitacionReservada
     {
         private Habitacion habReservada;
-        private float totalXhabitacion;
+        private double totalXhabitacion = 0;
         private static List<ServicioPedido> listaServicios = new List<ServicioPedido>(); 
 
         public HabitacionReservada(Habitacion habReservada)
@@ -15,7 +15,7 @@ namespace Hotel
             this.habReservada = habReservada; 
         }
 
-        public float TotalXhabitacion { get => totalXhabitacion; set => totalXhabitacion = value; }
+        public double TotalXhabitacion { get => totalXhabitacion; set => totalXhabitacion = value; }
         public List<ServicioPedido> ListaServicios { get => listaServicios; set => listaServicios = value; }
         public Habitacion HabReservada { get => habReservada; set => habReservada = value; }
 
@@ -27,8 +27,8 @@ namespace Hotel
         {
             try
             {
-                double total = servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
-                return total;
+                TotalXhabitacion += servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
+                return TotalXhabitacion;
             }
             catch
             {
