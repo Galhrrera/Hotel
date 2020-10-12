@@ -38,7 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTipoHab = new System.Windows.Forms.TextBox();
             this.txtNombreHuesped = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTipoCama = new System.Windows.Forms.TextBox();
             this.lblSubTotalProductos = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -141,13 +141,13 @@
             this.txtNombreHuesped.TabIndex = 9;
             this.txtNombreHuesped.TextChanged += new System.EventHandler(this.txtNombreHuesped_TextChanged);
             // 
-            // textBox3
+            // txtTipoCama
             // 
-            this.textBox3.Location = new System.Drawing.Point(225, 186);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(250, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtTipoCama.Location = new System.Drawing.Point(225, 186);
+            this.txtTipoCama.Name = "txtTipoCama";
+            this.txtTipoCama.ReadOnly = true;
+            this.txtTipoCama.Size = new System.Drawing.Size(250, 20);
+            this.txtTipoCama.TabIndex = 10;
             // 
             // lblSubTotalProductos
             // 
@@ -174,7 +174,7 @@
             this.ClientSize = new System.Drawing.Size(800, 349);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.lblSubTotalProductos);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTipoCama);
             this.Controls.Add(this.txtNombreHuesped);
             this.Controls.Add(this.txtTipoHab);
             this.Controls.Add(this.dataGridView1);
@@ -206,7 +206,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtTipoHab;
         private System.Windows.Forms.TextBox txtNombreHuesped;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTipoCama;
         private System.Windows.Forms.Label lblSubTotalProductos;
         private System.Windows.Forms.TextBox textBox4;
     }

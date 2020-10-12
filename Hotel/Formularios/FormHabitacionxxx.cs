@@ -19,6 +19,7 @@ namespace Hotel
             this.HabitacionEspecifica = habSpec;
             lblNumHabitacion.Text = HabitacionEspecifica.NumHabitacion.ToString();
             txtTipoHab.Text = HabitacionEspecifica.TipoHab.ToString();
+            txtTipoCama.Text = HabitacionEspecifica.TipoDeCama.ToString();
             if (HabitacionEspecifica.Titular == null)
             {
                 txtNombreHuesped.Text = "Ninguno";

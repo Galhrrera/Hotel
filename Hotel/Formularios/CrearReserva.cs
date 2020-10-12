@@ -152,6 +152,51 @@ namespace Hotel
                         {
                             item.EstadoHab = Habitacion.estado.Reservada;
                             item.Titular = titular;
+                            if (cBtipoCama.Text == "Sencilla")
+                            {
+                                switch (cBtipoCama.SelectedIndex)
+                                {
+                                    case 0:
+                                        item.TipoDeCama = Habitacion.tipoCama.doble;
+                                        break;
+                                    case 1:
+                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                        break;
+                                    default:
+                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                        break;
+                                }
+                            }
+                            else if(cBtipoCama.Text == "Ejecutiva")
+                            {
+                                switch (cBtipoCama.SelectedIndex)
+                                {
+                                    case 0:
+                                        item.TipoDeCama = Habitacion.tipoCama.queen;
+                                        break;
+                                    case 1:
+                                        item.TipoDeCama = Habitacion.tipoCama.semidoble;
+                                        break;
+                                    default:
+                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                        break;
+                                }
+                            }
+                            else if(cBtipoCama.Text == "Suite")
+                            {
+                                switch (cBtipoCama.SelectedIndex)
+                                {
+                                    case 0:
+                                        item.TipoDeCama = Habitacion.tipoCama.king;
+                                        break;
+                                    case 1:
+                                        item.TipoDeCama = Habitacion.tipoCama.king;
+                                        break;
+                                    default:
+                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                        break;
+                                }
+                            }
                             Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
                             rsvaSencilla.Dias = int.Parse(txtDias.Text); //AQUI
                             MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
