@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,11 @@ namespace Hotel
     {
         private List<Persona> listatemp = new List<Persona>();
         private Persona personaTemp;
-       
+
+        private int dias;
+
+        public int Dias { get => dias; set => dias = value; }
+
         public CrearReserva(List<Persona> lista)
         {
             InitializeComponent();
@@ -40,16 +45,17 @@ namespace Hotel
 
             TimeSpan tSpan = fechaSalida - fechaEntrada;
 
-            int dias = tSpan.Days;
+            dias = tSpan.Days;
 
 
             if (dias <= 0 || dias == null)
             {
                 MessageBox.Show("Por favor revise las fechas de ingreso y de salida");
-                throw new Exception("Error con los las fechas ingresadas");
+                //throw new Exception("Error con los las fechas ingresadas");
             }
             else
                 txtDias.Text = dias.ToString();
+
         }
                 
 
@@ -137,12 +143,21 @@ namespace Hotel
                 {
                     if (Convert.ToString(item.TipoHab).Equals("Sencilla") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                     {
-                        item.EstadoHab = Habitacion.estado.Reservada;
-                        Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
-                        rsvaSencilla.Dias = int.Parse(txtDias.Text);
-                        MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
-                        Reservas.ListaReservas.Add(rsvaSencilla);
-                        txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
+                        
+                        if (dias == 0 || titular == null)
+                        {
+                            MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                        }
+                        else
+                        {
+                            item.EstadoHab = Habitacion.estado.Reservada;
+                            Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
+                            rsvaSencilla.Dias = int.Parse(txtDias.Text); //AQUI
+                            MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
+                            Reservas.ListaReservas.Add(rsvaSencilla);
+                            txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
+                        }
+
                         return; 
                     }
                     
@@ -155,12 +170,20 @@ namespace Hotel
                 {
                     if (Convert.ToString(item.TipoHab).Equals("Suite") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                     {
-                        item.EstadoHab = Habitacion.estado.Reservada;
-                        Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
-                        rsvaSuite.Dias = int.Parse(txtDias.Text);
-                        MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
-                        Reservas.ListaReservas.Add(rsvaSuite);
-                        txtNumReserva.Text = rsvaSuite.NumReserva.ToString();
+                        if (dias == 0 || titular == null)
+                        {
+                            MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                        }
+                        else
+                        {
+                            item.EstadoHab = Habitacion.estado.Reservada;
+                            Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
+                            rsvaSuite.Dias = int.Parse(txtDias.Text);
+                            MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
+                            Reservas.ListaReservas.Add(rsvaSuite);
+                            txtNumReserva.Text = rsvaSuite.NumReserva.ToString();
+                        }
+                        
                         return; 
                     }
                     
@@ -173,12 +196,20 @@ namespace Hotel
                 {
                     if (Convert.ToString(item.TipoHab).Equals("Ejecutiva") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                     {
-                        item.EstadoHab = Habitacion.estado.Reservada;
-                        Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
-                        rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
-                        MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
-                        Reservas.ListaReservas.Add(rsvaEjecutiva);
-                        txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
+                        if (dias == 0 || titular == null)
+                        {
+                            MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                        }
+                        else
+                        {
+                            item.EstadoHab = Habitacion.estado.Reservada;
+                            Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
+                            rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
+                            MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
+                            Reservas.ListaReservas.Add(rsvaEjecutiva);
+                            txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
+                        }
+                            
                         return;
                     }
                    
@@ -189,6 +220,9 @@ namespace Hotel
                 MessageBox.Show("Debe seleccionar un tipo de habitación");
                 return;
             }
+           
+
+
 
             //Reservas.Show();
 
