@@ -43,9 +43,17 @@ namespace Hotel
 
         }
 
-        private void btnCheckIn_Click(object sender, EventArgs e)
+        private void btnCheckIn_Click(object sender, EventArgs e)                           //CheckIN
         {
-
+            foreach (var item in listaReservas)
+            {
+                if(dataGridViewReservas.CurrentRow.Cells[2].Value == item.Habitacion)
+                {
+                    item.Habitacion.EstadoHab = Habitacion.estado.Ocupada;
+                    MessageBox.Show($"El estado de la habitación: {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado.");
+                }
+            }
+            
         }
 
         private void Reservas_Load(object sender, EventArgs e)
@@ -66,6 +74,15 @@ namespace Hotel
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Aquí se cambiará el estado de la habitación y se procederá a guardar la factura en un archivo de texto");
+
+            foreach (var item in listaReservas)
+            {
+                if (dataGridViewReservas.CurrentRow.Cells[2].Value == item.Habitacion)
+                {
+                    item.Habitacion.EstadoHab = Habitacion.estado.Desocupada;
+                    MessageBox.Show($"El estado de la habitación: {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado.");
+                }
+            }
         }
 
         private void dataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
