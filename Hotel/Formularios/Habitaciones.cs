@@ -50,6 +50,7 @@ namespace Hotel
         {
             foreach (var item in ListaHabitaciones)
             {
+                
                 if (listHabitacionesHotel.SelectedItem == item)
                 {
                     FormHabitacionxxx frmHabSpec = new FormHabitacionxxx(item);

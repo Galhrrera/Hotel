@@ -127,8 +127,9 @@ namespace Hotel
                 {
                     if (Convert.ToString(item.TipoHab).Equals("Sencilla") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                     {
-                        item.EstadoHab = Habitacion.estado.Ocupada;
+                        //item.EstadoHab = Habitacion.estado.Ocupada;
                         Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
+                        rsvaSencilla.Dias = int.Parse(txtDias.Text);
                         MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
                         Reservas.ListaReservas.Add(rsvaSencilla);
                         txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
@@ -144,8 +145,9 @@ namespace Hotel
                 {
                     if (Convert.ToString(item.TipoHab).Equals("Suite") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                     {
-                        item.EstadoHab = Habitacion.estado.Ocupada;
+                        //item.EstadoHab = Habitacion.estado.Ocupada;
                         Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
+                        rsvaSuite.Dias = int.Parse(txtDias.Text);
                         MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
                         Reservas.ListaReservas.Add(rsvaSuite);
                         txtNumReserva.Text = rsvaSuite.NumReserva.ToString();
@@ -161,8 +163,9 @@ namespace Hotel
                 {
                     if (Convert.ToString(item.TipoHab).Equals("Ejecutiva") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                     {
-                        item.EstadoHab = Habitacion.estado.Ocupada;
+                        //item.EstadoHab = Habitacion.estado.Ocupada;
                         Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
+                        rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
                         MessageBox.Show($"Su habitación fue reservada exitosamente, Su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
                         Reservas.ListaReservas.Add(rsvaEjecutiva);
                         txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
