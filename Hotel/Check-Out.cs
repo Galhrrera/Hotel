@@ -38,7 +38,7 @@ namespace Hotel
 
         public static void ObtenerTotalServicio(double subtotal)
         {
-            totalServiciosXHab = subtotal;
+            totalServiciosXHab += subtotal;
 
 
         }

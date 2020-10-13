@@ -105,20 +105,32 @@ namespace Hotel
             if (servicio_lavandería.Text.Equals("Lavar"))
             {
                 Servicio pdLavandería = new Servicio(false, 12000, "Lavandería");
-                HabitacionReservada.PedirServicio(pdLavandería, int.Parse(txtCantPrendas.Text));
+                
+
+                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdLavandería, int.Parse(txtCantPrendas.Text)));
+                Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                MessageBox.Show(totalServicioXHab.ToString());
             }
             if (servicio_lavandería.Text.Equals("Planchar"))
             {
                 if (cBtipoPlancha.Text == "Normal")
                 {
                     Servicio pdNormal = new Servicio(false, 9000, "Plancha normal");
-                    HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text));
+                    
+
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show(totalServicioXHab.ToString());
                     MessageBox.Show("Se enviaron a planchar normal exitosamente");
                 }
                 if (cBtipoPlancha.Text == "A vapor")
                 {
-                    Servicio pdNormal = new Servicio(false, 6000, "Plancha a vapor");
-                    HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text));
+                    Servicio pdVapor = new Servicio(false, 6000, "Plancha a vapor");
+                    
+
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdVapor, int.Parse(txtCantPrendas.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show(totalServicioXHab.ToString());
                     MessageBox.Show("Se enviaron a planchar a vapor exitosamente");
                 }
 
