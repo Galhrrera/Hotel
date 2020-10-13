@@ -79,7 +79,11 @@ namespace Hotel
                     RS = false;
                 }
                 Servicio pdAlmuerzo = new Servicio(RS, 25000, "Restaurante - Almuerzo");
-                HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text));
+                
+
+                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text)));
+                Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                MessageBox.Show(totalServicioXHab.ToString());
             }
             if (restaurante_menu.Text.Equals("Cena"))
             {
@@ -92,7 +96,11 @@ namespace Hotel
                     RS = false;
                 }
                 Servicio pdCena = new Servicio(RS, 20000, "Restaurante - Cena");
-                HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text));
+                
+
+                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text)));
+                Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                MessageBox.Show(totalServicioXHab.ToString());
             }
             if (servicio_lavandería.Text.Equals("Lavar"))
             {
