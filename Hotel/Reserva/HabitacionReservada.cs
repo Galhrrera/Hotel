@@ -7,7 +7,7 @@ namespace Hotel
     public class HabitacionReservada
     {
         private Habitacion habReservada;
-        private double totalXhabitacion = 0;
+        private static double totalXhabitacion = 0;
         private static List<ServicioPedido> listaServicios = new List<ServicioPedido>(); 
 
         public HabitacionReservada(Habitacion habReservada)
@@ -19,21 +19,35 @@ namespace Hotel
         public List<ServicioPedido> ListaServicios { get => listaServicios; set => listaServicios = value; }
         public Habitacion HabReservada { get => habReservada; set => habReservada = value; }
 
-        public static void PedirServicio(Servicio servicio, int cant)
+        public static ServicioPedido PedirServicio(Servicio servicio, int cant)
         {
-            listaServicios.Add(new ServicioPedido(servicio, cant));
+            ServicioPedido nuevoServicio = new ServicioPedido(servicio, cant);
+            listaServicios.Add(nuevoServicio);
+            HabitacionReservada.CalcularTotalServicio(nuevoServicio);
+            return nuevoServicio;
+            
         }
-        public double CalcularTotalServicio(ServicioPedido servicioPdo)
+        
+        
+        public static double CalcularTotalServicio(ServicioPedido servicioPdo)
         {
             try
             {
-                TotalXhabitacion += servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
-                return TotalXhabitacion;
+                
+                //totalXhabitacion = servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
+                return servicioPdo.Servicio.Precio * servicioPdo.NumElementos;
             }
             catch
             {
                 throw new Exception();
             }
+            
+        }
+
+        public static void ObtenerTotalServicio(double subtotal)
+        {
+            totalXhabitacion = subtotal;
+
             
         }
 

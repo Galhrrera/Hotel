@@ -14,7 +14,7 @@ namespace Hotel
         private double seguro = 0;
         private double totalNoches = 0;
         private double totalProductosXHab = 0;
-        private double totalServiciosXHab = 0;
+        private static double totalServiciosXHab = 0;
         private double IVA = 1.19;
         private double total = 0;
         private double DescuentoCliente = 0.1;
@@ -23,7 +23,7 @@ namespace Hotel
         public double Seguro { get => seguro; }
         public double TotalNoches { get => totalNoches; }
         public double TotalProductosXHab { get => totalProductosXHab; }
-        public double TotalServiciosXHab { get => totalServiciosXHab; }
+        public static double TotalServiciosXHab { get => totalServiciosXHab; set => totalServiciosXHab = value;  }
         public double IVA1 { get => IVA; }
         public double Total { get => total; }
         public double DescuentoCliente1 { get => DescuentoCliente; }
@@ -35,6 +35,13 @@ namespace Hotel
 
             return CheckOut;
         }
+
+        public static void ObtenerTotalServicio(double subtotal)
+        {
+            totalServiciosXHab = subtotal;
+
+
+        }
         public void GenerarFactura(Reserva rsv)
         {
             if(rsv.Persona.TipoDePersona == Persona.TipoPersona.Cliente)
@@ -45,6 +52,16 @@ namespace Hotel
                 seguro = 0.025 * rsv.Habitacion.Precio;
 
                 totalNoches = rsv.Habitacion.Precio * (rsv.Dias - 1);
+
+                /*foreach (var item in rsv.ListaHabitacionesRsv)
+                {
+                    if (rsv.Habitacion.NumHabitacion == item.HabReservada.NumHabitacion)
+                    {
+                        totalServiciosXHab = item.TotalXhabitacion;
+                        
+                        break;
+                    }
+                }*/
 
                 subtotal = seguro + totalNoches + totalProductosXHab + totalServiciosXHab;
 
