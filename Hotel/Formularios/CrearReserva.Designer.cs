@@ -47,6 +47,8 @@
             this.lblNombreTitular = new System.Windows.Forms.Label();
             this.listClientes = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cBtipoCama = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtNumReserva = new System.Windows.Forms.TextBox();
             this.lblNumReserva = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -71,14 +73,14 @@
             // 
             // dtpFechaIngreso
             // 
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(218, 100);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(218, 83);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaIngreso.TabIndex = 1;
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(218, 146);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(218, 132);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
             this.dtpFechaSalida.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaSalida.TabIndex = 2;
@@ -87,7 +89,7 @@
             // 
             this.lblFechaIngreso.AutoSize = true;
             this.lblFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaIngreso.Location = new System.Drawing.Point(53, 106);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(52, 83);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Size = new System.Drawing.Size(113, 16);
             this.lblFechaIngreso.TabIndex = 3;
@@ -97,7 +99,7 @@
             // 
             this.lblFechaSalida.AutoSize = true;
             this.lblFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSalida.Location = new System.Drawing.Point(56, 146);
+            this.lblFechaSalida.Location = new System.Drawing.Point(56, 132);
             this.lblFechaSalida.Name = "lblFechaSalida";
             this.lblFechaSalida.Size = new System.Drawing.Size(88, 16);
             this.lblFechaSalida.TabIndex = 4;
@@ -106,7 +108,7 @@
             // lblNumDias
             // 
             this.lblNumDias.AutoSize = true;
-            this.lblNumDias.Location = new System.Drawing.Point(487, 152);
+            this.lblNumDias.Location = new System.Drawing.Point(488, 136);
             this.lblNumDias.Name = "lblNumDias";
             this.lblNumDias.Size = new System.Drawing.Size(30, 13);
             this.lblNumDias.TabIndex = 5;
@@ -114,7 +116,7 @@
             // 
             // txtDias
             // 
-            this.txtDias.Location = new System.Drawing.Point(535, 149);
+            this.txtDias.Location = new System.Drawing.Point(536, 136);
             this.txtDias.Name = "txtDias";
             this.txtDias.ReadOnly = true;
             this.txtDias.Size = new System.Drawing.Size(100, 20);
@@ -123,7 +125,7 @@
             // 
             // btnCDalcularDias
             // 
-            this.btnCDalcularDias.Location = new System.Drawing.Point(490, 99);
+            this.btnCDalcularDias.Location = new System.Drawing.Point(490, 82);
             this.btnCDalcularDias.Name = "btnCDalcularDias";
             this.btnCDalcularDias.Size = new System.Drawing.Size(106, 23);
             this.btnCDalcularDias.TabIndex = 7;
@@ -142,7 +144,7 @@
             this.groupBoxTitularNuevaReserva.Controls.Add(this.lblNombreTitular);
             this.groupBoxTitularNuevaReserva.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBoxTitularNuevaReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxTitularNuevaReserva.Location = new System.Drawing.Point(59, 208);
+            this.groupBoxTitularNuevaReserva.Location = new System.Drawing.Point(59, 168);
             this.groupBoxTitularNuevaReserva.Name = "groupBoxTitularNuevaReserva";
             this.groupBoxTitularNuevaReserva.Size = new System.Drawing.Size(376, 174);
             this.groupBoxTitularNuevaReserva.TabIndex = 8;
@@ -231,22 +233,45 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cBtipoCama);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNumReserva);
             this.groupBox1.Controls.Add(this.lblNumReserva);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.lblTipoHabitacion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(59, 402);
+            this.groupBox1.Location = new System.Drawing.Point(59, 349);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 108);
+            this.groupBox1.Size = new System.Drawing.Size(376, 165);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Habitación";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cBtipoCama
+            // 
+            this.cBtipoCama.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBtipoCama.Enabled = false;
+            this.cBtipoCama.FormattingEnabled = true;
+            this.cBtipoCama.Location = new System.Drawing.Point(160, 76);
+            this.cBtipoCama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBtipoCama.Name = "cBtipoCama";
+            this.cBtipoCama.Size = new System.Drawing.Size(198, 26);
+            this.cBtipoCama.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tipo de cama:";
+            // 
             // txtNumReserva
             // 
-            this.txtNumReserva.Location = new System.Drawing.Point(159, 72);
+            this.txtNumReserva.Location = new System.Drawing.Point(160, 123);
             this.txtNumReserva.Name = "txtNumReserva";
             this.txtNumReserva.ReadOnly = true;
             this.txtNumReserva.Size = new System.Drawing.Size(200, 24);
@@ -256,7 +281,7 @@
             // lblNumReserva
             // 
             this.lblNumReserva.AutoSize = true;
-            this.lblNumReserva.Location = new System.Drawing.Point(13, 72);
+            this.lblNumReserva.Location = new System.Drawing.Point(11, 123);
             this.lblNumReserva.Name = "lblNumReserva";
             this.lblNumReserva.Size = new System.Drawing.Size(143, 18);
             this.lblNumReserva.TabIndex = 2;
@@ -367,5 +392,7 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.BindingSource personaBindingSource;
+        private System.Windows.Forms.ComboBox cBtipoCama;
+        private System.Windows.Forms.Label label1;
     }
 }

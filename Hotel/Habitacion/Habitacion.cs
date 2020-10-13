@@ -14,19 +14,21 @@ namespace Hotel
 
         private int numHabitacion;
         private int piso;
-        private Huesped huesped;
+        private Persona titular;
         private float precio;
         private estado estadoHab;
         private tipoHabitacion tipoHab;
+        private tipoCama tipoDeCama;
         private List<PctoMinibar> listaMinibar = new List<PctoMinibar>(); 
 
         public int NumHabitacion { get => numHabitacion; set => numHabitacion = value; }
         public int Piso { get => piso; set => piso = value; }
-        public Huesped Huesped { get => huesped; set => huesped = value; }
+        public Persona Titular { get => titular; set => titular = value; }
         public float Precio { get => precio; set => precio = value; }
         public List<PctoMinibar> ListaMinibar { get => listaMinibar; set => listaMinibar = value; }
         public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
         public tipoHabitacion TipoHab { get => tipoHab; set => tipoHab = value; }
+        public tipoCama TipoDeCama { get => tipoDeCama; set => tipoDeCama = value; }
 
         public Habitacion() { }
 
@@ -97,7 +99,7 @@ namespace Hotel
                 tipohabitacionlst = "Suite";
 
             string texto;
-            if (huesped == null)
+            if (titular == null)
             {
                 texto = "Número de habitación: " + numHabitacion + "     Estado: " + estadohabitación +
                 "    Tipo de Habitación: " + tipohabitacionlst;
@@ -105,7 +107,7 @@ namespace Hotel
             else
             {
                 texto = "Número de habitación: " + numHabitacion + "     Estado: " + estadohabitación +
-                "    Tipo de Habitación: " + tipohabitacionlst + " Titular: " + huesped.Nombre;
+                "    Tipo de Habitación: " + tipohabitacionlst + " Titular: " + titular.Nombre;
             }
                 
 

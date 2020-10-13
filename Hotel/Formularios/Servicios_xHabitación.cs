@@ -13,6 +13,9 @@ namespace Hotel
     public partial class Servicios_xHabitación : Form
     {
         List<Servicio> listaServicios = new List<Servicio>();
+        private double totalServicioXHab = 0;
+
+        public double TotalServicioXHab { get => totalServicioXHab; set => totalServicioXHab = value; }
 
         public Servicios_xHabitación()
         {
@@ -46,6 +49,7 @@ namespace Hotel
 
         private void solicitar_servicio_Click(object sender, EventArgs e)
         {
+            
             bool RS = false;
             if (restaurante_menu.Text.Equals("Desayuno"))
             {
@@ -57,8 +61,11 @@ namespace Hotel
                 {
                     RS = false;
                 }
-                Servicio pdDesayuno = new Servicio(RS, 15000, "Restaurante - Desayuno");
-                HabitacionReservada.PedirServicio(pdDesayuno, int.Parse(txtCantPlatos.Text));
+                Servicio pdDesayuno = new Servicio(RS, 15000, "Desayuno");                
+
+                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdDesayuno, int.Parse(txtCantPlatos.Text)));
+                Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                MessageBox.Show(totalServicioXHab.ToString());
             }
             if (restaurante_menu.Text.Equals("Almuerzo"))
             {
@@ -71,7 +78,11 @@ namespace Hotel
                     RS = false;
                 }
                 Servicio pdAlmuerzo = new Servicio(RS, 25000, "Restaurante - Almuerzo");
-                HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text));
+                
+
+                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text)));
+                Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                MessageBox.Show(totalServicioXHab.ToString());
             }
             if (restaurante_menu.Text.Equals("Cena"))
             {
@@ -84,7 +95,11 @@ namespace Hotel
                     RS = false;
                 }
                 Servicio pdCena = new Servicio(RS, 20000, "Restaurante - Cena");
-                HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text));
+                
+
+                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text)));
+                Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                MessageBox.Show(totalServicioXHab.ToString());
             }
             if (servicio_lavandería.Text.Equals("Lavar"))
             {
@@ -107,6 +122,7 @@ namespace Hotel
                 }
 
             }
+            MessageBox.Show("Si funciona");
         }
 
 
