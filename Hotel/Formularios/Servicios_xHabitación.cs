@@ -39,8 +39,7 @@ namespace Hotel
                 for (int ix = 0; ix < restaurante_menu.Items.Count; ++ix)
                     if (ix !=2 || ix != 3) restaurante_menu.SetItemChecked(ix, false);
             }
-
-            
+  
         }
 
         private void lista_restaurante_Click(object sender, EventArgs e)
