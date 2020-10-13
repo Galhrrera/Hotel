@@ -120,163 +120,173 @@ namespace Hotel
 
         private void btnConfirmar_Click(object sender, EventArgs e) 
         {
-            
 
+            
             //la idea es recorrer la lista de las habitaciones ya existentes para ocupar 
             // una habitación (cambiar el estado) y crear la reserva de ese cliente con dicha habitación
             // esa habitación corresponde al tipo seleccionado. 
 
             Persona titular = null;
-            if ( comboBoxTipoPersona.SelectedIndex == 0)
-            {
-                titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-            }
 
-            if (comboBoxTipoPersona.SelectedIndex == 1)
+            try
             {
-                titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-            }
-
-            if (comboBox1.Text == "Sencilla")
-            {
-                foreach (var item in Principal.infoHabitaciones) 
+                if (comboBoxTipoPersona.SelectedIndex == 0)
                 {
-                    if (Convert.ToString(item.TipoHab).Equals("Sencilla") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
-                    {
-                        
-                        if (dias == 0 || titular == null)
-                        {
-                            MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
-                        }
-                        else
-                        {
-                            item.EstadoHab = Habitacion.estado.Reservada;
-                            item.Titular = titular;
-                            if (cBtipoCama.Text == "Sencilla")
-                            {
-                                switch (cBtipoCama.SelectedIndex)
-                                {
-                                    case 0:
-                                        item.TipoDeCama = Habitacion.tipoCama.doble;
-                                        break;
-                                    case 1:
-                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
-                                        break;
-                                    default:
-                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
-                                        break;
-                                }
-                            }
-                            else if(cBtipoCama.Text == "Ejecutiva")
-                            {
-                                switch (cBtipoCama.SelectedIndex)
-                                {
-                                    case 0:
-                                        item.TipoDeCama = Habitacion.tipoCama.queen;
-                                        break;
-                                    case 1:
-                                        item.TipoDeCama = Habitacion.tipoCama.semidoble;
-                                        break;
-                                    default:
-                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
-                                        break;
-                                }
-                            }
-                            else if(cBtipoCama.Text == "Suite")
-                            {
-                                switch (cBtipoCama.SelectedIndex)
-                                {
-                                    case 0:
-                                        item.TipoDeCama = Habitacion.tipoCama.king;
-                                        break;
-                                    case 1:
-                                        item.TipoDeCama = Habitacion.tipoCama.king;
-                                        break;
-                                    default:
-                                        item.TipoDeCama = Habitacion.tipoCama.sencilla;
-                                        break;
-                                }
-                            }
-                            Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
-                            rsvaSencilla.Dias = int.Parse(txtDias.Text); //AQUI
-                            MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
-                            Reservas.ListaReservas.Add(rsvaSencilla);
-                            txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
-                        }
-
-                        return; 
-                    }
-                    
+                    titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
 
-            }
-            if (comboBox1.Text == "Suite")
-            {
-                foreach (var item in Principal.infoHabitaciones)
+                if (comboBoxTipoPersona.SelectedIndex == 1)
                 {
-                    if (Convert.ToString(item.TipoHab).Equals("Suite") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
-                    {
-                        if (dias == 0 || titular == null)
-                        {
-                            MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
-                        }
-                        else
-                        {
-                            item.EstadoHab = Habitacion.estado.Reservada;
-                            item.Titular = titular;
-                            Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
-                            rsvaSuite.Dias = int.Parse(txtDias.Text);
-                            MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
-                            Reservas.ListaReservas.Add(rsvaSuite);
-                            txtNumReserva.Text = rsvaSuite.NumReserva.ToString();
-                        }
-                        
-                        return; 
-                    }
-                    
+                    titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
 
-            }
-            if (comboBox1.Text == "Ejecutiva")
-            {
-                foreach (var item in Principal.infoHabitaciones)
+                if (comboBoxTipoHabitacion.Text == "Sencilla")
                 {
-                    if (Convert.ToString(item.TipoHab).Equals("Ejecutiva") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
+                    foreach (var item in Principal.infoHabitaciones)
                     {
-                        if (dias == 0 || titular == null)
+                        if (Convert.ToString(item.TipoHab).Equals("Sencilla") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                         {
-                            MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+
+                            if (dias == 0 || titular == null)
+                            {
+                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                                //MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                            }
+                            else
+                            {
+                                item.EstadoHab = Habitacion.estado.Reservada;
+                                item.Titular = titular;
+                                if (cBtipoCama.Text == "Sencilla")
+                                {
+                                    switch (cBtipoCama.SelectedIndex)
+                                    {
+                                        case 0:
+                                            item.TipoDeCama = Habitacion.tipoCama.doble;
+                                            break;
+                                        case 1:
+                                            item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                            break;
+                                        default:
+                                            item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                            break;
+                                    }
+                                }
+                                                                
+                                Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
+                                rsvaSencilla.Dias = int.Parse(txtDias.Text); //AQUI
+                                MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
+                                Reservas.ListaReservas.Add(rsvaSencilla);
+                                txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
+                            }
+
+                            return;
                         }
-                        else
+
+                    }
+
+                }
+                if (comboBoxTipoHabitacion.Text == "Suite")
+                {
+                    foreach (var item in Principal.infoHabitaciones)
+                    {
+                        if (Convert.ToString(item.TipoHab).Equals("Suite") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
                         {
-                            item.EstadoHab = Habitacion.estado.Reservada;
-                            item.Titular = titular;
-                            Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
-                            rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
-                            MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
-                            Reservas.ListaReservas.Add(rsvaEjecutiva);
-                            txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
+                            if (dias == 0 || titular == null)
+                            {
+                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                                //MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                            }
+                            else
+                            {
+                                item.EstadoHab = Habitacion.estado.Reservada;
+                                item.Titular = titular;
+                                
+                                switch (cBtipoCama.SelectedIndex)
+                                {
+                                    case 0:
+                                       item.TipoDeCama = Habitacion.tipoCama.king;
+                                       break;
+                                    case 1:
+                                       item.TipoDeCama = Habitacion.tipoCama.king;
+                                       break;
+                                    default:
+                                       item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                        break;
+                                }
+                                
+                                
+                                Reserva rsvaSuite = new Reserva(titular, item); //item es la habitación
+                                rsvaSuite.Dias = int.Parse(txtDias.Text);
+                                MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSuite.Habitacion.NumHabitacion}");
+                                Reservas.ListaReservas.Add(rsvaSuite);
+                                txtNumReserva.Text = rsvaSuite.NumReserva.ToString();
+                            }
+
+                            return;
                         }
+
+                    }
+
+                }
+                if (comboBoxTipoHabitacion.Text == "Ejecutiva")
+                {
+                    foreach (var item in Principal.infoHabitaciones)
+                    {
+                        if (Convert.ToString(item.TipoHab).Equals("Ejecutiva") && Convert.ToString(item.EstadoHab).Equals("Desocupada"))
+                        {
+                            if (dias == 0 || titular == null)
+                            {
+                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                                //MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                            }
+                            else
+                            {
+                                item.EstadoHab = Habitacion.estado.Reservada;
+                                item.Titular = titular;
+                                
+                               switch (cBtipoCama.SelectedIndex)
+                               {
+                                   case 0:
+                                       item.TipoDeCama = Habitacion.tipoCama.queen;
+                                       break;
+                                   case 1:
+                                       item.TipoDeCama = Habitacion.tipoCama.semidoble;
+                                       break;
+                                   default:
+                                       item.TipoDeCama = Habitacion.tipoCama.sencilla;
+                                       break;
+                               }
+                                
+                                Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
+                                rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
+                                MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
+                                Reservas.ListaReservas.Add(rsvaEjecutiva);
+                                txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
+                            }
+
+                            return;
+                        }
+
+                    }
+                }                
+
+                if (comboBoxTipoHabitacion.Text == string.Empty)
+                {
+                    throw new Exception("Por favor ingrese el tipo de habitación");
+                    //MessageBox.Show("Por favor ingrese el tipo de habitación");
+                }
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show($"{error.Message}");
+            }
+            
+
+            
                             
-                        return;
-                    }
-                   
-                }
-            }
-            if (comboBox1.Text == null)
-            {
-                MessageBox.Show("Debe seleccionar un tipo de habitación");
-                return;
-            }
-           
-
-
-
-            //Reservas.Show();
-
-            txtNumID.Text = string.Empty;
-            txtNombreTitular.Text = string.Empty;
-            comboBoxTipoPersona.SelectedIndex = 0;
+            //txtNumID.Text = string.Empty;
+            //txtNombreTitular.Text = string.Empty;
+            
 
         }
 
@@ -287,21 +297,21 @@ namespace Hotel
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Sencilla")
+            if (comboBoxTipoHabitacion.Text == "Sencilla")
             {
                 cBtipoCama.Items.Clear();
                 cBtipoCama.Enabled = true;
                 cBtipoCama.Items.Add("Cama doble");
                 cBtipoCama.Items.Add("Dos camas sencillas");              
             }
-            if (comboBox1.Text == "Ejecutiva")
+            if (comboBoxTipoHabitacion.Text == "Ejecutiva")
             {
                 cBtipoCama.Items.Clear();
                 cBtipoCama.Enabled = true;
                 cBtipoCama.Items.Add("Cama queen");
                 cBtipoCama.Items.Add("Dos camas semidobles");
             }
-            if (comboBox1.Text == "Suite")
+            if (comboBoxTipoHabitacion.Text == "Suite")
             {
                 cBtipoCama.Items.Clear();
                 cBtipoCama.Enabled = true;

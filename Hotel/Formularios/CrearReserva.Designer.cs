@@ -51,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNumReserva = new System.Windows.Forms.TextBox();
             this.lblNumReserva = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoHabitacion = new System.Windows.Forms.ComboBox();
             this.lblTipoHabitacion = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -237,7 +237,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNumReserva);
             this.groupBox1.Controls.Add(this.lblNumReserva);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxTipoHabitacion);
             this.groupBox1.Controls.Add(this.lblTipoHabitacion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(59, 349);
@@ -254,7 +254,7 @@
             this.cBtipoCama.Enabled = false;
             this.cBtipoCama.FormattingEnabled = true;
             this.cBtipoCama.Location = new System.Drawing.Point(160, 76);
-            this.cBtipoCama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBtipoCama.Margin = new System.Windows.Forms.Padding(2);
             this.cBtipoCama.Name = "cBtipoCama";
             this.cBtipoCama.Size = new System.Drawing.Size(198, 26);
             this.cBtipoCama.TabIndex = 5;
@@ -287,19 +287,19 @@
             this.lblNumReserva.TabIndex = 2;
             this.lblNumReserva.Text = "Número de reserva: ";
             // 
-            // comboBox1
+            // comboBoxTipoHabitacion
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxTipoHabitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoHabitacion.FormattingEnabled = true;
+            this.comboBoxTipoHabitacion.Items.AddRange(new object[] {
             "Sencilla",
             "Ejecutiva",
             "Suite"});
-            this.comboBox1.Location = new System.Drawing.Point(159, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 26);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxTipoHabitacion.Location = new System.Drawing.Point(159, 27);
+            this.comboBoxTipoHabitacion.Name = "comboBoxTipoHabitacion";
+            this.comboBoxTipoHabitacion.Size = new System.Drawing.Size(200, 26);
+            this.comboBoxTipoHabitacion.TabIndex = 1;
+            this.comboBoxTipoHabitacion.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lblTipoHabitacion
             // 
@@ -387,7 +387,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNumReserva;
         private System.Windows.Forms.Label lblNumReserva;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxTipoHabitacion;
         private System.Windows.Forms.Label lblTipoHabitacion;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnRegresar;
