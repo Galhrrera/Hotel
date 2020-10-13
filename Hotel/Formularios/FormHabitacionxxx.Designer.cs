@@ -35,13 +35,12 @@
             this.lblTipoCama = new System.Windows.Forms.Label();
             this.btnServicios = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.txtTipoHab = new System.Windows.Forms.TextBox();
             this.txtNombreHuesped = new System.Windows.Forms.TextBox();
             this.txtTipoCama = new System.Windows.Forms.TextBox();
             this.lblSubTotalProductos = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.listBoxPruductos = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblHabitacion
@@ -116,14 +115,6 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // dataGridViewProductos
-            // 
-            this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProductos.Location = new System.Drawing.Point(524, 101);
-            this.dataGridViewProductos.Name = "dataGridViewProductos";
-            this.dataGridViewProductos.Size = new System.Drawing.Size(240, 150);
-            this.dataGridViewProductos.TabIndex = 7;
-            // 
             // txtTipoHab
             // 
             this.txtTipoHab.Location = new System.Drawing.Point(225, 101);
@@ -139,7 +130,6 @@
             this.txtNombreHuesped.ReadOnly = true;
             this.txtNombreHuesped.Size = new System.Drawing.Size(250, 20);
             this.txtNombreHuesped.TabIndex = 9;
-            this.txtNombreHuesped.TextChanged += new System.EventHandler(this.txtNombreHuesped_TextChanged);
             // 
             // txtTipoCama
             // 
@@ -159,25 +149,34 @@
             this.lblSubTotalProductos.TabIndex = 11;
             this.lblSubTotalProductos.Text = "Subtotal: ";
             // 
-            // textBox4
+            // txtSubTotal
             // 
-            this.textBox4.Location = new System.Drawing.Point(634, 270);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(130, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtSubTotal.Location = new System.Drawing.Point(634, 270);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
+            this.txtSubTotal.Size = new System.Drawing.Size(130, 20);
+            this.txtSubTotal.TabIndex = 12;
+            // 
+            // listBoxPruductos
+            // 
+            this.listBoxPruductos.FormattingEnabled = true;
+            this.listBoxPruductos.Location = new System.Drawing.Point(528, 101);
+            this.listBoxPruductos.Name = "listBoxPruductos";
+            this.listBoxPruductos.Size = new System.Drawing.Size(432, 147);
+            this.listBoxPruductos.TabIndex = 13;
+            this.listBoxPruductos.DoubleClick += new System.EventHandler(this.listBoxPruductos_DoubleClick);
             // 
             // FormHabitacionxxx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 349);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(980, 349);
+            this.Controls.Add(this.listBoxPruductos);
+            this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.lblSubTotalProductos);
             this.Controls.Add(this.txtTipoCama);
             this.Controls.Add(this.txtNombreHuesped);
             this.Controls.Add(this.txtTipoHab);
-            this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnServicios);
             this.Controls.Add(this.lblTipoCama);
@@ -188,7 +187,6 @@
             this.Name = "FormHabitacionxxx";
             this.Text = "FormHabitacionxxx";
             this.Load += new System.EventHandler(this.FormHabitacionxxx_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,11 +201,11 @@
         private System.Windows.Forms.Label lblTipoCama;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.TextBox txtTipoHab;
         private System.Windows.Forms.TextBox txtNombreHuesped;
         private System.Windows.Forms.TextBox txtTipoCama;
         private System.Windows.Forms.Label lblSubTotalProductos;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.ListBox listBoxPruductos;
     }
 }

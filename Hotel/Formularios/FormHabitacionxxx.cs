@@ -13,8 +13,9 @@ namespace Hotel
     public partial class FormHabitacionxxx : Form
     {
         private Habitacion HabitacionEspecifica;
-        
-        
+        public static double subtotalMinibar = 0;
+
+        public static double SubtotalMinibar { get => subtotalMinibar; set => subtotalMinibar = value; }
 
         public FormHabitacionxxx(Habitacion habSpec)
         {
@@ -38,35 +39,35 @@ namespace Hotel
 
         private void FormHabitacionxxx_Load(object sender, EventArgs e)
         {
-            
-            if (HabitacionEspecifica.TipoHab == Habitacion.tipoHabitacion.Suite)
-            {
-                Suite.LeerProductos();
-            }
-                
-            else if(HabitacionEspecifica.TipoHab == Habitacion.tipoHabitacion.Ejecutiva)
-            {
-                Ejecutiva.LeerProductos();                
-            }
-                
-
-            dataGridViewProductos.DataSource = Habitacion.ListaDeProductos;
-            foreach (var item in Habitacion.ListaDeProductos)
-            {
-                MessageBox.Show($"{item.ToString()}");
-            }
+                                                    
+            listBoxPruductos.DataSource = HabitacionEspecifica.ListaMinibar;
             
         }
 
-        private void txtNombreHuesped_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnServicios_Click(object sender, EventArgs e)
         {
             Servicios_xHabitación frmServicioXHabitacion = new Servicios_xHabitación();
             frmServicioXHabitacion.Show();
+        }
+
+        private void listBoxPruductos_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (var item in HabitacionEspecifica.ListaMinibar)
+            {
+                if (listBoxPruductos.SelectedItem == item)
+                {
+                    item.CantidadFinal -= 1;
+                    MessageBox.Show($"Consumiste: {item.Producto.NombreProducto}");
+
+                    listBoxPruductos.DataSource = null;
+                    listBoxPruductos.DataSource = HabitacionEspecifica.ListaMinibar;
+                    subtotalMinibar += item.Producto.PrecioProducto * (item.CantidadInicial - item.CantidadFinal);
+                    txtSubTotal.Text = "$ " + subtotalMinibar.ToString();
+                }
+            }
+
         }
     }
 }

@@ -53,15 +53,8 @@ namespace Hotel
 
                 totalNoches = rsv.Habitacion.Precio * (rsv.Dias - 1);
 
-                /*foreach (var item in rsv.ListaHabitacionesRsv)
-                {
-                    if (rsv.Habitacion.NumHabitacion == item.HabReservada.NumHabitacion)
-                    {
-                        totalServiciosXHab = item.TotalXhabitacion;
-                        
-                        break;
-                    }
-                }*/
+                totalProductosXHab = FormHabitacionxxx.SubtotalMinibar;
+                
 
                 subtotal = seguro + totalNoches + totalProductosXHab + totalServiciosXHab;
 
@@ -85,6 +78,7 @@ namespace Hotel
             {
                 StreamWriter archivo = new StreamWriter("Factura.txt");
 
+                totalProductosXHab = FormHabitacionxxx.SubtotalMinibar;
 
                 seguro = 0.025 * rsv.Habitacion.Precio;
 

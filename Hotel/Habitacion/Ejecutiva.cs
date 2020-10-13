@@ -20,14 +20,47 @@ namespace Hotel
         
         public override void ReabastecerMinibar() 
         {
+
+            //Producto productoTemp = null;
+            //string linea;
+
+            int cantidad;
+            //PctoMinibar productoMiniBarTemp = null;
+
+            string[] vectorTempProducto = new string[3];
+
+            //StreamReader SR = new StreamReader("ProductosEjecutiva.txt");
+
+            string[] linea = System.IO.File.ReadAllLines("ProductosEjecutiva.txt");
+
+            for (int i = 0; i < linea.Length; i++)
+            {
+                vectorTempProducto = linea[i].Split('#');
+
+                cantidad = int.Parse(vectorTempProducto[0]);
+                Producto productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]));
+                AdicionarPctoMinibar(productoTemp, cantidad);
+            }
+            //SR.Close();
+
             /*try
             {
-                ListaMinibar = new List<PctoMinibar>(); 
+                
 
-                AdicionarPctoMinibar(new Producto("Botella de licor", 25000), 4);
-                AdicionarPctoMinibar(new Producto("Botella de Agua", 3500), 2);
-                AdicionarPctoMinibar(new Producto("Kit de aseo personal", 9000), 1);
-                AdicionarPctoMinibar(new Producto("Gaseosa", 3000), 2);
+                
+
+                while (linea != null)
+                {
+                    //vectorTempProducto = linea.Split('#');
+                    cantidad = int.Parse(vectorTempProducto[0]);
+                    Producto productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]));
+                    
+                    //productoMiniBarTemp = new PctoMinibar(cantidad, productoTemp);
+                    //ListaMinibar.Add(productoMiniBarTemp);
+                    AdicionarPctoMinibar(productoTemp, cantidad);
+                }
+
+                SR.Close();
             }
             catch
             {
@@ -36,13 +69,13 @@ namespace Hotel
             
         }
 
-        public static void LeerProductos()
+        /*public static void LeerProductos()
         {
             Producto productoTemp = null;
             string linea;
 
             int cantidad;
-            //PctoMinibar productoMiniBarTemp = null;
+            PctoMinibar productoMiniBarTemp = null;
 
             string[] vectorTempProducto;
 
@@ -54,14 +87,14 @@ namespace Hotel
             {
                 vectorTempProducto = linea.Split('#');
                 cantidad = int.Parse(vectorTempProducto[0]);
-                productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]), cantidad);
+                productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]));
                 ListaDeProductos.Add(productoTemp);
-                //productoMiniBarTemp = new PctoMinibar(cantidad, productoTemp);
+                productoMiniBarTemp = new PctoMinibar(cantidad, productoTemp);
                 //ListaMinibar.Add(productoMiniBarTemp);
             }
 
             SR.Close();
-        }
+        }*/
 
     }
 }

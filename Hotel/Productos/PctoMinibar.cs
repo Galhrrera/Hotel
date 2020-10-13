@@ -20,5 +20,12 @@ namespace Hotel
         public int CantidadInicial { get => cantidadInicial; set => cantidadInicial = value; } 
         public Producto Producto { get => producto; set => producto = value; } //internal??
         public int CantidadFinal { get => cantidadFinal; set => cantidadFinal = value; }
+
+
+        public override string ToString()
+        {
+            //nombre pdcto, precio, cantIn, cantOUT
+            return producto.NombreProducto + " $" + producto.PrecioProducto + " Cantidad inicial: " + cantidadInicial + " Cantidad final: " + cantidadFinal;
+        }
     }
 }

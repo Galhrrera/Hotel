@@ -69,7 +69,6 @@
     <Compile Include="Formularios\Habitaciones.Designer.cs">
       <DependentUpon>Habitaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="LeerProducto.cs" />
     <Compile Include="Persona\Cliente.cs" />
     <Compile Include="Habitacion\Ejecutiva.cs" />
     <Compile Include="Formularios\Form1.cs">

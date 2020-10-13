@@ -34,10 +34,7 @@ namespace Hotel
         }
         
 
-        private void lblHabitaciones_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Habitaciones_Load(object sender, EventArgs e)
         {

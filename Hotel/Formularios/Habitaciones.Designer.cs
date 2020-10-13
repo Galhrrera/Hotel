@@ -74,7 +74,7 @@
             this.lblHabitaciones.Size = new System.Drawing.Size(202, 37);
             this.lblHabitaciones.TabIndex = 2;
             this.lblHabitaciones.Text = "Habitaciones";
-            this.lblHabitaciones.Click += new System.EventHandler(this.lblHabitaciones_Click);
+            
             // 
             // Habitaciones
             // 
