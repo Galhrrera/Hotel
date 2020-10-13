@@ -12,7 +12,7 @@ namespace Hotel
         private int dias;
         private Habitacion habitacion;        
         private Random rnd = new Random(DateTime.Now.Millisecond);                                   //Generador de número de reserva
-        private List<HabitacionReservada> listaHabitacionesRsv = new List<HabitacionReservada>();       //Se necesita la clase HabitacionReservada
+        private List<HabitacionReservada> listaHabitacionesRsv = new List<HabitacionReservada>();    //Se necesita la clase HabitacionReservada
                                                                                                      //Clase de asociación entre reserva y habitación
         
         public Persona Persona { get => persona; set => persona = value; }
@@ -40,7 +40,7 @@ namespace Hotel
 
         public void HacerCheckOut()
         {
-            string SalidaArchivo = "Factura.txt";                            //Ingresar la ruta en la que se debe crear el archivo.
+            string SalidaArchivo = "Factura.txt";                         //Ingresar la ruta en la que se debe crear el archivo.
             StreamWriter streamwriter = new StreamWriter(SalidaArchivo);
             //factura
             streamwriter.Close();
