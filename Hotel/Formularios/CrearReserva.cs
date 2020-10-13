@@ -48,10 +48,9 @@ namespace Hotel
             dias = tSpan.Days;
 
 
-            if (dias <= 0 || dias == null)
+            if (dias <= 0 || txtDias.Text == null)
             {
-                MessageBox.Show("Por favor revise las fechas de ingreso y de salida");
-                //throw new Exception("Error con los las fechas ingresadas");
+                MessageBox.Show("Por favor revise las fechas de ingreso y de salida");                
             }
             else
                 txtDias.Text = dias.ToString();
@@ -61,7 +60,7 @@ namespace Hotel
 
         private void btnGuardarPersona_Click(object sender, EventArgs e)  //botón para guardar un nuevo cliente
         {
-            Persona PersonaTemp = null;
+            Persona PersonaTemp;
 
             if (txtNombreTitular.Text == string.Empty)
             {
@@ -76,9 +75,11 @@ namespace Hotel
 
             personaTemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
 
+            
+
             if (Reservas.ListaPersona.Count != 0)
             {
-                foreach (Persona item in Reservas.ListaPersona)
+                foreach (var item in Reservas.ListaPersona)
                 {
                     if (item.Num_id == personaTemp.Num_id)
                     {
@@ -88,20 +89,24 @@ namespace Hotel
                     {
                         if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped
                         {
-
-                            listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                            Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                            personaTemp = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                            //listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));                            
+                            //Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
 
                         }
                         else if (comboBoxTipoPersona.SelectedIndex == 1)  //2=> Cliente
                         {
-
-                            listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                            Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                            personaTemp = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                            //listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                            //Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
 
                         }
                     }
                 }
+
+                listClientes.Items.Add(personaTemp);
+                Reservas.ListaPersona.Add(personaTemp);
+                
             }
             else
             {
@@ -155,9 +160,7 @@ namespace Hotel
         
 
         private void btnConfirmar_Click(object sender, EventArgs e) 
-        {
-
-            
+        {            
             //la idea es recorrer la lista de las habitaciones ya existentes para ocupar 
             // una habitación (cambiar el estado) y crear la reserva de ese cliente con dicha habitación
             // esa habitación corresponde al tipo seleccionado. 
@@ -168,14 +171,15 @@ namespace Hotel
             {
                 if (comboBoxTipoPersona.SelectedIndex == 0)
                 {
+                   
                     titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                     titular = listClientes.SelectedItem as Huesped;
                 }
                 
                 if (comboBoxTipoPersona.SelectedIndex == 1)
-                {
-                    titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                {                    
                     titular = listClientes.SelectedItem as Cliente;
+                    titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
 
                 if (comboBoxTipoHabitacion.Text == "Sencilla")
@@ -187,8 +191,7 @@ namespace Hotel
 
                             if (dias == 0 || listClientes.SelectedItem == null)
                             {
-                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");
-                                //MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");                                
                             }
                             else
                             {
@@ -211,7 +214,7 @@ namespace Hotel
                                 }
                                                                 
                                 Reserva rsvaSencilla = new Reserva(titular, item); //item es la habitación
-                                rsvaSencilla.Dias = int.Parse(txtDias.Text); //AQUI
+                                rsvaSencilla.Dias = int.Parse(txtDias.Text); 
                                 MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaSencilla.Habitacion.NumHabitacion}");
                                 Reservas.ListaReservas.Add(rsvaSencilla);
                                 txtNumReserva.Text = rsvaSencilla.NumReserva.ToString();
@@ -231,8 +234,7 @@ namespace Hotel
                         {
                             if (dias == 0 || listClientes.SelectedItem == null)
                             {
-                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");
-                                //MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");                                
                             }
                             else
                             {
@@ -274,8 +276,7 @@ namespace Hotel
                         {
                             if (dias == 0 || listClientes.SelectedItem == null)
                             {
-                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");
-                                //MessageBox.Show("Debe calcular los días de la estadía o ingresar un titular para la reserva");
+                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");                                
                             }
                             else
                             {
@@ -297,7 +298,7 @@ namespace Hotel
                                 
                                 Reserva rsvaEjecutiva = new Reserva(titular, item); //item es la habitación
                                 rsvaEjecutiva.Dias = int.Parse(txtDias.Text);
-                                MessageBox.Show($"La habitación de {rsvaEjecutiva} fue reservada exitosamente, su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
+                                MessageBox.Show($"La habitación de {titular.Nombre} fue reservada exitosamente, su habitación es: {rsvaEjecutiva.Habitacion.NumHabitacion}");
                                 Reservas.ListaReservas.Add(rsvaEjecutiva);
                                 txtNumReserva.Text = rsvaEjecutiva.NumReserva.ToString();
                             }
@@ -310,8 +311,7 @@ namespace Hotel
 
                 if (comboBoxTipoHabitacion.Text == string.Empty)
                 {
-                    throw new Exception("Por favor ingrese el tipo de habitación");
-                    //MessageBox.Show("Por favor ingrese el tipo de habitación");
+                    throw new Exception("Por favor ingrese el tipo de habitación");                    
                 }
             }
             catch(Exception error)

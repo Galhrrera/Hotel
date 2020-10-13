@@ -330,9 +330,9 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // personaBindingSource
+            
             // 
-            this.personaBindingSource.DataSource = typeof(Hotel.Persona);
+            
             // 
             // CrearReserva
             // 
