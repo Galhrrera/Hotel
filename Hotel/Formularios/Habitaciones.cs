@@ -53,7 +53,7 @@ namespace Hotel
                 
                 if (listHabitacionesHotel.SelectedItem == item)
                 {
-                    FormHabitacionxxx frmHabSpec = new FormHabitacionxxx(item);
+                    FormHabitacionxxx frmHabSpec = new FormHabitacionxxx(item);                   
                     frmHabSpec.Show();
                     break;
                 }

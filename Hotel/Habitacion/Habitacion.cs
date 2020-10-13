@@ -19,7 +19,8 @@ namespace Hotel
         private estado estadoHab;
         private tipoHabitacion tipoHab;
         private tipoCama tipoDeCama;
-        private List<PctoMinibar> listaMinibar = new List<PctoMinibar>(); 
+        private List<PctoMinibar> listaMinibar = new List<PctoMinibar>();
+        private static List<Producto> listaDeProductos = new List<Producto>();
 
         public int NumHabitacion { get => numHabitacion; set => numHabitacion = value; }
         public int Piso { get => piso; set => piso = value; }
@@ -29,6 +30,7 @@ namespace Hotel
         public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
         public tipoHabitacion TipoHab { get => tipoHab; set => tipoHab = value; }
         public tipoCama TipoDeCama { get => tipoDeCama; set => tipoDeCama = value; }
+        public static List<Producto> ListaDeProductos { get => listaDeProductos; set => listaDeProductos = value; }
 
         public Habitacion() { }
 

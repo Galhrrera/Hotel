@@ -13,6 +13,9 @@ namespace Hotel
     public partial class FormHabitacionxxx : Form
     {
         private Habitacion HabitacionEspecifica;
+        
+        
+
         public FormHabitacionxxx(Habitacion habSpec)
         {
             InitializeComponent();
@@ -35,7 +38,24 @@ namespace Hotel
 
         private void FormHabitacionxxx_Load(object sender, EventArgs e)
         {
+            
+            if (HabitacionEspecifica.TipoHab == Habitacion.tipoHabitacion.Suite)
+            {
+                Suite.LeerProductos();
+            }
+                
+            else if(HabitacionEspecifica.TipoHab == Habitacion.tipoHabitacion.Ejecutiva)
+            {
+                Ejecutiva.LeerProductos();                
+            }
+                
 
+            dataGridViewProductos.DataSource = Habitacion.ListaDeProductos;
+            foreach (var item in Habitacion.ListaDeProductos)
+            {
+                MessageBox.Show($"{item.ToString()}");
+            }
+            
         }
 
         private void txtNombreHuesped_TextChanged(object sender, EventArgs e)

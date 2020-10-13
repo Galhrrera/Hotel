@@ -35,13 +35,13 @@
             this.lblTipoCama = new System.Windows.Forms.Label();
             this.btnServicios = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.txtTipoHab = new System.Windows.Forms.TextBox();
             this.txtNombreHuesped = new System.Windows.Forms.TextBox();
             this.txtTipoCama = new System.Windows.Forms.TextBox();
             this.lblSubTotalProductos = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHabitacion
@@ -116,13 +116,13 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // dataGridView1
+            // dataGridViewProductos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(524, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProductos.Location = new System.Drawing.Point(524, 101);
+            this.dataGridViewProductos.Name = "dataGridViewProductos";
+            this.dataGridViewProductos.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewProductos.TabIndex = 7;
             // 
             // txtTipoHab
             // 
@@ -177,7 +177,7 @@
             this.Controls.Add(this.txtTipoCama);
             this.Controls.Add(this.txtNombreHuesped);
             this.Controls.Add(this.txtTipoHab);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnServicios);
             this.Controls.Add(this.lblTipoCama);
@@ -188,7 +188,7 @@
             this.Name = "FormHabitacionxxx";
             this.Text = "FormHabitacionxxx";
             this.Load += new System.EventHandler(this.FormHabitacionxxx_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +203,7 @@
         private System.Windows.Forms.Label lblTipoCama;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.TextBox txtTipoHab;
         private System.Windows.Forms.TextBox txtNombreHuesped;
         private System.Windows.Forms.TextBox txtTipoCama;

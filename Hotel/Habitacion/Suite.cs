@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace Hotel
 {
@@ -9,12 +10,13 @@ namespace Hotel
         public Suite() 
         {
             this.TipoHab = tipoHabitacion.Suite;
-            ReabastecerMinibar(); 
+            ReabastecerMinibar();
+            
         }
 
         public override void ReabastecerMinibar()
         {
-            try
+            /*try
             {
                 ListaMinibar = new List<PctoMinibar>();
 
@@ -27,8 +29,35 @@ namespace Hotel
             catch
             {
                 throw new Exception();
-            }
+            }*/
            
+        }
+
+        public static void LeerProductos()
+        {
+            Producto productoTemp = null;
+            string linea;
+            
+            int cantidad;
+            //PctoMinibar productoMiniBarTemp = null;
+
+            string[] vectorTempProducto;
+
+            StreamReader SR = new StreamReader("ProductosSuite.txt");
+
+            linea = SR.ReadLine();
+
+            while(linea != null)
+            {
+                vectorTempProducto = linea.Split('#');
+                cantidad = int.Parse(vectorTempProducto[0]);
+                productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]), cantidad);
+                ListaDeProductos.Add(productoTemp);
+                //productoMiniBarTemp = new PctoMinibar(cantidad, productoTemp);
+                //ListaMinibar.Add(productoMiniBarTemp);
+            }
+
+            SR.Close();
         }
     }
 }
