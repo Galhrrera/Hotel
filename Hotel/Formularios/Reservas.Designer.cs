@@ -36,6 +36,7 @@
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnCrearReserva = new System.Windows.Forms.Button();
+            this.button_regresar = new System.Windows.Forms.Button();
             this.groupBoxReservaHeader.SuspendLayout();
             this.groupBoxHabitacionesReservadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
@@ -87,6 +88,7 @@
             // 
             // groupBoxbtnsReservas
             // 
+            this.groupBoxbtnsReservas.Controls.Add(this.button_regresar);
             this.groupBoxbtnsReservas.Controls.Add(this.btnCheckOut);
             this.groupBoxbtnsReservas.Controls.Add(this.btnCheckIn);
             this.groupBoxbtnsReservas.Controls.Add(this.btnCrearReserva);
@@ -99,9 +101,9 @@
             // btnCheckOut
             // 
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(611, 31);
+            this.btnCheckOut.Location = new System.Drawing.Point(328, 77);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckOut.Size = new System.Drawing.Size(124, 44);
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
@@ -110,9 +112,9 @@
             // btnCheckIn
             // 
             this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.Location = new System.Drawing.Point(435, 30);
+            this.btnCheckIn.Location = new System.Drawing.Point(328, 19);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(142, 65);
+            this.btnCheckIn.Size = new System.Drawing.Size(124, 45);
             this.btnCheckIn.TabIndex = 1;
             this.btnCheckIn.Text = "Check In";
             this.btnCheckIn.UseVisualStyleBackColor = true;
@@ -129,6 +131,18 @@
             this.btnCrearReserva.Text = "Crear Reserva";
             this.btnCrearReserva.UseVisualStyleBackColor = false;
             this.btnCrearReserva.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button_regresar
+            // 
+            this.button_regresar.BackColor = System.Drawing.Color.Magenta;
+            this.button_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_regresar.Location = new System.Drawing.Point(526, 30);
+            this.button_regresar.Name = "button_regresar";
+            this.button_regresar.Size = new System.Drawing.Size(244, 65);
+            this.button_regresar.TabIndex = 3;
+            this.button_regresar.Text = "Regresar";
+            this.button_regresar.UseVisualStyleBackColor = false;
+            this.button_regresar.Click += new System.EventHandler(this.button_regresar_Click);
             // 
             // Reservas
             // 
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Button btnCrearReserva;
         private System.Windows.Forms.DataGridView dataGridViewReservas;
+        private System.Windows.Forms.Button button_regresar;
     }
 }

@@ -48,25 +48,62 @@ namespace Hotel
 
         private void btnServicios_Click(object sender, EventArgs e)
         {
-            Servicios_xHabitación frmServicioXHabitacion = new Servicios_xHabitación();
-            frmServicioXHabitacion.Show();
+            if(HabitacionEspecifica.EstadoHab == Habitacion.estado.Ocupada)
+            {
+                Servicios_xHabitación frmServicioXHabitacion = new Servicios_xHabitación();
+                frmServicioXHabitacion.Show();
+            }
+            else
+            {
+                MessageBox.Show("No se pueden solicitar servicios debido a que la habitación está desocupada.");
+                Close(); 
+            }
+            
         }
 
         private void listBoxPruductos_DoubleClick(object sender, EventArgs e)
         {
+            int cont = 0; 
+
             foreach (var item in HabitacionEspecifica.ListaMinibar)
             {
-                if (listBoxPruductos.SelectedItem == item)
+                if(HabitacionEspecifica.EstadoHab == Habitacion.estado.Ocupada)
                 {
-                    item.CantidadFinal -= 1;
-                    MessageBox.Show($"Consumiste: {item.Producto.NombreProducto}");
+                    if (listBoxPruductos.SelectedItem == item)
+                    {
+                        if(item.CantidadFinal > 0)
+                        {
+                            if (listBoxPruductos.SelectedItem == item)
+                            {
+                                item.CantidadFinal -= 1;
+                                MessageBox.Show($"Consumiste: {item.Producto.NombreProducto}");
 
-                    listBoxPruductos.DataSource = null;
-                    listBoxPruductos.DataSource = HabitacionEspecifica.ListaMinibar;
-                    subtotalMinibar += item.Producto.PrecioProducto * (item.CantidadInicial - item.CantidadFinal);
-                    txtSubTotal.Text = "$ " + subtotalMinibar.ToString();
+                                listBoxPruductos.DataSource = null;
+                                listBoxPruductos.DataSource = HabitacionEspecifica.ListaMinibar;
+                                subtotalMinibar += item.Producto.PrecioProducto * (item.CantidadInicial - item.CantidadFinal);
+                                txtSubTotal.Text = "$ " + subtotalMinibar.ToString();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay más productos");
+                        }
+                        
+                    }
                 }
+                else if(cont == 0)
+                {
+                    cont++;
+                    MessageBox.Show("No se pueden consumir productos porque la habitación está desocupada");
+                    Close(); 
+                }
+                
             }
+
+        }
+
+        private void listBoxPruductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

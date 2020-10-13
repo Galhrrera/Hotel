@@ -164,6 +164,7 @@
             this.listBoxPruductos.Name = "listBoxPruductos";
             this.listBoxPruductos.Size = new System.Drawing.Size(432, 147);
             this.listBoxPruductos.TabIndex = 13;
+            this.listBoxPruductos.SelectedIndexChanged += new System.EventHandler(this.listBoxPruductos_SelectedIndexChanged);
             this.listBoxPruductos.DoubleClick += new System.EventHandler(this.listBoxPruductos_DoubleClick);
             // 
             // FormHabitacionxxx

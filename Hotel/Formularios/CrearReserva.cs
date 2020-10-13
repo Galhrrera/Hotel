@@ -61,6 +61,8 @@ namespace Hotel
 
         private void btnGuardarPersona_Click(object sender, EventArgs e)  //botón para guardar un nuevo cliente
         {
+            Persona PersonaTemp = null;
+
             if (txtNombreTitular.Text == string.Empty)
             {
                 MessageBox.Show("Debe ingresar el nombre del titular");
@@ -72,21 +74,33 @@ namespace Hotel
                 return;
             }
 
-            if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped
+            personaTemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+
+            foreach (Persona item in Reservas.ListaPersona)
             {
+                if (item.Num_id == personaTemp.Num_id)
+                {
+                    MessageBox.Show("Ya existe un cliente/huesped con ese número de identificación");
+                }
+                else
+                {
+                    if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped
+                    {
 
-                listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                        listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                        Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
 
+                    }
+                    else if (comboBoxTipoPersona.SelectedIndex == 1)  //2=> Cliente
+                    {
+
+                        listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                        Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+
+                    }
+                }
             }
-            else if (comboBoxTipoPersona.SelectedIndex ==1)  //2=> Cliente
-            {
-                
-                listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-
-            }            
-                                  
+                       
         }
 
         private void LlenarListaPersonas(List<Persona> lista)
@@ -133,11 +147,13 @@ namespace Hotel
                 if (comboBoxTipoPersona.SelectedIndex == 0)
                 {
                     titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                    titular = listClientes.SelectedItem as Huesped;
                 }
-
+                
                 if (comboBoxTipoPersona.SelectedIndex == 1)
                 {
                     titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                    titular = listClientes.SelectedItem as Cliente;
                 }
 
                 if (comboBoxTipoHabitacion.Text == "Sencilla")
