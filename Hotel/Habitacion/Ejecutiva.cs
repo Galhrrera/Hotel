@@ -16,20 +16,28 @@ namespace Hotel
         }
         public override void ReabastecerMinibar() 
         {
-            int cantidad;
-
-            string[] vectorTempProducto = new string[3];
-
-            string[] linea = System.IO.File.ReadAllLines("ProductosEjecutiva.txt");
-
-            for (int i = 0; i < linea.Length; i++)
+            try
             {
-                vectorTempProducto = linea[i].Split('#');
+                int cantidad;
 
-                cantidad = int.Parse(vectorTempProducto[0]);
-                Producto productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]));
-                AdicionarPctoMinibar(productoTemp, cantidad);
+                string[] vectorTempProducto = new string[3];
+
+                string[] linea = System.IO.File.ReadAllLines("ProductosEjecutiva.txt");
+
+                for (int i = 0; i < linea.Length; i++)
+                {
+                    vectorTempProducto = linea[i].Split('#');
+
+                    cantidad = int.Parse(vectorTempProducto[0]);
+                    Producto productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]));
+                    AdicionarPctoMinibar(productoTemp, cantidad);
+                }
             }
+            catch
+            {
+                throw new Exception(); 
+            }
+            
             
         }
 

@@ -44,59 +44,75 @@ namespace Hotel
         {
             if(rsv.Persona.TipoDePersona == Persona.TipoPersona.Cliente)
             {
-                StreamWriter archivo = new StreamWriter("Factura.txt");
+                try
+                {
+                    StreamWriter archivo = new StreamWriter("Factura.txt");
+
+
+                    seguro = 0.025 * rsv.Habitacion.Precio;
+
+                    totalNoches = rsv.Habitacion.Precio * (rsv.Dias - 1);
+
+                    totalProductosXHab = FormHabitacionxxx.SubtotalMinibar;
+
+
+                    subtotal = seguro + totalNoches + totalProductosXHab + totalServiciosXHab;
+
+                    total = subtotal * IVA;
+                    total -= total * DescuentoCliente;
+
+                    archivo.WriteLine("A continuación se generará su factura para la habitación {0} de --> {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
+                    archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
+                    archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
+                    archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
+                    archivo.WriteLine("El seguro es de: ${0}", seguro.ToString());
+                    archivo.WriteLine("El Subtotal es: ${0}", subtotal.ToString());
+                    archivo.WriteLine();
+                    archivo.WriteLine("Al tratarse de un Cliente del hotel, se le realizará un descuento del 10% sobre su valor total");
+                    archivo.WriteLine("EL TOTAL A PAGAR ES: ${0}", total.ToString());
+
+                    archivo.Close();
+                }
+                catch
+                {
+                    throw new Exception();
+                }
                 
-
-                seguro = 0.025 * rsv.Habitacion.Precio;
-
-                totalNoches = rsv.Habitacion.Precio * (rsv.Dias - 1);
-
-                totalProductosXHab = FormHabitacionxxx.SubtotalMinibar;
-                
-
-                subtotal = seguro + totalNoches + totalProductosXHab + totalServiciosXHab;
-
-                total = subtotal * IVA;
-                total -= total * DescuentoCliente;
-
-                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de --> {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
-                archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
-                archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
-                archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
-                archivo.WriteLine("El seguro es de: ${0}", seguro.ToString());
-                archivo.WriteLine("El Subtotal es: ${0}", subtotal.ToString());                
-                archivo.WriteLine();
-                archivo.WriteLine("Al tratarse de un Cliente del hotel, se le realizará un descuento del 10% sobre su valor total");
-                archivo.WriteLine("EL TOTAL A PAGAR ES: ${0}", total.ToString());
-
-                archivo.Close();
             }
 
             if (rsv.Persona.TipoDePersona == Persona.TipoPersona.Huesped)
             {
-                StreamWriter archivo = new StreamWriter("Factura.txt");
+                try
+                {
+                    StreamWriter archivo = new StreamWriter("Factura.txt");
 
-                totalProductosXHab = FormHabitacionxxx.SubtotalMinibar;
+                    totalProductosXHab = FormHabitacionxxx.SubtotalMinibar;
 
-                seguro = 0.025 * rsv.Habitacion.Precio;
+                    seguro = 0.025 * rsv.Habitacion.Precio;
 
-                totalNoches = rsv.Habitacion.Precio * (rsv.Dias - 1);
+                    totalNoches = rsv.Habitacion.Precio * (rsv.Dias - 1);
 
-                subtotal = seguro + totalNoches + totalProductosXHab + totalServiciosXHab;
+                    subtotal = seguro + totalNoches + totalProductosXHab + totalServiciosXHab;
 
-                total = subtotal * IVA;
-                
+                    total = subtotal * IVA;
 
-                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de --> {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
-                archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
-                archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
-                archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
-                archivo.WriteLine("El seguro es de: ${0}", seguro.ToString());
-                archivo.WriteLine("El Subtotal es: ${0}", subtotal.ToString());
-                archivo.WriteLine();                
-                archivo.WriteLine("EL TOTAL A PAGAR ES: ${0}", total.ToString());
 
-                archivo.Close();
+                    archivo.WriteLine("A continuación se generará su factura para la habitación {0} de --> {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
+                    archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
+                    archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
+                    archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
+                    archivo.WriteLine("El seguro es de: ${0}", seguro.ToString());
+                    archivo.WriteLine("El Subtotal es: ${0}", subtotal.ToString());
+                    archivo.WriteLine();
+                    archivo.WriteLine("EL TOTAL A PAGAR ES: ${0}", total.ToString());
+
+                    archivo.Close();
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+               
             }
 
             
