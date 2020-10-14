@@ -60,14 +60,14 @@ namespace Hotel
                 total = subtotal * IVA;
                 total -= total * DescuentoCliente;
 
-                archivo.WriteLine("A continuación se generará su factura para la habitación: {0}", rsv.Habitacion.NumHabitacion.ToString()); ;
+                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de la persona {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
                 archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
                 archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
                 archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
                 archivo.WriteLine("El seguro es de: ${0}", seguro.ToString());
                 archivo.WriteLine("El Subtotal es: ${0}", subtotal.ToString());                
                 archivo.WriteLine();
-                archivo.WriteLine("Al tratarse de un Cliente del hotel, se le realizará un descuneto del 10% sobre su valor total");
+                archivo.WriteLine("Al tratarse de un Cliente del hotel, se le realizará un descuento del 10% sobre su valor total");
                 archivo.WriteLine("EL TOTAL A PAGAR ES: ${0}", total.ToString());
 
                 archivo.Close();
@@ -88,7 +88,7 @@ namespace Hotel
                 total = subtotal * IVA;
                 
 
-                archivo.WriteLine("A continuación se generará su factura para la habitación: {0}", rsv.Habitacion.NumHabitacion.ToString()); ;
+                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de la persona {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
                 archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
                 archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
                 archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
