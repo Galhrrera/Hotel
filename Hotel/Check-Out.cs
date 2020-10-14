@@ -15,18 +15,18 @@ namespace Hotel
         private double totalNoches = 0;
         private double totalProductosXHab = 0;
         private static double totalServiciosXHab = 0;
-        private double IVA = 1.19;
+        private double iVA = 1.19;
         private double total = 0;
-        private double DescuentoCliente = 0.1;
+        private double descuentoCliente = 0.1;
 
         public double Subtotal { get => subtotal; }
         public double Seguro { get => seguro; }
         public double TotalNoches { get => totalNoches; }
         public double TotalProductosXHab { get => totalProductosXHab; }
         public static double TotalServiciosXHab { get => totalServiciosXHab; set => totalServiciosXHab = value;  }
-        public double IVA1 { get => IVA; }
+        public double IVA { get => iVA; }
         public double Total { get => total; }
-        public double DescuentoCliente1 { get => DescuentoCliente; }
+        public double DescuentoCliente { get => descuentoCliente; }
 
         public static Check_Out GetCheck_Out()
         {
@@ -39,7 +39,6 @@ namespace Hotel
         public static void ObtenerTotalServicio(double subtotal)
         {
             totalServiciosXHab += subtotal;
-
 
         }
         public void GenerarFactura(Reserva rsv)

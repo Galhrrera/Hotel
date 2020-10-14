@@ -83,6 +83,10 @@ namespace Hotel
                         check.GenerarFactura(item);
                         //Check_Out.CheckOut.GenerarFactura(item);
                         item.Habitacion.EstadoHab = Habitacion.estado.Desocupada;
+                        item.Habitacion.Titular = null;
+                        //REABASTECER MINIBAR 
+                        item.Habitacion.ListaMinibar.Clear();
+                        item.Habitacion.ReabastecerMinibar();
                         MessageBox.Show($"El estado de la habitación: {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado a: DESOCUPADA");
                     }
                     else
