@@ -17,6 +17,8 @@ namespace Hotel
         public TipoPersona TipoDePersona { get => tipoDePersona; set => tipoDePersona = value; }
 
         //constructor - exige un nombre y un número de identificación para crear una persona
+        
+
         public Persona(string nombre, long num_id)
         {
             Nombre = nombre;
