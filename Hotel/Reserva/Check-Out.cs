@@ -59,7 +59,7 @@ namespace Hotel
                 total = subtotal * IVA;
                 total -= total * DescuentoCliente;
 
-                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de la persona {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
+                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de --> {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
                 archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
                 archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
                 archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
@@ -87,7 +87,7 @@ namespace Hotel
                 total = subtotal * IVA;
                 
 
-                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de la persona {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
+                archivo.WriteLine("A continuación se generará su factura para la habitación {0} de --> {1}", rsv.Habitacion.NumHabitacion.ToString(), rsv.Habitacion.Titular.ToString()); ;
                 archivo.WriteLine("Total por noches en {0} es: ${1} ", (rsv.Dias - 1), totalNoches.ToString());
                 archivo.WriteLine("El total de los productos consumidos es: ${0}", totalProductosXHab.ToString());
                 archivo.WriteLine("El total de los servicios utilizados es: ${0}", totalServiciosXHab.ToString());
