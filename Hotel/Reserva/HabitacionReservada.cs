@@ -33,8 +33,7 @@ namespace Hotel
         {
             try
             {
-                
-                //totalXhabitacion = servicioPdo.Servicio.Precio * servicioPdo.NumElementos; 
+                                
                 return servicioPdo.Servicio.Precio * servicioPdo.NumElementos;
             }
             catch
@@ -47,7 +46,6 @@ namespace Hotel
         public static void ObtenerTotalServicio(double subtotal)
         {
             totalXhabitacion = subtotal;
-
             
         }
 

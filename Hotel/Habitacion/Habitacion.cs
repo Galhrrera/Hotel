@@ -20,7 +20,7 @@ namespace Hotel
         private tipoHabitacion tipoHab;
         private tipoCama tipoDeCama;
         private List<PctoMinibar> listaMinibar = new List<PctoMinibar>();
-        private static List<Producto> listaDeProductos = new List<Producto>();
+        //private static List<Producto> listaDeProductos = new List<Producto>();
 
         public int NumHabitacion { get => numHabitacion; set => numHabitacion = value; }
         public int Piso { get => piso; set => piso = value; }
@@ -30,7 +30,7 @@ namespace Hotel
         public estado EstadoHab { get => estadoHab; set => estadoHab = value; }
         public tipoHabitacion TipoHab { get => tipoHab; set => tipoHab = value; }
         public tipoCama TipoDeCama { get => tipoDeCama; set => tipoDeCama = value; }
-        public static List<Producto> ListaDeProductos { get => listaDeProductos; set => listaDeProductos = value; }
+        //public static List<Producto> ListaDeProductos { get => listaDeProductos; set => listaDeProductos = value; }
 
         public Habitacion() { }
 
@@ -68,20 +68,7 @@ namespace Hotel
             }
             
         }
-
-        public double CalcularTotalMinibar(PctoMinibar productoMinibar)
-        {
-            try
-            {
-                double totalMB = (productoMinibar.CantidadInicial - productoMinibar.CantidadFinal) * productoMinibar.Producto.PrecioProducto;
-                return totalMB; 
-            }
-            catch
-            {
-                throw new Exception();
-            }
-            
-        }
+        
 
         public override string ToString()
         {

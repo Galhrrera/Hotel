@@ -23,8 +23,7 @@ namespace Hotel
 
 
         public override string ToString()
-        {
-            //nombre pdcto, precio, cantIn, cantOUT
+        {            
             return producto.NombreProducto + " $" + producto.PrecioProducto + " Cantidad inicial: " + cantidadInicial + " Cantidad final: " + cantidadFinal;
         }
     }
