@@ -7,8 +7,7 @@ namespace Hotel
     public class Producto
     {
         private string nombreProducto;
-        private double precioProducto;
-        //private int cantidadProducto; //cantidad de inventario del hotel
+        private double precioProducto;        
 
         public Producto(string nombreProducto, double precioProducto)
         {
@@ -18,8 +17,7 @@ namespace Hotel
         }
 
         public string NombreProducto { get => nombreProducto; set => nombreProducto = value; }
-        public double PrecioProducto { get => precioProducto; set => precioProducto = value; }
-        //public int CantidadProducto { get => cantidadProducto; set => cantidadProducto = value; }
+        public double PrecioProducto { get => precioProducto; set => precioProducto = value; }        
 
         public override string ToString()
         {
