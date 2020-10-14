@@ -32,13 +32,9 @@ namespace Hotel
         {
             Close();
         }
-        
-
-        
-
+ 
         private void Habitaciones_Load(object sender, EventArgs e)
         {
-            
             listHabitacionesHotel.DataSource = ListaHabitaciones;
         }
                 
@@ -54,9 +50,7 @@ namespace Hotel
                     frmHabSpec.Show();
                     break;
                 }
-
             }
-
         }
 
         private void listHabitacionesHotel_SelectedIndexChanged(object sender, EventArgs e)

@@ -19,11 +19,8 @@ namespace Hotel
         public static List<Reserva> ListaReservas { get => listaReservas; set => listaReservas = value; }
 
         public Reservas(List<Reserva> listares)
-        {
-            
-           
+        {         
             InitializeComponent();
-
             LlenarListaReservas(ListaReservas);
         }
 

@@ -39,7 +39,6 @@ namespace Hotel
         public static void ObtenerTotalServicio(double subtotal)
         {
             totalServiciosXHab += subtotal;
-
         }
         public void GenerarFactura(Reserva rsv)
         {

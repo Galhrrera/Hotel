@@ -33,19 +33,9 @@ namespace Hotel
         }
 
         public void HacerCheckIn()
-        {
-            
+        {          
             Habitacion.EstadoHab = Habitacion.estado.Ocupada;
         }
 
-        public void HacerCheckOut()
-        {
-            string SalidaArchivo = "Factura.txt";                            //Ingresar la ruta en la que se debe crear el archivo.
-            StreamWriter streamwriter = new StreamWriter(SalidaArchivo);
-            //factura
-            streamwriter.Close();
-        }
-
-        
     }
 }

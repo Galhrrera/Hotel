@@ -81,31 +81,25 @@ namespace Hotel
             {
                 foreach (var item in Reservas.ListaPersona)
                 {
-                    personaTemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                    personaTemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text)); //Se crean personas temproales con los datos de los textbox para verificar si ya existe
 
                     if (item.Num_id == personaTemp.Num_id)
                     {
                         MessageBox.Show("Ya existe un cliente/huesped con ese número de identificación");
-                        iguales = true;
-                        
+                        iguales = true;                
                     }
                     else
                     {
                         if (comboBoxTipoPersona.SelectedIndex == 0) //1 = huesped
                         {
                             personaTemp = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-                            //listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));                            
-                            //Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                             iguales = false;
 
                         }
                         else if (comboBoxTipoPersona.SelectedIndex == 1)  //2=> Cliente
                         {
                             personaTemp = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
-                            //listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
-                            //Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                             iguales = false;
-
                         }
                     }
                 }
@@ -136,10 +130,7 @@ namespace Hotel
                     Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
 
                 }
-            }
-
-            
-                       
+            }                    
         }
 
         private void LlenarListaPersonas(List<Persona> lista)
@@ -183,16 +174,12 @@ namespace Hotel
             {
                 if (comboBoxTipoPersona.SelectedIndex == 0)
                 {
-
-
                     titular = listClientes.SelectedItem as Huesped;
-                    //titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
                 
                 if (comboBoxTipoPersona.SelectedIndex == 1)
                 {
                     titular = listClientes.SelectedItem as Cliente;
-                    //titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
 
                 if (comboBoxTipoHabitacion.Text == "Sencilla")
