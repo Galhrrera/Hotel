@@ -12,34 +12,10 @@ namespace Hotel
         public Ejecutiva()
         {
             this.TipoHab = tipoHabitacion.Ejecutiva;
+            this.Path = "ProductosEjecutiva.txt";
             ReabastecerMinibar();
         }
-        public override void ReabastecerMinibar() 
-        {
-            try
-            {
-                int cantidad;
-
-                string[] vectorTempProducto = new string[3];
-
-                string[] linea = System.IO.File.ReadAllLines("ProductosEjecutiva.txt");
-
-                for (int i = 0; i < linea.Length; i++)
-                {
-                    vectorTempProducto = linea[i].Split('#');
-
-                    cantidad = int.Parse(vectorTempProducto[0]);
-                    Producto productoTemp = new Producto(vectorTempProducto[1], Convert.ToDouble(vectorTempProducto[2]));
-                    AdicionarPctoMinibar(productoTemp, cantidad);
-                }
-            }
-            catch
-            {
-                throw new Exception(); 
-            }
-            
-            
-        }
+        
 
     }
 }
