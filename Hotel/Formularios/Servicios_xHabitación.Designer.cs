@@ -121,7 +121,7 @@
             this.txtCantPrendas.Location = new System.Drawing.Point(576, 260);
             this.txtCantPrendas.Name = "txtCantPrendas";
             this.txtCantPrendas.Size = new System.Drawing.Size(100, 20);
-            this.txtCantPrendas.TabIndex = 7;            
+            this.txtCantPrendas.TabIndex = 7;
             this.txtCantPrendas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantPrendas_KeyPress);
             // 
             // cant_prendas
@@ -139,9 +139,8 @@
             this.subtotal_restaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotal_restaurante.Location = new System.Drawing.Point(37, 302);
             this.subtotal_restaurante.Name = "subtotal_restaurante";
-            this.subtotal_restaurante.Size = new System.Drawing.Size(135, 13);
+            this.subtotal_restaurante.Size = new System.Drawing.Size(0, 13);
             this.subtotal_restaurante.TabIndex = 9;
-            this.subtotal_restaurante.Text = "Subtotal Restaurante: ";
             // 
             // subtotal_lavanderia
             // 
@@ -149,15 +148,14 @@
             this.subtotal_lavanderia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotal_lavanderia.Location = new System.Drawing.Point(462, 302);
             this.subtotal_lavanderia.Name = "subtotal_lavanderia";
-            this.subtotal_lavanderia.Size = new System.Drawing.Size(131, 13);
+            this.subtotal_lavanderia.Size = new System.Drawing.Size(0, 13);
             this.subtotal_lavanderia.TabIndex = 10;
-            this.subtotal_lavanderia.Text = "Subtotal Lavandería: ";
             this.subtotal_lavanderia.Click += new System.EventHandler(this.subtotal_lavanderia_Click);
             // 
             // solicitar_servicio
             // 
             this.solicitar_servicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.solicitar_servicio.Location = new System.Drawing.Point(225, 361);
+            this.solicitar_servicio.Location = new System.Drawing.Point(225, 341);
             this.solicitar_servicio.Name = "solicitar_servicio";
             this.solicitar_servicio.Size = new System.Drawing.Size(143, 56);
             this.solicitar_servicio.TabIndex = 11;
@@ -168,7 +166,7 @@
             // regresar_habitacion
             // 
             this.regresar_habitacion.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regresar_habitacion.Location = new System.Drawing.Point(395, 361);
+            this.regresar_habitacion.Location = new System.Drawing.Point(395, 341);
             this.regresar_habitacion.Name = "regresar_habitacion";
             this.regresar_habitacion.Size = new System.Drawing.Size(131, 56);
             this.regresar_habitacion.TabIndex = 12;

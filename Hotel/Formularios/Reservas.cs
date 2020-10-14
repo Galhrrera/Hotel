@@ -33,7 +33,6 @@ namespace Hotel
             //Parámetro de lista estática
             CrearReserva NuevaReserva = new CrearReserva(ListaPersona);
             NuevaReserva.Show();
-            //NuevaReserva.ShowDialog();
             Close();
 
         }
@@ -50,7 +49,7 @@ namespace Hotel
                 if(dataGridViewReservas.CurrentRow.Cells[2].Value == item.Habitacion)
                 {
                     item.Habitacion.EstadoHab = Habitacion.estado.Ocupada;
-                    MessageBox.Show($"El estado de la habitación: {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado a: OCUPADA.");
+                    MessageBox.Show($"El estado de la habitación {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado a: OCUPADA.");
                 }
             }
             
@@ -81,13 +80,12 @@ namespace Hotel
                     {
                         Check_Out check = new Check_Out();
                         check.GenerarFactura(item);
-                        //Check_Out.CheckOut.GenerarFactura(item);
                         item.Habitacion.EstadoHab = Habitacion.estado.Desocupada;
                         item.Habitacion.Titular = null;
                         //REABASTECER MINIBAR 
                         item.Habitacion.ListaMinibar.Clear();
                         item.Habitacion.ReabastecerMinibar();
-                        MessageBox.Show($"El estado de la habitación: {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado a: DESOCUPADA");
+                        MessageBox.Show($"El estado de la habitación {item.Habitacion.NumHabitacion.ToString()} ha sido actualizado a: DESOCUPADA");
                     }
                     else
                     {

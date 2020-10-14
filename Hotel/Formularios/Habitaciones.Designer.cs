@@ -48,19 +48,22 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listHabitacionesHotel);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(674, 257);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBoxListaHabitaciones";
+            this.groupBox1.Text = "Lista de Habitaciones";
             // 
             // listHabitacionesHotel
             // 
+            this.listHabitacionesHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listHabitacionesHotel.FormattingEnabled = true;
+            this.listHabitacionesHotel.ItemHeight = 16;
             this.listHabitacionesHotel.Location = new System.Drawing.Point(7, 20);
             this.listHabitacionesHotel.Name = "listHabitacionesHotel";
-            this.listHabitacionesHotel.Size = new System.Drawing.Size(661, 225);
+            this.listHabitacionesHotel.Size = new System.Drawing.Size(661, 212);
             this.listHabitacionesHotel.TabIndex = 0;
             this.listHabitacionesHotel.SelectedIndexChanged += new System.EventHandler(this.listHabitacionesHotel_SelectedIndexChanged);
             this.listHabitacionesHotel.DoubleClick += new System.EventHandler(this.listHabitacionesHotel_DoubleClick);
@@ -74,7 +77,6 @@
             this.lblHabitaciones.Size = new System.Drawing.Size(202, 37);
             this.lblHabitaciones.TabIndex = 2;
             this.lblHabitaciones.Text = "Habitaciones";
-            
             // 
             // Habitaciones
             // 

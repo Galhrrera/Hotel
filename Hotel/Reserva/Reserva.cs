@@ -46,14 +46,6 @@ namespace Hotel
             streamwriter.Close();
         }
 
-        public void CalcularDias() //Este método fue implementado en el formulario de Crear Reserva
-        {
-            //this.fechaEntrada = dptFechaInicio.Value.Date;
-            //this.fechaSalida = dptFechaFinal.Value.Date;
-            //dptFechaInicio & dptFechaFinal son los nombres de los box en el formulario
-            //tSpan = fechaSalida - fechaEntrada;
-
-            //this.dias = tSpan.Days;
-        }
+        
     }
 }

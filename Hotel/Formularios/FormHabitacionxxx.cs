@@ -102,9 +102,6 @@ namespace Hotel
 
         }
 
-        private void listBoxPruductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

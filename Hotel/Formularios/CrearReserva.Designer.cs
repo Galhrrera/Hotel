@@ -212,6 +212,7 @@
             this.txtNombreTitular.Name = "txtNombreTitular";
             this.txtNombreTitular.Size = new System.Drawing.Size(200, 23);
             this.txtNombreTitular.TabIndex = 1;
+            this.txtNombreTitular.TextChanged += new System.EventHandler(this.txtNombreTitular_TextChanged);
             this.txtNombreTitular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreTitular_KeyPress);
             // 
             // lblNombreTitular
@@ -331,10 +332,6 @@
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            
-            // 
-            
             // 
             // CrearReserva
             // 

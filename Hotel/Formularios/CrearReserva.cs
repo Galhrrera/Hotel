@@ -50,7 +50,7 @@ namespace Hotel
 
             if (dias <= 0 || txtDias.Text == null)
             {
-                MessageBox.Show("Por favor revise las fechas de ingreso y de salida");                
+                MessageBox.Show("Por favor, revise las fechas de ingreso y de salida");                
             }
             else
                 txtDias.Text = dias.ToString();
@@ -204,7 +204,7 @@ namespace Hotel
 
                             if (dias == 0 || listClientes.SelectedItem == null)
                             {
-                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");                                
+                                throw new Exception("Debe calcular los días de la estadía o seleccionar un titular para la reserva");                                
                             }
                             else
                             {
@@ -247,7 +247,7 @@ namespace Hotel
                         {
                             if (dias == 0 || listClientes.SelectedItem == null)
                             {
-                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");                                
+                                throw new Exception("Debe calcular los días de la estadía o seleccionar un titular para la reserva");                                
                             }
                             else
                             {
@@ -289,7 +289,7 @@ namespace Hotel
                         {
                             if (dias == 0 || listClientes.SelectedItem == null)
                             {
-                                throw new Exception("Debe calcular los días de la estadía o ingresar un titular para la reserva");                                
+                                throw new Exception("Debe calcular los días de la estadía o seleccionar un titular para la reserva");                                
                             }
                             else
                             {
@@ -373,6 +373,11 @@ namespace Hotel
         private void txtNumID_KeyPress(object sender, KeyPressEventArgs e)
         {
             Principal.ValidarSoloNumeros(e);
+        }
+
+        private void txtNombreTitular_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
