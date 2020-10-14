@@ -60,7 +60,7 @@ namespace Hotel
 
         private void btnGuardarPersona_Click(object sender, EventArgs e)  //botón para guardar un nuevo cliente
         {
-            Persona PersonaTemp;
+            
 
             if (txtNombreTitular.Text == string.Empty)
             {
@@ -73,17 +73,21 @@ namespace Hotel
                 return;
             }
 
-            personaTemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+            Persona PersonaTemp;
 
-            
+            bool iguales = false;
 
             if (Reservas.ListaPersona.Count != 0)
             {
                 foreach (var item in Reservas.ListaPersona)
                 {
+                    personaTemp = new Persona(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+
                     if (item.Num_id == personaTemp.Num_id)
                     {
                         MessageBox.Show("Ya existe un cliente/huesped con ese número de identificación");
+                        iguales = true;
+                        
                     }
                     else
                     {
@@ -92,6 +96,7 @@ namespace Hotel
                             personaTemp = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                             //listClientes.Items.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));                            
                             //Reservas.ListaPersona.Add(new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                            iguales = false;
 
                         }
                         else if (comboBoxTipoPersona.SelectedIndex == 1)  //2=> Cliente
@@ -99,13 +104,20 @@ namespace Hotel
                             personaTemp = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                             //listClientes.Items.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
                             //Reservas.ListaPersona.Add(new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text)));
+                            iguales = false;
 
                         }
                     }
                 }
 
-                listClientes.Items.Add(personaTemp);
-                Reservas.ListaPersona.Add(personaTemp);
+                if(iguales == false)
+                {
+                    listClientes.Items.Add(personaTemp);
+                    Reservas.ListaPersona.Add(personaTemp);
+                }
+
+                txtNumID.Text = string.Empty;
+                txtNombreTitular.Text = string.Empty;
                 
             }
             else
@@ -171,15 +183,16 @@ namespace Hotel
             {
                 if (comboBoxTipoPersona.SelectedIndex == 0)
                 {
-                   
-                    titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+
+
                     titular = listClientes.SelectedItem as Huesped;
+                    //titular = new Huesped(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
                 
                 if (comboBoxTipoPersona.SelectedIndex == 1)
-                {                    
+                {
                     titular = listClientes.SelectedItem as Cliente;
-                    titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
+                    //titular = new Cliente(txtNombreTitular.Text, long.Parse(txtNumID.Text));
                 }
 
                 if (comboBoxTipoHabitacion.Text == "Sencilla")
@@ -318,13 +331,6 @@ namespace Hotel
             {
                 MessageBox.Show($"{error.Message}");
             }
-            
-
-            
-                            
-            //txtNumID.Text = string.Empty;
-            //txtNombreTitular.Text = string.Empty;
-            
 
         }
 
