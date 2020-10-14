@@ -54,5 +54,29 @@ namespace Hotel
         {
 
         }
+
+        public static void ValidarSoloLetras(KeyPressEventArgs V)
+        {
+            if (char.IsLetter(V.KeyChar))
+                V.Handled = false;
+            else if (char.IsSeparator(V.KeyChar))
+                V.Handled = false;
+            else if (char.IsControl(V.KeyChar))
+                V.Handled = false;
+            else
+                V.Handled = true;
+        }
+
+        public static void ValidarSoloNumeros(KeyPressEventArgs V)
+        {
+            if (char.IsDigit(V.KeyChar))
+                V.Handled = false;
+            else if (char.IsSeparator(V.KeyChar))
+                V.Handled = false;
+            else if (char.IsControl(V.KeyChar))
+                V.Handled = false;
+            else
+                V.Handled = true;
+        }
     }
 }

@@ -121,7 +121,8 @@
             this.txtCantPrendas.Location = new System.Drawing.Point(576, 260);
             this.txtCantPrendas.Name = "txtCantPrendas";
             this.txtCantPrendas.Size = new System.Drawing.Size(100, 20);
-            this.txtCantPrendas.TabIndex = 7;
+            this.txtCantPrendas.TabIndex = 7;            
+            this.txtCantPrendas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantPrendas_KeyPress);
             // 
             // cant_prendas
             // 
@@ -211,7 +212,7 @@
             "Sí",
             "No"});
             this.cBroomService.Location = new System.Drawing.Point(140, 262);
-            this.cBroomService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBroomService.Margin = new System.Windows.Forms.Padding(2);
             this.cBroomService.Name = "cBroomService";
             this.cBroomService.Size = new System.Drawing.Size(100, 21);
             this.cBroomService.TabIndex = 16;
@@ -236,7 +237,7 @@
             "Normal",
             "A vapor"});
             this.cBtipoPlancha.Location = new System.Drawing.Point(576, 234);
-            this.cBtipoPlancha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBtipoPlancha.Margin = new System.Windows.Forms.Padding(2);
             this.cBtipoPlancha.Name = "cBtipoPlancha";
             this.cBtipoPlancha.Size = new System.Drawing.Size(100, 21);
             this.cBtipoPlancha.TabIndex = 18;

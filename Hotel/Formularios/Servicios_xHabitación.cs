@@ -218,18 +218,12 @@ namespace Hotel
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*
-            if (e.KeyCode == Keys.T || e.KeyCode == Keys.M)
-            {
-                e.SuppressKeyPress = true;
-                Button1Click(this, EventArgs.Empty);
-            }
-            */
+            Principal.ValidarSoloNumeros(e);
         }
 
         private void Servicios_xHabitación_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cBroomService_SelectedIndexChanged(object sender, EventArgs e)
@@ -238,6 +232,11 @@ namespace Hotel
             {
                 TotalServicioXHab += 5000; 
             }
+        }
+
+        private void txtCantPrendas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Principal.ValidarSoloNumeros(e);
         }
     }
 }

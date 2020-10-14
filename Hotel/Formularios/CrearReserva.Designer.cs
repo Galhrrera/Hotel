@@ -193,6 +193,7 @@
             this.txtNumID.Name = "txtNumID";
             this.txtNumID.Size = new System.Drawing.Size(200, 23);
             this.txtNumID.TabIndex = 3;
+            this.txtNumID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumID_KeyPress);
             // 
             // lblNumID
             // 
@@ -211,6 +212,7 @@
             this.txtNombreTitular.Name = "txtNombreTitular";
             this.txtNombreTitular.Size = new System.Drawing.Size(200, 23);
             this.txtNombreTitular.TabIndex = 1;
+            this.txtNombreTitular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreTitular_KeyPress);
             // 
             // lblNombreTitular
             // 

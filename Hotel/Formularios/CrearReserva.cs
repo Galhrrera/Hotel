@@ -364,5 +364,15 @@ namespace Hotel
             }
 
         }
+
+        private void txtNombreTitular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Principal.ValidarSoloLetras(e);
+        }
+
+        private void txtNumID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Principal.ValidarSoloNumeros(e);
+        }
     }
 }
