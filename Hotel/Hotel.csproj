@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Check-Out.cs" />
-    <Compile Include="Facturacion.cs" />
+    <Compile Include="Reserva\Check-Out.cs" />
+    <Compile Include="Reserva\Facturacion.cs" />
     <Compile Include="Habitacion\AccesoBD.cs" />
     <Compile Include="Formularios\CrearReserva.cs">
       <SubType>Form</SubType>
