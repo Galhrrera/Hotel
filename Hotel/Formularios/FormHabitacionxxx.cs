@@ -87,8 +87,7 @@ namespace Hotel
                         else
                         {
                             MessageBox.Show("No hay más productos");
-                        }
-                        
+                        }                       
                     }
                 }
                 else if(cont == 0)
@@ -96,12 +95,8 @@ namespace Hotel
                     cont++;
                     MessageBox.Show("No se pueden consumir productos porque la habitación está desocupada");
                     Close(); 
-                }
-                
+                }   
             }
-
-        }
-
-        
+        }      
     }
 }
