@@ -63,9 +63,21 @@ namespace Hotel
                 }
                 Servicio pdDesayuno = new Servicio(RS, 15000, "Desayuno");                
 
-                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdDesayuno, int.Parse(txtCantPlatos.Text)));
-                Check_Out.ObtenerTotalServicio(totalServicioXHab);
-                MessageBox.Show(totalServicioXHab.ToString());
+                if(txtCantPlatos.Text != string.Empty)
+                {
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdDesayuno, int.Parse(txtCantPlatos.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
+                else
+                {
+                    MessageBox.Show("Se agregará un plato por defecto");
+                    txtCantPlatos.Text = "1";
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdDesayuno, int.Parse(txtCantPlatos.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
+                
             }
             if (restaurante_menu.Text.Equals("Almuerzo"))
             {
@@ -78,11 +90,22 @@ namespace Hotel
                     RS = false;
                 }
                 Servicio pdAlmuerzo = new Servicio(RS, 25000, "Restaurante - Almuerzo");
-                
 
-                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text)));
-                Check_Out.ObtenerTotalServicio(totalServicioXHab);
-                MessageBox.Show(totalServicioXHab.ToString());
+
+                if (txtCantPlatos.Text != string.Empty)
+                {
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
+                else
+                {
+                    MessageBox.Show("Se agregará un plato por defecto");
+                    txtCantPlatos.Text = "1";
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdAlmuerzo, int.Parse(txtCantPlatos.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
             }
             if (restaurante_menu.Text.Equals("Cena"))
             {
@@ -95,20 +118,38 @@ namespace Hotel
                     RS = false;
                 }
                 Servicio pdCena = new Servicio(RS, 20000, "Restaurante - Cena");
-                
 
-                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text)));
-                Check_Out.ObtenerTotalServicio(totalServicioXHab);
-                MessageBox.Show(totalServicioXHab.ToString());
+
+                if (txtCantPlatos.Text != string.Empty)
+                {
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
+                else
+                {
+                    MessageBox.Show("Se agregará un plato por defecto");
+                    txtCantPlatos.Text = "1";
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdCena, int.Parse(txtCantPlatos.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
             }
             if (servicio_lavandería.Text.Equals("Lavar"))
             {
                 Servicio pdLavandería = new Servicio(false, 12000, "Lavandería");
                 
-
-                totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdLavandería, int.Parse(txtCantPrendas.Text)));
-                Check_Out.ObtenerTotalServicio(totalServicioXHab);
-                MessageBox.Show(totalServicioXHab.ToString());
+                if(txtCantPrendas.Text != string.Empty)
+                {
+                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdLavandería, int.Parse(txtCantPrendas.Text)));
+                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                    MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una cantidad de prendas");
+                }
+                
             }
             if (servicio_lavandería.Text.Equals("Planchar"))
             {
@@ -116,25 +157,39 @@ namespace Hotel
                 {
                     Servicio pdNormal = new Servicio(false, 9000, "Plancha normal");
                     
-
-                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text)));
-                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
-                    MessageBox.Show(totalServicioXHab.ToString());
-                    MessageBox.Show("Se enviaron a planchar normal exitosamente");
+                    if(txtCantPrendas.Text != string.Empty)
+                    {
+                        totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdNormal, int.Parse(txtCantPrendas.Text)));
+                        Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                        MessageBox.Show($"Se recargarán: ${totalServicioXHab.ToString()} a la cuenta");
+                        MessageBox.Show("Se enviaron a planchar normal exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar una cantidad de prendas");
+                    }
+                    
                 }
                 if (cBtipoPlancha.Text == "A vapor")
                 {
                     Servicio pdVapor = new Servicio(false, 6000, "Plancha a vapor");
                     
-
-                    totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdVapor, int.Parse(txtCantPrendas.Text)));
-                    Check_Out.ObtenerTotalServicio(totalServicioXHab);
-                    MessageBox.Show(totalServicioXHab.ToString());
-                    MessageBox.Show("Se enviaron a planchar a vapor exitosamente");
+                    if(txtCantPrendas.Text != string.Empty)
+                    {
+                        totalServicioXHab += HabitacionReservada.CalcularTotalServicio(HabitacionReservada.PedirServicio(pdVapor, int.Parse(txtCantPrendas.Text)));
+                        Check_Out.ObtenerTotalServicio(totalServicioXHab);
+                        MessageBox.Show(totalServicioXHab.ToString());
+                        MessageBox.Show("Se enviaron a planchar a vapor exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar una cantidad de prendas");
+                    }
+                    
                 }
 
             }
-            MessageBox.Show("Si funciona");
+           
         }
 
 
@@ -175,6 +230,14 @@ namespace Hotel
         private void Servicios_xHabitación_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cBroomService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cBroomService.SelectedItem.ToString().Equals("Sí"))
+            {
+                TotalServicioXHab += 5000; 
+            }
         }
     }
 }
