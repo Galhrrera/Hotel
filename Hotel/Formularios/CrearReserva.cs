@@ -45,7 +45,7 @@ namespace Hotel
 
             TimeSpan tSpan = fechaSalida - fechaEntrada;
 
-            dias = tSpan.Days;
+            dias = tSpan.Days + 1;
 
 
             if (dias <= 0 || txtDias.Text == null)
