@@ -78,5 +78,10 @@ namespace Hotel
             else
                 V.Handled = true;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,6 +37,8 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.foto_hotel = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.foto_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,11 +112,34 @@
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(70, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Créditos: ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(70, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(219, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Juan Galeano, Miguel Pérez, Nicole Bruneau";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 638);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.foto_hotel);
             this.Controls.Add(this.btnExit);
@@ -138,6 +163,8 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox foto_hotel;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
